@@ -1,0 +1,33 @@
+Arch Install Notes:
+
+On virtualbox we need:
+
+    #   pacstrap -i /mnt base base-devel iw wireless_tools wpa_actiond wpa_supplicant dialog
+
+
+To enable WiFi on VB:
+
+First, get the name of your connection using:
+
+    #   ip link
+
+Should be something like `enp0s3`
+
+    #   ip link set dev enp0s3 up
+    #   wpa_supplicant -B -i enp0s3 -c /etc/wpa_supplicant/wpa_supplicant.conf
+    #   dhcpcd enp0s3
+
+
+Verify that you connected successfully: 
+
+    #   iw dev enp0s3 link
+
+
+
+
+
+#Sound
+# sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol  --noconfirm --needed
+# sudo pacman -S alsa-utils alsa-plugins alsa-lib alsa-firmware --noconfirm --needed
+
+

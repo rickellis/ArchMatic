@@ -1,8 +1,119 @@
-Arch Install Notes:
+ORDER OF EVENTS
 
-On virtualbox we need:
+* Install Arch 
+* Install reflector and update mirrorlist
+* Install git
 
-    #   pacstrap -i /mnt base base-devel iw wireless_tools wpa_actiond wpa_supplicant dialog
+* Install Xorg (do I need this?)
+* Install XFCE and display manager. LightDM?
+
+* Install video drivers (research)
+* Install Network packages
+* Download WifiVPN and get online
+* Install audio packages
+* Install bluetooth packages
+* Install AVAHI Network discovery
+* Install printer drivers
+* Configure auto-login (see ArchMergeD/800-autologin.sh)
+
+
+* Install core software via pacman
+* Install software via AUR
+
+* Create home folders
+* Create Thunar bookmarks
+* Install Dotfiles
+
+
+
+
+
+To Install:
+
+gnome-keyring
+wget
+
+
+
+
+# To enable Wifi on Virtualbox:
+
+First, get the name of your connection using:
+
+    #   ip link
+
+Should be something like `enp0s3`. Then run:
+
+    #   sudo ip link set dev enp0s3 up
+    #   sudo dhcpcd enp0s3
+
+
+
+
+NETWORK MANAGER
+
+    # sudo pacman -S wpa_supplicant networkmanager networkmanager-vpnc dhclient libsecret
+
+    NOTE: I'm not sure if networkmanager-openvpn is necessary in addition to the above.
+
+
+
+
+Once XFCE is installed add these:
+
+    # sudo pacman -S network-manager-applet gnome-keyring dialog
+
+
+
+
+
+
+Enable NetworkManger and disable dhcpcd
+
+    #   sudo systemctl disable dhcpcd.service
+    #   sudo systemctl stop dhcpcd.service
+    #   sudo ip link set dev enp0s3 down
+    #   sudo systemctl enable NetworkManager.service
+    #   sudo systemctl start NetworkManager.service
+
+
+
+
+
+## Rankmirrors
+
+    #   sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+
+If you are running as root, run:
+
+    # rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+
+To use sudo, run this instead:
+
+sudo rankmirrors -v -n 6 /etc/pacman.d/mirrorlst.backup | sudo tee /etc/pacman.d/mirrorlist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 To enable WiFi on VB:
@@ -12,6 +123,18 @@ First, get the name of your connection using:
     #   ip link
 
 Should be something like `enp0s3`
+
+Run
+    #   nano /etc/wpa_supplicant.conf
+
+And add:
+
+    network={
+        ssid="Haiku House"
+        psk="password"
+    }
+
+Then run:
 
     #   ip link set dev enp0s3 up
     #   wpa_supplicant -B -i enp0s3 -c /etc/wpa_supplicant/wpa_supplicant.conf
@@ -23,11 +146,7 @@ Verify that you connected successfully:
     #   iw dev enp0s3 link
 
 
+https://askubuntu.com/questions/138472/how-do-i-connect-to-a-wpa-wifi-network-using-the-command-line
 
-
-
-#Sound
-# sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol  --noconfirm --needed
-# sudo pacman -S alsa-utils alsa-plugins alsa-lib alsa-firmware --noconfirm --needed
 
 

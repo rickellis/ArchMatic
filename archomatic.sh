@@ -7,7 +7,6 @@
 #   Automated Arch Linux Installation Script
 #
 #-----------------------------------------------------------------------------------
-APPNAME="Archomatic"
 VERSION="1.0.0"
 #-----------------------------------------------------------------------------------
 #
@@ -29,104 +28,91 @@ VERSION="1.0.0"
 
 declare -a install=( xorg desktop display-manager aur-helpers network bluetooth audio video sound printers sensors software-pacman software-aur extras setup personal )
 
-compdir="components"
+scriptdir="installers"
+
+tracker="tracker.txt"
 
 # TEXT COLORS ----------------------------------------------------------------------
 
-DFT="\033[39m" # Terminal default color
-BLK="\033[30m" # Black
-GRY="\033[37m" # Grey
 RED="\033[91m" # Red
 GRN="\033[92m" # Green
 BLU="\033[94m" # Blue
 YEL="\033[93m" # Yellow
+ORG="\033[38;5;202m" # Orange
 MAG="\033[95m" # Magenta
 CYN="\033[96m" # Cyan
-WHT="\033[97m" # White
+RST="\033[0m"  # Color Reset
 
-# BACKGROUND COLORS ----------------------------------------------------------------
+# HEADING FUNCTION -----------------------------------------------------------------
 
-BDFT="\033[49m\033[97m" # Terminal default color
-BBLK="\033[40m\033[97m" # Black
-BGRY="\033[47m\033[97m" # Grey
-BRED="\033[41m\033[97m" # Red
-BGRN="\033[42m\033[97m" # Green
-BBLU="\033[44m\033[97m" # Blue
-BYEL="\033[42m\033[97m" # Yellow
-BMAG="\033[45m\033[97m" # Magenta
-BCYN="\033[46m\033[97m" # Cyan
-BWHT="\033[107m\033[97m" # White
-
-# COLOR RESET ----------------------------------------------------------------------
-
-
-
-
-# HEADING --------------------------------------------------------------------------
-
+# Generates heading with a background color and white text, centered.
 function heading() {
 
-    if [ -z $1 ]; then
-        color="MAG"
-    else
-        color=${1}
+    if [ -z "$1" ] || [ -z "$2" ]; then
+        echo 'Usage: heading <color> "My cool heading"'
+        exit 1
     fi
 
-    # Uppercase the color
-    color=${color^^}
-    case "$SELECTION" in
-    BLACK)
-        color="\033[40m\033[97m" # Black
+    color=${1}
+    color=${color,,} # Lowercase the color
+    text=${2}
+    length=74 # Overal length of heading
+    reset="\033[0m"
+    
+    case "$color" in
+    black | blk)
+        color="\033[40m\033[97m" # Black with white text
     ;;
-    GREY)
-        color="\033[47m\033[97m" # Grey
+    grey | gry)
+        color="\033[47m\033[100m" # Grey with white text
     ;;
-    RED)
-        color="\033[41m\033[97m" # Red
+    red)
+        color="\033[41m\033[97m" # Red with white text
     ;;
-    GREEN)
-        color="\033[42m\033[97m" # Green
+    darkred | dred)
+        color="\033[48;5;52m\033[97m" # Dark red with white text
     ;;
-    BLUE)
-        color="\033[44m\033[97m" # Blue
+    green | grn)
+        color="\033[42m\033[97m" # Green with white text
     ;;
-    YELLOW)
-        color="\033[42m\033[97m" # Yellow
+    blue | blu)
+        color="\033[44m\033[97m" # Blue with white text
     ;;
-    MAGENTA)
-        color="\033[45m\033[97m" # Magenta
+    yellow | yel)
+        color="\033[42m\033[97m" # Yellow with white text
     ;;
-    CYAN)
-        color="\033[46m\033[97m" # Cyan
-    ;;padding
+    orange | org)
+        color="\033[48;5;202m\033[97m" # OrNGE with white text
+    ;;
+    olive | olv)
+        color="\033[48;5;58m\033[97m" # Yellow with white text
+    ;;
+    magenta | mag)
+        color="\033[45m\033[97m" # Magenta with white text
+    ;;
+    purple | pur)
+        color="\033[48;5;53m" # Purple with white text
+    ;;
+    cyan | cyn)
+        color="\033[46m\033[97m" # Cyan with white text
+    ;;
     *)
-        color="\033[45m\033[97m" # Magenta
+        color="\033[45m\033[97m" # Magenta with white text
     ;;
     esac
-    reset="\033[0m"
-
-    # Set the default text if no argument is passed
-    if [ -z "${2}" ]; then
-        text="${APPNAME} ${VERSION}"
-    else
-        text=${2}
-    fi
-
-    # Get the lenghth of the string that was passed
+    
+    # Get the lenghth of text string
     # Divide 74 by the length.
     # Divide it in half.
     n=${#text}
-    l=$(( 74 - n  )) 
+    l=$(( length - n  )) 
     d=$(( l / 2 ))
 
-    pad=""
-    for i in $(seq 1 ${d});
-    do 
-        pad+=" "
-    done
+    declare padding
+    for i in $(seq 1 ${d}); do padding+=" "; done;
 
     echo
-    echo -e "${color}${pad}${text}${pad}${reset}"
+    echo -e "${color}${padding}${text}${padding}${reset}"
     echo
 }
 
@@ -135,6 +121,7 @@ function heading() {
 function consent() {
     unset CONSENT
     msg="Hit ENTER to continue:"
+
     if [ "$1" != "" ]; then
         msg=${1}
     fi
@@ -143,7 +130,7 @@ function consent() {
     read -p " ${msg} " CONSENT
     echo
 
-    if ! [ -z "$CONSENT" ]; then
+    if ! [ -z "$CONSENT" ] && [ "$CONSENT" != 'y' ] && [ "$CONSENT" != 'Y' ]; then
         echo "Goodbye..."
         echo
         exit 1
@@ -152,68 +139,84 @@ function consent() {
 
 
 
+# MAIN HEADING ---------------------------------------------------------------------
+
+clear
+heading purple "Archomatic ${VERSION}"
+consent "Ready to begin? [y|n] "
+
+# PRE-FLIGHT CHECKS ----------------------------------------------------------------
+
+clear
+heading green "PRE-FLIGHT CHECKS"
 
 
+if [ ! -e "${tracker}}" ] ; then
+    touch "${tracker}"
+fi
 
-
-
-heading
-
-
-exit 1
-consent "Hit ENTER to begin, or any other key to abort"
-
-
-
-
-
-
-
-echo -e "${BGRN}                         PRE-FLIGHT CHECKS                           ${RST}"
-echo
+if [ ! -w "${tracker}" ] ; then
+    echo -e ${RED}!WRITABLE:${RST}  ${YEL}${tracker}${RST}
+    PASS="n"
+fi
 
 
 PASS="y"
 for filename in "${install[@]}"
 do
-    script="${compdir}/${filename}.sh"
+    script="${scriptdir}/${filename}.sh"
     if [ ! -f "$script" ]; then
-        echo -e " ${RED}FILE MISSING: ${script}${RST}"
+        echo -e " ${RED}FILE MISSING:${RST} ${YEL}${script}${RST}"
         PASS="n"
+        continue
     else
-        echo -e " ${GRN}FILE EXISTS:  ${script}${RST}"
+        echo -e " ${GRN}FILE EXISTS:${RST}  ${script}"
     fi
+
     if [ ! -x "$script" ]; then
-        echo -e " ${RED}! EXECUTABLE: ${script}${RST}"
+        echo -e " ${RED}!EXECUTABLE:${RST}  ${YEL}${script}${RST}"
         PASS="n"
     fi
 done
 
-
-
 if [ "$PASS" == 'n' ]; then
     echo
-    echo -e " ${RED}EXECUTION ABORTED: Pre-flight checks failed.${RST}"
+    echo -e " ${RED}EXECUTION ABORTED:${RST} Pre-flight checks failed."
     echo
     exit 1
 fi
 
-consent "All pre-flight tests passed! Hit ENTER to continue"
+echo
+echo -e " ${GRN}All pre-flight tests passed!${RST}"
+
+consent "Ready to continue? [y|n] "
 
 
-heading
+# INSTALLATION ---------------------------------------------------------------------
+
+clear
+heading green "Install"
+
 for filename in "${install[@]}"
 do
-    script="${compdir}/${filename}.sh"
 
-    if [ ! -f "$script" ]; then
-        echo " ERROR; Unable to find: ${script}"
-        break
+    if grep -Fxq "$filename" "$tracker"
+    then
+        echo -e " ${ORG}SKIPPING${RST} ${filename}"
+        continue
     fi
 
-    sh "${compdir}/${filename}.sh"
+    read -p " INSTALL ${filename}? [y|n] " DOIT
+
+    if ! [ -z "$DOIT" ] && [ "$DOIT" != 'y' ] && [ "$DOIT" != 'Y' ]; then
+        continue
+    fi
+
+    sh "${scriptdir}/${filename}.sh"
+
+    echo "${filename}" >> "${tracker}"
 
 done
 
-
+echo
 echo

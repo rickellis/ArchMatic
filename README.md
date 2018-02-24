@@ -1,2 +1,2 @@
 # Archomatic
-Automated Arch Linux Installation Script
+Automated Arch Linux Post Installation Setup and Configuration

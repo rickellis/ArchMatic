@@ -10,14 +10,7 @@
 VERSION="1.0.0"
 #-----------------------------------------------------------------------------------
 #
-#  Archomatic does the following:
-#
-#    * Creates a 16 color palette image from the current wallpaper.
-#    * Extracts the hex color values of the palette.
-#    * Generates a .conkyrc file using colors randomly selected from the palette.
-#    * Exports a set of colorized weather icons.
-#    * Copies the new .conkyrc file to the home folder.
-#    * Relaunches the Conky application.
+#  Archomatic is an Arch Linux installation script
 #
 #-----------------------------------------------------------------------------------
 # Author:   Rick Ellis
@@ -25,130 +18,41 @@ VERSION="1.0.0"
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-
+# Array containing the files that will be executed by this script. 
+# IMPORTANT: The order that the items appear in the array is the
+# order in which the execution happens.
 declare -a install=( xorg desktop display-manager aur-helpers network bluetooth audio video sound printers sensors software-pacman software-aur extras setup personal )
 
+# Name of the directory containing all the installer scripts
 scriptdir="installers"
 
+# This file is created automatically by Archomatic. As each installation 
+# script is executed, the name is added to the tracker file. This allows
+# Archomatic to be aborted, and the next time it's run it will pick up
+# where it left off.
 tracker="tracker.txt"
 
-# TEXT COLORS ----------------------------------------------------------------------
 
-RED="\033[91m" # Red
-GRN="\033[92m" # Green
-BLU="\033[94m" # Blue
-YEL="\033[93m" # Yellow
-ORG="\033[38;5;202m" # Orange
-MAG="\033[95m" # Magenta
-CYN="\033[96m" # Cyan
-RST="\033[0m"  # Color Reset
-
-# HEADING FUNCTION -----------------------------------------------------------------
-
-# Generates heading with a background color and white text, centered.
-function heading() {
-
-    if [ -z "$1" ] || [ -z "$2" ]; then
-        echo 'Usage: heading <color> "My cool heading"'
-        exit 1
-    fi
-
-    color=${1}
-    color=${color,,} # Lowercase the color
-    text=${2}
-    length=74 # Overal length of heading
-    reset="\033[0m"
-    
-    case "$color" in
-    black | blk)
-        color="\033[40m\033[97m" # Black with white text
-    ;;
-    grey | gry)
-        color="\033[47m\033[100m" # Grey with white text
-    ;;
-    red)
-        color="\033[41m\033[97m" # Red with white text
-    ;;
-    darkred | dred)
-        color="\033[48;5;52m\033[97m" # Dark red with white text
-    ;;
-    green | grn)
-        color="\033[42m\033[97m" # Green with white text
-    ;;
-    blue | blu)
-        color="\033[44m\033[97m" # Blue with white text
-    ;;
-    yellow | yel)
-        color="\033[42m\033[97m" # Yellow with white text
-    ;;
-    orange | org)
-        color="\033[48;5;202m\033[97m" # OrNGE with white text
-    ;;
-    olive | olv)
-        color="\033[48;5;58m\033[97m" # Yellow with white text
-    ;;
-    magenta | mag)
-        color="\033[45m\033[97m" # Magenta with white text
-    ;;
-    purple | pur)
-        color="\033[48;5;53m" # Purple with white text
-    ;;
-    cyan | cyn)
-        color="\033[46m\033[97m" # Cyan with white text
-    ;;
-    *)
-        color="\033[45m\033[97m" # Magenta with white text
-    ;;
-    esac
-    
-    # Get the lenghth of text string
-    # Divide 74 by the length.
-    # Divide it in half.
-    n=${#text}
-    l=$(( length - n  )) 
-    d=$(( l / 2 ))
-
-    declare padding
-    for i in $(seq 1 ${d}); do padding+=" "; done;
-
-    echo
-    echo -e "${color}${padding}${text}${padding}${reset}"
-    echo
-}
-
-# CONSENT --------------------------------------------------------------------------
-
-function consent() {
-    unset CONSENT
-    msg="Hit ENTER to continue:"
-
-    if [ "$1" != "" ]; then
-        msg=${1}
-    fi
-
-    echo
-    read -p " ${msg} " CONSENT
-    echo
-
-    if ! [ -z "$CONSENT" ] && [ "$CONSENT" != 'y' ] && [ "$CONSENT" != 'Y' ]; then
-        echo "Goodbye..."
-        echo
-        exit 1
-    fi
-}
-
+# Source the functions script
+. functions.sh
 
 
 # MAIN HEADING ---------------------------------------------------------------------
 
 clear
-heading purple "Archomatic ${VERSION}"
-consent "Ready to begin? [y|n] "
+sheading purple "Archomatic ${VERSION}"
+read -p "Ready to begin? [y|n] " CONSENT
+if ! [ -z "$CONSENT" ] && [ "$CONSENT" != 'y' ] && [ "$CONSENT" != 'Y' ]; then
+    echo
+    echo "Goodbye..."
+    echo
+    exit 1
+fi
 
 # PRE-FLIGHT CHECKS ----------------------------------------------------------------
 
 clear
-heading green "PRE-FLIGHT CHECKS"
+sheading green "PRE-FLIGHT CHECKS"
 
 
 if [ ! -e "${tracker}}" ] ; then
@@ -166,36 +70,42 @@ for filename in "${install[@]}"
 do
     script="${scriptdir}/${filename}.sh"
     if [ ! -f "$script" ]; then
-        echo -e " ${RED}FILE MISSING:${RST} ${YEL}${script}${RST}"
+        echo -e "${RED}FILE MISSING:${RST} ${YEL}${script}${RST}"
         PASS="n"
         continue
     else
-        echo -e " ${GRN}FILE EXISTS:${RST}  ${script}"
+        echo -e "${GRN}FILE EXISTS:${RST}  ${script}"
     fi
 
     if [ ! -x "$script" ]; then
-        echo -e " ${RED}!EXECUTABLE:${RST}  ${YEL}${script}${RST}"
+        echo -e "${RED}!EXECUTABLE:${RST}  ${YEL}${script}${RST}"
         PASS="n"
     fi
 done
 
 if [ "$PASS" == 'n' ]; then
     echo
-    echo -e " ${RED}EXECUTION ABORTED:${RST} Pre-flight checks failed."
+    echo -e "${RED}EXECUTION ABORTED:${RST} Pre-flight checks failed."
     echo
     exit 1
 fi
 
 echo
-echo -e " ${GRN}All pre-flight tests passed!${RST}"
+echo -e "${GRN}All pre-flight tests passed!${RST}"
+echo
 
-consent "Ready to continue? [y|n] "
-
+read -p "Ready to continue? [y|n] " CONSENT
+if ! [ -z "$CONSENT" ] && [ "$CONSENT" != 'y' ] && [ "$CONSENT" != 'Y' ]; then
+    echo
+    echo "Goodbye..."
+    echo
+    exit 1
+fi
 
 # INSTALLATION ---------------------------------------------------------------------
 
 clear
-heading green "Install"
+sheading green "Install"
 
 for filename in "${install[@]}"
 do
@@ -206,14 +116,14 @@ do
         continue
     fi
 
-    read -p " INSTALL ${filename}? [y|n] " DOIT
+    echo -ne " ${GRN}INSTALL${RST} ${filename}? [y|n] "
+    read DOIT
 
     if ! [ -z "$DOIT" ] && [ "$DOIT" != 'y' ] && [ "$DOIT" != 'Y' ]; then
         continue
     fi
 
     sh "${scriptdir}/${filename}.sh"
-
     echo "${filename}" >> "${tracker}"
 
 done

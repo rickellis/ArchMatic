@@ -12,3 +12,6 @@
 #
 
 echo " INSTALLING Audio"
+
+
+pavucontrol

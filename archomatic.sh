@@ -10,7 +10,7 @@
 VERSION="1.0.0"
 #-----------------------------------------------------------------------------------
 #
-#  Archomatic is an Arch Linux installation script
+#  Archomatic is an Arch Linux post-install setup and configuration script
 #
 #-----------------------------------------------------------------------------------
 # Author:   Rick Ellis
@@ -18,10 +18,26 @@ VERSION="1.0.0"
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-# Array containing the files that will be executed by this script. 
-# IMPORTANT: The order that the items appear in the array is the
-# order in which the execution happens.
-declare -a install=( xorg desktop display-manager aur-helpers network bluetooth audio video sound printers sensors software-pacman software-aur extras setup personal )
+# Array containing the installer files that will be executed by this script. 
+# IMPORTANT: The order that the items appear in the array is the order in 
+# which the execution happens.
+INSTALL=( 
+        xorg
+        video-driver
+        desktop 
+        display-manager
+        network
+        bluetooth
+        audio
+        printers
+        sensors
+        software-pacman
+        aur-helpers
+        software-aur 
+        extras 
+        setup 
+        personal
+    )
 
 # Name of the directory containing all the installer scripts
 scriptdir="installers"

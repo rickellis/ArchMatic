@@ -200,8 +200,6 @@ gtk3
 gtop
 gufw
 gutenprint
--------------------------------------------
-
 guvcview
 gvfs
 gvfs-afc
@@ -407,6 +405,7 @@ unzip
 usb_modeswitch
 variety
 veracrypt
+---------------------------------------------------------
 vim
 virtualbox
 virtualbox-guest-utils
@@ -532,7 +531,7 @@ xterm
 yad
 yaourt
 zd1211-firmware
-zenity
+s
 zsh
 zsh-completions
 zsh-syntax-highlighting

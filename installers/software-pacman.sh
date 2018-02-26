@@ -18,49 +18,49 @@ PKGS=(
 
     # SYSTEM UTILITIES ----------------------------------------------
 
-    'nemo'              # Filesystem browser
     'gnome-keyring'     # System password storage
-    'parted'            # Disk utility
-    'gparted'           # Disk utility
-    'gnome-disks'       # Disk utility
     'gtop'              # System monitoring via terminal
     'gufw'              # Firewall manager
     'hardinfo'          # Hardware info app
     'htop'              # Process viewer
     'inxi'              # System information utility
-    'exfat-utils'       # Mount exFat drives
     'numlockx'          # Turns on numlock in X11
     'file-roller'       # Archive utility
     'unrar'             # RAR compression program
     'zip'               # Zip compression program
     'unzip'             # Zip compression program
+    'tlp'               # Advanced laptop power management
     'bleachbit'         # File deletion utility
     'volumeicon'        # Volume control for system tray
     'zenity'            # Display graphical dialog boxes via shell scripts
 
+    # DISK UTILITIES -----------------------------------------------
+
+    'parted'            # Disk utility
+    'gparted'           # Disk utility
+    'gnome-disks'       # Disk utility
+    'exfat-utils'       # Mount exFat drives
+    'ntfs-3g'           # Open source implementation of NTFS file system 
+    'autofs'            # Auto-mounter
+    
     # TERMINAL UTILITIES --------------------------------------------
 
-    'hyper'             # Terminal emulator built on Electron
-    'termite'           # Terminal emulator
+    'xfce4-terminal'    # Terminal emulator
     'bash-completion'   # Tab completion for Bash
     'neofetch'          # System info with terminal launch
+    'bc'                # Precision calculator language
     'jq'                # JSON parsing library
     'jshon'             # JSON parsing library
     'wget'              # Remote content retrieval
     'curl'              # Remote content retrieval
+    'rsync'             # Remote file sync utility
     'zsh'               # ZSH shell
     'zsh-completions'   # Tab completion for ZSH
     'speedtest-cli'     # Internet speed via terminal
 
-    # PRINTER DRIVERS -----------------------------------------------
-
-    'cups'              # Open source printer drivers
-    'cups-pdf'          # PDF support for cups
-    'hplip'             # HP Util. !!INVESTIGATE
-    'gutenprint'        # Print drivers !!INVESTIGATE
-
     # UTILITIES -----------------------------------------------------
 
+    'nemo'              # Filesystem browser
     'conky'             # System information viewer
     'catfish'           # Filesystem search
     'veracrypt'         # Disc encryption utility

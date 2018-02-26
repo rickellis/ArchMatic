@@ -23,7 +23,7 @@ VERSION="1.0.0"
 # which the execution happens.
 INSTALL=( 
         xorg
-        video-driver
+        video-drivers
         desktop 
         display-manager
         network

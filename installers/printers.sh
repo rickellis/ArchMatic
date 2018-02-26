@@ -11,4 +11,22 @@
 #-----------------------------------------------------------------------------------
 #
 
+PRINTPKGS=(
+
+    # PRINTER DRIVERS -----------------------------------------------
+
+    'cups'              # Open source printer drivers
+    'cups-pdf'          # PDF support for cups
+
+    'ghostscript'       # PostScript interpreter
+
+    'cups-filters'      # !! INVESTIGATE
+    'hplip'             # HP Util. !!INVESTIGATE
+    'gutenprint'        # Print drivers !!INVESTIGATE
+
+)
+
+
+systemctl enable org.cups.cupsd.service
+
 echo " INSTALLING Printer Drivers"

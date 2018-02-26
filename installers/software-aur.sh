@@ -23,6 +23,7 @@ AURPKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------
 
+    'hyper'                 # Terminal emulator built on Electron
     'oh-my-zsh-git'         # ZSH library
 
     # UTILITIES -----------------------------------------------------

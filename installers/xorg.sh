@@ -14,7 +14,7 @@
 XPKGS=(
         'xorg-server'           # XOrg server
         'xorg-apps'             # XOrg apps group
-        'xorg-server-xwayland'  # 
+        'xorg-server-xwayland'  # Wayland support for XOrg
         'xorg-xinit'            # XOrg init
         'xf86-video-intel'      # 2D/3D video driver
         'mesa'                  # Open source version of OpenGL

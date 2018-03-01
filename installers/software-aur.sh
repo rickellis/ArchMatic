@@ -7,7 +7,8 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING AUR Software"
+echo -e "${yellow}INSTALLING${reset} AUR Software"
+
 
 
 AURPKGS=(
@@ -47,3 +48,9 @@ AURPKGS=(
     'skypeforlinux-bin'     # Skype
 
 )
+
+
+for pk in "${AURPKGS[@]}"
+do
+    echo " $pk"
+done

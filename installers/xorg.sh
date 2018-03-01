@@ -10,6 +10,7 @@
 
 # NOTE: At some point it will likely make sense to use Wayland instead of Xorg
 
+echo -e "${yellow}INSTALLING${reset} Xorg"
 
 XPKGS=(
         'xorg-server'           # XOrg server
@@ -21,4 +22,7 @@ XPKGS=(
 )
 
 
-echo " INSTALLING Xorg"
+for pk in "${XPKGS[@]}"
+do
+    echo " $pk"
+done

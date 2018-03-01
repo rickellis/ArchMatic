@@ -7,4 +7,4 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING Bluetooth"
+echo -e "${yellow}INSTALLING${reset} Bluetooth"

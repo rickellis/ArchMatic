@@ -7,8 +7,7 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING Pacman Software"
-
+echo -e "${yellow}INSTALLING${reset} Software via Pacman"
 
 PKGS=(
 
@@ -126,7 +125,5 @@ PKGS=(
 
 for pk in "${PKGS[@]}"
 do
-    echo $pk
+    echo " $pk"
 done
-
-

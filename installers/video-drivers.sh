@@ -8,4 +8,15 @@
 #-----------------------------------------------------------------------------------
 
 
-echo " INSTALLING Video"
+echo -e "${yellow}INSTALLING${reset} Video Drivers"
+
+VIDPKGS=(
+
+    
+)
+
+
+for pk in "${VIDPKGS[@]}"
+do
+    echo " $pk"
+done

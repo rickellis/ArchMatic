@@ -7,4 +7,4 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING Extras"
+echo -e "${yellow}INSTALLING${reset} Extras"

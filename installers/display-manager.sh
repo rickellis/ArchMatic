@@ -7,4 +7,4 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING Display Manager"
+echo -e "${yellow}INSTALLING${reset} Display Manager"

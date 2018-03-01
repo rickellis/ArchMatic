@@ -7,6 +7,9 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
+
+echo -e "${yellow}INSTALLING${reset} Printer Drivers"
+
 PRINTPKGS=(
 
     # PRINTER DRIVERS -----------------------------------------------
@@ -23,6 +26,9 @@ PRINTPKGS=(
 )
 
 
-systemctl enable org.cups.cupsd.service
+# systemctl enable org.cups.cupsd.service
 
-echo " INSTALLING Printer Drivers"
+for pk in "${PRINTPKGS[@]}"
+do
+    echo " $pk"
+done

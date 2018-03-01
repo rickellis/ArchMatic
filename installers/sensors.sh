@@ -10,4 +10,5 @@
 # lm_sensors
 # systemctl enable lm_sensors.service
 
-echo " INSTALLING Sensors"
+echo -e "${yellow}INSTALLING${reset} Sensors"
+

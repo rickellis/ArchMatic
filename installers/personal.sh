@@ -7,4 +7,4 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING Personal Settings"
+echo -e "${yellow}INSTALLING${reset} Personal Settings"

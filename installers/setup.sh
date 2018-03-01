@@ -7,4 +7,4 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING Setup"
+echo -e "${yellow}PERFORMING${reset} Setup and Configuration"

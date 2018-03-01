@@ -18,7 +18,7 @@ VERSION="1.0.0"
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-# Array containing the installer files that will be executed by this script. 
+# Array containing the installation files that will be executed by this script. 
 # IMPORTANT: The order that the items appear in the array is the order in 
 # which the execution happens.
 INSTALL=( 
@@ -49,14 +49,24 @@ scriptdir="installers"
 tracker="tracker.txt"
 
 
-# Source the functions script
-. functions.sh
-
+# Load colors.sh script to display pretty headings and colored text
+# This is an optional (but recommended) dependency
+BASEPATH=$(dirname "$0")
+if [ -f "${BASEPATH}/colors.sh" ]; then
+    . "${BASEPATH}/colors.sh"
+else
+    heading() {
+        echo " ----------------------------------------------------------------------"
+        echo "  $2"
+        echo " ----------------------------------------------------------------------"
+        echo
+    }
+fi
 
 # MAIN HEADING ---------------------------------------------------------------------
 
 clear
-sheading purple "Archomatic ${VERSION}"
+heading purple "Archomatic ${VERSION}"
 read -p "Ready to begin? [y|n] " CONSENT
 if ! [ -z "$CONSENT" ] && [ "$CONSENT" != 'y' ] && [ "$CONSENT" != 'Y' ]; then
     echo
@@ -68,7 +78,7 @@ fi
 # PRE-FLIGHT CHECKS ----------------------------------------------------------------
 
 clear
-sheading green "PRE-FLIGHT CHECKS"
+heading green "PRE-FLIGHT CHECKS"
 
 
 if [ ! -e "${tracker}}" ] ; then
@@ -76,38 +86,38 @@ if [ ! -e "${tracker}}" ] ; then
 fi
 
 if [ ! -w "${tracker}" ] ; then
-    echo -e ${RED}!WRITABLE:${RST}  ${YEL}${tracker}${RST}
+    echo -e ${red}!WRITABLE:${reset}  ${yellow}${tracker}${reset}
     PASS="n"
 fi
 
 
 PASS="y"
-for filename in "${install[@]}"
+for filename in "${INSTALL[@]}"
 do
     script="${scriptdir}/${filename}.sh"
     if [ ! -f "$script" ]; then
-        echo -e "${RED}FILE MISSING:${RST} ${YEL}${script}${RST}"
+        echo -e "${red}FILE MISSING:${reset} ${yellow}${script}${reset}"
         PASS="n"
         continue
     else
-        echo -e "${GRN}FILE EXISTS:${RST}  ${script}"
+        echo -e "${green}FILE EXISTS:${reset}  ${script}"
     fi
 
     if [ ! -x "$script" ]; then
-        echo -e "${RED}!EXECUTABLE:${RST}  ${YEL}${script}${RST}"
+        echo -e "${red}!EXECUTABLE:${reset}  ${yellow}${script}${reset}"
         PASS="n"
     fi
 done
 
 if [ "$PASS" == 'n' ]; then
     echo
-    echo -e "${RED}EXECUTION ABORTED:${RST} Pre-flight checks failed."
+    echo -e "${red}EXECUTION ABORTED:${reset} Pre-flight checks failed."
     echo
     exit 1
 fi
 
 echo
-echo -e "${GRN}All pre-flight tests passed!${RST}"
+echo -e "${green}All pre-flight tests passed!${reset}"
 echo
 
 read -p "Ready to continue? [y|n] " CONSENT
@@ -121,26 +131,29 @@ fi
 # INSTALLATION ---------------------------------------------------------------------
 
 clear
-sheading green "Install"
+heading green "Install"
 
-for filename in "${install[@]}"
+for filename in "${INSTALL[@]}"
 do
 
-    if grep -Fxq "$filename" "$tracker"
-    then
-        echo -e " ${ORG}SKIPPING${RST} ${filename}"
-        continue
-    fi
+    # if grep -Fxq "$filename" "$tracker"
+    # then
+    #     echo -e " ${ORG}SKIPPING${reset} ${filename}"
+    #     continue
+    # fi
 
-    echo -ne " ${GRN}INSTALL${RST} ${filename}? [y|n] "
+    echo -ne "${green}INSTALL${reset} ${filename}? [y|n] "
     read DOIT
 
     if ! [ -z "$DOIT" ] && [ "$DOIT" != 'y' ] && [ "$DOIT" != 'Y' ]; then
+        echo -e "${orange}SKIPPING${reset} ${filename}"
         continue
     fi
 
-    sh "${scriptdir}/${filename}.sh"
-    echo "${filename}" >> "${tracker}"
+    . "${scriptdir}/${filename}.sh"
+
+
+    # echo "${filename}" >> "${tracker}"
 
 done
 

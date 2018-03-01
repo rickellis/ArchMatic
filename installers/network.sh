@@ -7,4 +7,4 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING Network"
+echo -e "${yellow}INSTALLING${reset} Network"

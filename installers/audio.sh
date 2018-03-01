@@ -7,6 +7,8 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
+echo -e "${yellow}INSTALLING${reset} Audio Components"
+
 AUDIOPKGS=(
             'alsa-utils'        # Advanced Linux Sound Architecture (ALSA) Components https://alsa.opensrc.org/
             'alsa-plugins'      # ALSA plugins
@@ -16,9 +18,8 @@ AUDIOPKGS=(
             'volumeicon'        # System tray volume control
 )
 
-echo " INSTALLING Audio Components"
 
  for pk in "${AUDIOPKGS[@]}"
 do
-    echo $pk
+    echo " $pk"
 done

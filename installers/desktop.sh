@@ -7,4 +7,4 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING Desktop"
+echo -e "${yellow}INSTALLING${reset} Desktop"

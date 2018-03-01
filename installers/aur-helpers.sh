@@ -7,4 +7,4 @@
 # License:  MIT
 #-----------------------------------------------------------------------------------
 
-echo " INSTALLING AUR Helpers"
+echo -e "${yellow}INSTALLING${reset} AUR Helpers"

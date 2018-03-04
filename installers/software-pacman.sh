@@ -11,110 +11,110 @@ echo -e "${yellow}INSTALLING${reset} Software via Pacman"
 
 PKGS=(
 
-    # SYSTEM UTILITIES ----------------------------------------------
+    # TERMINAL UTILITIES ------------------------------------------------
 
+    'bash-completion'       # Tab completion for Bash
+    'bc'                    # Precision calculator language
+    'bleachbit'             # File deletion utility
+    'curl'                  # Remote content retrieval
+    'feh'                   # Terminal-based image viewer/manipulator
+    'file-roller'           # Archive utility
     'gnome-keyring'         # System password storage
     'gtop'                  # System monitoring via terminal
     'gufw'                  # Firewall manager
     'hardinfo'              # Hardware info app
     'htop'                  # Process viewer
     'inxi'                  # System information utility
-    'numlockx'              # Turns on numlock in X11
-    'feh'                   # Terminal-based image viewer/manipulator
-    'file-roller'           # Archive utility
-    'unrar'                 # RAR compression program
-    'zip'                   # Zip compression program
-    'unzip'                 # Zip compression program
-    'tlp'                   # Advanced laptop power management
-    'bleachbit'             # File deletion utility
-    'volumeicon'            # Volume control for system tray
-    'zenity'                # Display graphical dialog boxes via shell scripts
-
-    # DISK UTILITIES -----------------------------------------------
-
-    'parted'                # Disk utility
-    'gparted'               # Disk utility
-    'gnome-disks'           # Disk utility
-    'exfat-utils'           # Mount exFat drives
-    'ntfs-3g'               # Open source implementation of NTFS file system 
-    'autofs'                # Auto-mounter
-    
-    # TERMINAL UTILITIES --------------------------------------------
-
-    'xfce4-terminal'        # Terminal emulator
-    'bash-completion'       # Tab completion for Bash
-    'neofetch'              # System info with terminal launch
-    'bc'                    # Precision calculator language
     'jq'                    # JSON parsing library
     'jshon'                 # JSON parsing library
-    'wget'                  # Remote content retrieval
-    'curl'                  # Remote content retrieval
+    'neofetch'              # System info with terminal launch
+    'numlockx'              # Turns on numlock in X11
     'rsync'                 # Remote file sync utility
+    'speedtest-cli'         # Internet speed via terminal
+    'tlp'                   # Advanced laptop power management
+    'unrar'                 # RAR compression program
+    'unzip'                 # Zip compression program
+    'volumeicon'            # Volume control for system tray
+    'wget'                  # Remote content retrieval
+    'xfce4-terminal'        # Terminal emulator
+    'zenity'                # Display graphical dialog boxes via shell scripts
+    'zip'                   # Zip compression program
     'zsh'                   # ZSH shell
     'zsh-completions'       # Tab completion for ZSH
-    'speedtest-cli'         # Internet speed via terminal
 
-    # UTILITIES -----------------------------------------------------
+    # DISK UTILITIES ---------------------------------------------------------------
 
-    'nemo'                  # Filesystem browser
-    'conky'                 # System information viewer
+    'autofs'                # Auto-mounter
+    'exfat-utils'           # Mount exFat drives
+    'gparted'               # Disk utility
+    'gnome-disks'           # Disk utility
+    'ntfs-3g'               # Open source implementation of NTFS file system 
+    'parted'                # Disk utility
+
+
+    # UTILITIES --------------------------------------------------------------------
+
     'catfish'               # Filesystem search
+    'conky'                 # System information viewer
+    'nemo'                  # Filesystem browser
     'veracrypt'             # Disc encryption utility
     'variety'               # Wallpaper changer
     'xfburn'                # CD burning application
 
-    # DEVELOPMENT ---------------------------------------------------
+    # DEVELOPMENT ------------------------------------------------------------------
 
-    'git'                   # Version control system
-    'python'                # Scripting language
-    'electron'              # Cross-platform development using Javascript
-    'nodejs'                # Javascript runtime environment
     'apache'                # Apache web server
-    'php'                   # Web application scripting language
-    'mariadb'               # Drop-in replacement for MySQL
+    'electron'              # Cross-platform development using Javascript
+    'git'                   # Version control system
     'gcc'                   # C/C++ compiler
     'glibc'                 # C libraries
-    'postfix'               # SMTP agent
+    'mariadb'               # Drop-in replacement for MySQL
     'meld'                  # File/directory comparison
+    'nodejs'                # Javascript runtime environment
+    'npm'                   # Node package manager
+    'php'                   # Web application scripting language
+    'postfix'               # SMTP agent
+    'python'                # Scripting language
+    'yarn'                  # Dependency management (Hyper needs this)
 
-    # WEB TOOLS -----------------------------------------------------
+    # WEB TOOLS --------------------------------------------------------------------
 
-    'firefox'               # Web browser
     'chromium'              # Web browser
+    'firefox'               # Web browser
     'filezilla'             # FTP Client
     'flashplugin'           # Flash
 
-    # COMMUNICATIONS ------------------------------------------------
+    # COMMUNICATIONS ---------------------------------------------------------------
 
     'hexchat'               # Multi format chat
     'irssi'                 # Terminal based IIRC
 
-    # MEDIA ---------------------------------------------------------
+    # MEDIA ------------------------------------------------------------------------
 
-    'vlc'                   # Video player
     'lollypop'              # Music player
     'simplescreenrecorder'  # Record your screen
+    'vlc'                   # Video player
     'xfce4-screenshooter'   # Screen capture. Does this get installed with XFCE?
 
-    # GRAPHICS AND DESIGN -------------------------------------------
+    # GRAPHICS AND DESIGN ----------------------------------------------------------
 
+    'gcolor2'               # Colorpicker
     'gimp'                  # GNU Image Manipulation Program
     'inkscape'              # Vector image creation app
     'imagemagick'           # Command line image manipulation tool
-    'gcolor2'               # Colorpicker
-    'ristretto'             # Multi image viewer
     'nomacs'                # Image viewer
+    'ristretto'             # Multi image viewer
 
-    # PRODUCTIVITY --------------------------------------------------
+    # PRODUCTIVITY -----------------------------------------------------------------
 
-    'libreoffice-fresh'     # Libre office with extra features
-    'mousepad'              # XFCE simple text editor
     'galculator'            # Gnome calculator
     'evince'                # Multi format document viewer !!INVESTIGATE
     'hunspell'              # Spellcheck libraries
     'hunspell-en'
+    'libreoffice-fresh'     # Libre office with extra features
+    'mousepad'              # XFCE simple text editor
 
-    # VIRTUALIZATION ------------------------------------------------
+    # VIRTUALIZATION ---------------------------------------------------------------
 
     'virtualbox'
     'virtualbox-guest-utils'

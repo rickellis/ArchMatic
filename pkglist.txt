@@ -531,7 +531,6 @@ xterm
 yad
 yaourt
 zd1211-firmware
-s
 zsh
 zsh-completions
 zsh-syntax-highlighting

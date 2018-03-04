@@ -21,7 +21,6 @@ AURPKGS=(
     # TERMINAL UTILITIES --------------------------------------------
 
     'hyper'                 # Terminal emulator built on Electron
-    'oh-my-zsh-git'         # ZSH library
 
     # UTILITIES -----------------------------------------------------
 
@@ -30,7 +29,7 @@ AURPKGS=(
 
     # DEVELOPMENT ---------------------------------------------------
     
-    'visual-studio-code-bin'    # Kickass text editors
+    'visual-studio-code-bin'    # Kickass text editor
     # 'visual-studio-code-insiders' # Insiders version
 
     # MEDIA ---------------------------------------------------------
@@ -40,7 +39,6 @@ AURPKGS=(
 
     # POST PRODUCTION -----------------------------------------------
 
-    'davinci-resolve'       # Post prodution suite
     'peek'                  # GIF animation screen recorder
 
     # COMMUNICATIONS ------------------------------------------------

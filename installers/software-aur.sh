@@ -43,7 +43,7 @@ AURPKGS=(
 
     # COMMUNICATIONS ------------------------------------------------
 
-    'skypeforlinux-bin'     # Skype
+    'skypeforlinux-stable-bin' # Skype
 
 )
 

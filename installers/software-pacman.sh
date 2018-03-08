@@ -123,7 +123,9 @@ PKGS=(
 
 
 
-for pk in "${PKGS[@]}"
+for pkg in "${PKGS[@]}"
 do
-    echo " $pk"
+    # sudo pacman -S "$pkg" --noconfirm --needed
+
+    echo " $pkg"
 done

@@ -8,3 +8,15 @@
 #-----------------------------------------------------------------------------------
 
 echo -e "${yellow}INSTALLING${reset} Desktop"
+
+DKPKGS=(
+        'xfce4'
+        'xfce4-goodies'
+)
+
+for pkg in "${DKPKGS[@]}"
+do
+    # sudo pacman -S "$pkg" --noconfirm --needed
+
+    echo " $pkg"
+done

@@ -19,7 +19,9 @@ AUDIOPKGS=(
 )
 
 
- for pk in "${AUDIOPKGS[@]}"
+ for pkg in "${AUDIOPKGS[@]}"
 do
-    echo " $pk"
+    # sudo pacman -S "$pkg" --noconfirm --needed
+
+    echo " $pkg"
 done

@@ -28,7 +28,9 @@ PRINTPKGS=(
 
 # systemctl enable org.cups.cupsd.service
 
-for pk in "${PRINTPKGS[@]}"
+for pkg in "${PRINTPKGS[@]}"
 do
-    echo " $pk"
+    # sudo pacman -S "$pkg" --noconfirm --needed
+
+    echo " $pkg"
 done

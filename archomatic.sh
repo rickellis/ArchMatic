@@ -24,16 +24,14 @@ VERSION="1.0.0"
 INSTALL=( 
         xorg
         video-drivers
-        desktop 
         display-manager
+        desktop 
         network
         bluetooth
         audio
         printers
         sensors
         software-pacman
-        aur-helpers
-        software-aur 
         extras 
         setup 
         personal

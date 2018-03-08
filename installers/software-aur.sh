@@ -30,7 +30,6 @@ AURPKGS=(
     # DEVELOPMENT ---------------------------------------------------
     
     'visual-studio-code-bin'    # Kickass text editor
-    # 'visual-studio-code-insiders' # Insiders version
 
     # MEDIA ---------------------------------------------------------
 

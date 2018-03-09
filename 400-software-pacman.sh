@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
-#-----------------------------------------------------------------------------------
-#  Software via Pacman
-#-----------------------------------------------------------------------------------
-# Author:   Rick Ellis
-# URL:      https://github.com/rickellis/archomatic
-# License:  MIT
-#-----------------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#  Arch Linux Post Install Setup and Configuration
+#--------------------------------------------------------------------------
 
-echo -e "${yellow}INSTALLING${reset} Software via Pacman"
+echo "INSTALLING SOFTWARE"
 
 PKGS=(
 
-    # TERMINAL UTILITIES ------------------------------------------------
+    # TERMINAL UTILITIES --------------------------------------------------
 
     'bash-completion'       # Tab completion for Bash
     'bc'                    # Precision calculator language
@@ -27,6 +23,7 @@ PKGS=(
     'inxi'                  # System information utility
     'jq'                    # JSON parsing library
     'jshon'                 # JSON parsing library
+    'lm_sensors'            # Hardware monitoring
     'neofetch'              # System info with terminal launch
     'numlockx'              # Turns on numlock in X11
     'rsync'                 # Remote file sync utility
@@ -42,7 +39,7 @@ PKGS=(
     'zsh'                   # ZSH shell
     'zsh-completions'       # Tab completion for ZSH
 
-    # DISK UTILITIES ---------------------------------------------------------------
+    # DISK UTILITIES ------------------------------------------------------
 
     'autofs'                # Auto-mounter
     'exfat-utils'           # Mount exFat drives
@@ -52,7 +49,7 @@ PKGS=(
     'parted'                # Disk utility
 
 
-    # UTILITIES --------------------------------------------------------------------
+    # UTILITIES -----------------------------------------------------------
 
     'catfish'               # Filesystem search
     'conky'                 # System information viewer
@@ -61,7 +58,7 @@ PKGS=(
     'variety'               # Wallpaper changer
     'xfburn'                # CD burning application
 
-    # DEVELOPMENT ------------------------------------------------------------------
+    # DEVELOPMENT ---------------------------------------------------------
 
     'apache'                # Apache web server
     'electron'              # Cross-platform development using Javascript
@@ -77,26 +74,26 @@ PKGS=(
     'python'                # Scripting language
     'yarn'                  # Dependency management (Hyper needs this)
 
-    # WEB TOOLS --------------------------------------------------------------------
+    # WEB TOOLS -----------------------------------------------------------
 
     'chromium'              # Web browser
     'firefox'               # Web browser
     'filezilla'             # FTP Client
     'flashplugin'           # Flash
 
-    # COMMUNICATIONS ---------------------------------------------------------------
+    # COMMUNICATIONS ------------------------------------------------------
 
     'hexchat'               # Multi format chat
     'irssi'                 # Terminal based IIRC
 
-    # MEDIA ------------------------------------------------------------------------
+    # MEDIA ---------------------------------------------------------------
 
     'lollypop'              # Music player
     'simplescreenrecorder'  # Record your screen
     'vlc'                   # Video player
     'xfce4-screenshooter'   # Screen capture. Does this get installed with XFCE?
 
-    # GRAPHICS AND DESIGN ----------------------------------------------------------
+    # GRAPHICS AND DESIGN -------------------------------------------------
 
     'gcolor2'               # Colorpicker
     'gimp'                  # GNU Image Manipulation Program
@@ -105,16 +102,16 @@ PKGS=(
     'nomacs'                # Image viewer
     'ristretto'             # Multi image viewer
 
-    # PRODUCTIVITY -----------------------------------------------------------------
+    # PRODUCTIVITY --------------------------------------------------------
 
     'galculator'            # Gnome calculator
     'evince'                # Multi format document viewer !!INVESTIGATE
     'hunspell'              # Spellcheck libraries
-    'hunspell-en'
+    'hunspell-en'           # English spellcheck library
     'libreoffice-fresh'     # Libre office with extra features
     'mousepad'              # XFCE simple text editor
 
-    # VIRTUALIZATION ---------------------------------------------------------------
+    # VIRTUALIZATION ------------------------------------------------------
 
     'virtualbox'
     'virtualbox-guest-utils'
@@ -123,9 +120,9 @@ PKGS=(
 
 
 
-for pkg in "${PKGS[@]}"
-do
-    # sudo pacman -S "$pkg" --noconfirm --needed
+for PKG in "${PKGS[@]}"; do
 
-    echo " $pkg"
+    echo "INSTALLING: ${PKG}"
+
+    # sudo pacman -S "$PKG" --noconfirm --needed
 done

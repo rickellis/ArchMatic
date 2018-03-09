@@ -1,0 +1,44 @@
+BIOS:
+    Enable UEFI
+    Disable Secure Boot
+
+
+Boot from USB installer
+    Insert USB
+    Hold F12 during startup
+
+Install Arch Base with git
+
+Boot into new installation
+
+mkdir /home/CodeLab
+
+git clone "https://github.com/rickellis/Archomatic.git"
+
+Run Archomatic files
+
+Reboot and launch Firefox
+
+Run Archomatic/personal-setup.sh
+
+
+
+
+
+
+
+
+
+
+# To enable Wifi on Virtualbox:
+
+First, get the name of your connection using:
+
+    #   ip link
+
+Should be something like `enp0s3`. Then run:
+
+    #   sudo ip link set dev enp0s3 up
+    #   sudo dhcpcd enp0s3
+
+

@@ -124,6 +124,9 @@ cp -a "${DOTREPO}/.config/neofetch/." "${HOMEDIR}/.config/neofetch/"
 cp -a "${DOTREPO}/.config/nemo/." "${HOMEDIR}/.config/nemo/"
 cp -a "${DOTREPO}/.config/theme-override/." "${HOMEDIR}/.config/theme-override/"
 cp -a "${DOTREPO}/.config/variety/." "${HOMEDIR}/.config/variety/"
+
+
+# For sure?!
 cp -a "${DOTREPO}/.config/xfce4/." "${HOMEDIR}/.config/xfce4/"
 
 #--------------------------------------------------------------------------
@@ -160,7 +163,6 @@ cp "${BASHDIR}/.bashrc" "${HOMEDIR}/.bashrc";
 cp "${BASHDIR}/.bash_profile" "${HOMEDIR}/.bash_profile";
 cp "${DOTREPO}/.conkyrc" "${HOMEDIR}/.conkyrc";
 cp "${DOTREPO}/.conkyrc-owm" "${HOMEDIR}/.conkyrc-owm";
-cp "${DOTREPO}/.gitconfig" "${HOMEDIR}/.gitconfig";
 cp "${DOTREPO}/.hyper.js" "${HOMEDIR}/.hyper.js";
 
 #--------------------------------------------------------------------------

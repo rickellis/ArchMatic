@@ -6,9 +6,18 @@ Boot from USB installer
     Insert USB
     Hold F12 during startup
 
-Install Arch Base with git
+Install Arch Base and install git
 
 Boot into new installation
+
+Initialize Git
+
+    git init
+    git config --global user.name "rickellis"
+    git config --global user.email "rickellis@gmail.com"
+    git config --global credential.helper cache
+    git config --global credential.helper 'cache --timeout=31536000'
+
 
 mkdir /home/CodeLab
 

@@ -1,0 +1,149 @@
+To get network name: iwconfig
+
+To determine what video card I have: lspci
+
+To update system information:  /etc/lsb-release
+
+
+# -------------------------------------------------------------------------
+
+#   sudo systemctl list-units
+#   sudo systemctl start application
+#   sudo systemctl stop application
+#   sudo systemctl restart application
+#   sudo systemctl reload application # Reloads the config file
+
+
+# -------------------------------------------------------------------------
+
+Preferred Applications 
+
+Web browser     Firefox
+Terminal:       Hyper
+File Manager:   Nemo
+
+
+# -------------------------------------------------------------------------
+
+Shortcuts
+
+COMMANDS                                SHORTCUT
+
+exo-open --launch FileManager           Super+FileManager
+exo-open --launch TerminalEmulator      Super+T
+/usr/bin/hyper                          Super+Y
+/usr/bin/xfce4-popup-whiskermenu        Super+Alt L
+/usr/bin/xfce4-popup-whiskermenu        Alt+Super L
+xfce4-session-logout                    Super+L
+xkill                                   Super+Escape
+variety -n                              Shift+Super+Right
+variety -p                              Shift+Super+Left
+variety -t                              Shift+Super+T
+
+
+# -------------------------------------------------------------------------
+
+
+Whisker menu:
+    Deselect “position commands next to search entry”
+    Remove opacity
+
+# -------------------------------------------------------------------------
+
+Preferred Applications
+     Set default browser to Firefox
+     Set xfce-terminal to default terminal
+
+# -------------------------------------------------------------------------
+
+Set closing of the laptop lid to suspend:
+     sudo nano /etc/systemd/logind.conf
+     Change this:
+     HandleLidSwitch = suspend
+
+# -------------------------------------------------------------------------
+
+Firefox: deactivate middle button paste:
+     config:about
+     middlemouse.paste = false
+     middlemouse.opennewwindow = false
+
+# -------------------------------------------------------------------------
+
+Set favorites in whisker menu:
+     Firefox
+     Chromium
+     Visual Studio Code
+     Enpass
+     VeraCrypt
+
+# -------------------------------------------------------------------------
+
+To let Visual Studio run as root:
+
+     Open Thunar > Edit > Custom Actions
+
+Set "edit as root" to:
+
+gksudo /opt/visual-studio-code/code %f
+
+# -------------------------------------------------------------------------
+
+Using 8 cores
+
+Open  /etc/makepkg.conf
+And set these:
+
+MAKEFLAGS="-j$(nproc)"
+COMPRESSXZ=(xz -c -T 8 -z -)
+
+# -------------------------------------------------------------------------
+
+
+To solve the giant cursor problem, comment out inherits=theme:
+
+    $ sudo nano /usr/share/icons/default/index.theme
+
+[Icon Theme]
+#Inherits=Theme
+
+# -------------------------------------------------------------------------
+
+VS Code
+
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0,
+    "editor.fontSize": 16,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Visual Studio Light",
+    "git.confirmSync": true,
+    "git.enableSmartCommit": true,
+    "editor.detectIndentation": false,
+    "editor.minimap.maxColumn": 35,
+    "editor.minimap.renderCharacters": false,
+    "files.autoSave": "off",
+    "files.autoSaveDelay": 1000,
+    "editor.tokenColorCustomizations": {
+        "comments": "#606260"
+    },
+    "files.associations": {
+        "*.bash_*":"shellscript"
+    },
+    "window.menuBarVisibility": "toggle"
+}
+
+# -------------------------------------------------------------------------
+
+# To enable Wifi on Virtualbox:
+
+First, get the name of your connection using:
+
+    #   ip link
+
+Should be something like `enp0s3`. Then run:
+
+    #   sudo ip link set dev enp0s3 up
+    #   sudo dhcpcd enp0s3
+
+

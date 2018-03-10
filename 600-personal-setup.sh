@@ -19,6 +19,8 @@ BASHDIR="${HOME}/CodeLab/BashRC"
 
 # Create home directories
 HOMEDIRS=(
+        'Archive'
+        'Archive/Documents'
         'CodeLab'
         'Desktop'
         'Downloads'
@@ -98,10 +100,23 @@ echo "Cloning Hardcode Fixer"
 echo
 git clone https://github.com/Foggalong/hardcode-fixer.git
 
+
+
+
+#--------------------------------------------------------------------------
+
+# Backup the XFCE config folder in case mine isn't fully compatible
+
+if [[ -d "${HOMEDIR}/.config/xfce4" ]]; then
+    cp "${HOMEDIR}/.config/xfce4/." "${HOMEDIR}/Archive/Documents";
+fi
+
 #--------------------------------------------------------------------------
 
 echo "Copying .config files"
 echo
+
+
 cp -a "${DOTREPO}/.config/autostart/." "${HOMEDIR}/.config/autostart/"
 cp -a "${DOTREPO}/.config/Code/." "${HOMEDIR}/.config/Code/"
 cp -a "${DOTREPO}/.config/Hyper/." "${HOMEDIR}/.config/Hyper/"

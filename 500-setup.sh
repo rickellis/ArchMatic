@@ -6,7 +6,7 @@
 echo "PERFORMING SETUP AND CONFIGURATION"
 
 
-# Get IP LINK using: ip link
+# Get IP LINK using: ip link or iwconfig
 LINK="wlp58s0"
 
 #--------------------------------------------------------------------------

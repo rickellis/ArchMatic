@@ -19,13 +19,19 @@ Initialize Git
     git config --global credential.helper 'cache --timeout=31536000'
 
 
-mkdir /home/CodeLab
+mkdir /home/CodeLab'
 
-git clone "https://github.com/rickellis/Archomatic.git"
 
-Run Archomatic files
+Clone Archomatic
+
+    git clone https://github.com/rickellis/Archomatic.git
+
+Run Archomatic files except personal setup
 
 Reboot and launch Firefox
 
 Run Archomatic/personal-setup.sh
 
+
+
+ENABLE TRACKPAD ON OLD LAPTOP!!

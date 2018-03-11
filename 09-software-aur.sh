@@ -3,7 +3,9 @@
 #  Arch Linux Post Install Setup and Configuration
 #--------------------------------------------------------------------------
 
+echo
 echo "INSTALLING AUR SOFTWARE"
+echo
 
 PKGS=(
 
@@ -29,6 +31,7 @@ PKGS=(
 
     'spotify'               # Music player
     'screenkey'             # Screencast your keypresses
+    'aftershotpro3'         # Photo editor
 
     # POST PRODUCTION -----------------------------------------------------
 
@@ -44,5 +47,12 @@ cd ${HOME}/CodeLab/AURIC
 chmod +x auric.sh
 
 for PKG in "${PKGS[@]}"; do
-    ./auric.sh $PKG
+    ./auric.sh -i $PKG
 done
+
+
+echo
+echo "Done!"
+echo
+echo "Now would be a good time to setup Dropbox and Enpass"
+echo

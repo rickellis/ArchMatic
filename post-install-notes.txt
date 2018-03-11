@@ -147,3 +147,59 @@ Should be something like `enp0s3`. Then run:
     #   sudo dhcpcd enp0s3
 
 
+# -------------------------------------------------------------------------
+
+MariaDB SETUP
+
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+systemctl enable mysqld
+
+COMMANDS
+
+systemctl start mysqld
+
+systemctl start mysqld
+
+systemctl status mysqld
+
+CHANGE ROOT PASSWORD:
+
+First start mysql, then:
+
+mysql_secure_installation
+
+
+# -------------------------------------------------------------------------
+
+PHP SETUP
+
+
+EDIT: /etc/httpd/conf/httpd.conf
+
+Find the following line and COMMENT IT OUT:
+
+#LoadModule mpm_event_module modules/mod_mpm_event.so
+
+
+Then, add the following lines at the bottom:
+
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+LoadModule php7_module modules/libphp7.so
+AddHandler php7-script php
+Include conf/extra/php7_module.conf
+
+Then run:  systemctl restart httpd
+
+
+EDIT: /etc/php/php.ini
+
+Uncomment this:
+extension=mysqli
+
+Add these:
+extension=bz2.so
+extension=mcrypt.so
+
+
+

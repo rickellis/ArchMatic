@@ -3,7 +3,9 @@
 #  Arch Linux Post Install Setup and Configuration
 #--------------------------------------------------------------------------
 
+echo
 echo "INSTALLING SOFTWARE"
+echo
 
 PKGS=(
 
@@ -23,7 +25,6 @@ PKGS=(
     'inxi'                  # System information utility
     'jq'                    # JSON parsing library
     'jshon'                 # JSON parsing library
-    'lm_sensors'            # Hardware monitoring
     'neofetch'              # System info with terminal launch
     'numlockx'              # Turns on numlock in X11
     'rsync'                 # Remote file sync utility
@@ -70,6 +71,7 @@ PKGS=(
     'nodejs'                # Javascript runtime environment
     'npm'                   # Node package manager
     'php'                   # Web application scripting language
+    'php-apache'            # Apache driver
     'postfix'               # SMTP agent
     'python'                # Scripting language
     'yarn'                  # Dependency management (Hyper needs this)
@@ -119,10 +121,11 @@ PKGS=(
 )
 
 
-
 for PKG in "${PKGS[@]}"; do
-
     echo "INSTALLING: ${PKG}"
-
-    # sudo pacman -S "$PKG" --noconfirm --needed
+    sudo pacman -S "$PKG" --noconfirm --needed
 done
+
+echo
+echo "Done!"
+echo

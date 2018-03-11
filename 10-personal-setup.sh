@@ -4,15 +4,16 @@
 #--------------------------------------------------------------------------
 
 
-# HOMEDIR="${HOME}"
-# CODELAB="${HOME}/CodeLab"
-# DOTREPO="${HOME}/CodeLab/Dotfiles"
-# BASHDIR="${HOME}/CodeLab/BashRC"
-
-HOMEDIR="${HOME}/FAKEHOME"
-CODELAB="${HOME}/FAKEHOME/CodeLab"
+HOMEDIR="${HOME}"
+CODELAB="${HOME}/CodeLab"
 DOTREPO="${HOME}/CodeLab/Dotfiles"
 BASHDIR="${HOME}/CodeLab/BashRC"
+
+# TESTING
+# HOMEDIR="${HOME}/FAKEHOME"
+# CODELAB="${HOME}/FAKEHOME/CodeLab"
+# DOTREPO="${HOME}/CodeLab/Dotfiles"
+# BASHDIR="${HOME}/CodeLab/BashRC"
 
 
 #--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ HOMEDIRS=(
         'CodeLab'
         'Desktop'
         'Downloads'
+        'Safeties'
         '.cache'
         '.config'
         '.fonts'
@@ -63,52 +65,10 @@ done
 
 #--------------------------------------------------------------------------
 
-# Git assets
-GITREPOS=(
-        'Arch-Cheatsheet'
-        'Arch-Linux-Install-Guide'
-        'AURIC'
-        'Bash-Cheatsheet'
-        'BashRC'
-        'CodeIgniter'
-        'ConkyMatic'
-        'Dotfiles'
-        'jotTablet'
-        'Shell-Scripts'
-        'Shortcuts'
-        'Snippets'
-        'SVG-to-PNG'
-        'SVG-Weather-Icons'
-        'SYSTR'
-        'Utilities'
-        'WifiVPN'
-)
-
-echo "Cloning GIT repos"
-echo
-
-cd $CODELAB
-
-for repo in "${GITREPOS[@]}"; do
-    git clone "https://github.com/rickellis/${repo}.git"
-    echo
-done
-
-# Clone Hardcode Fixer
-
-echo "Cloning Hardcode Fixer"
-echo
-git clone https://github.com/Foggalong/hardcode-fixer.git
-
-
-
-
-#--------------------------------------------------------------------------
-
 # Backup the XFCE config folder in case mine isn't fully compatible
 
-if [[ -d "${HOMEDIR}/.config/xfce4" ]]; then
-    cp "${HOMEDIR}/.config/xfce4/." "${HOMEDIR}/Archive/Documents";
+if [[ -d "${HOME}/.config/xfce4" ]]; then
+    cp -a "${HOME}/.config/xfce4/." "${HOMEDIR}/Safeties/xfce4";
 fi
 
 #--------------------------------------------------------------------------
@@ -124,9 +84,6 @@ cp -a "${DOTREPO}/.config/neofetch/." "${HOMEDIR}/.config/neofetch/"
 cp -a "${DOTREPO}/.config/nemo/." "${HOMEDIR}/.config/nemo/"
 cp -a "${DOTREPO}/.config/theme-override/." "${HOMEDIR}/.config/theme-override/"
 cp -a "${DOTREPO}/.config/variety/." "${HOMEDIR}/.config/variety/"
-
-
-# For sure?!
 cp -a "${DOTREPO}/.config/xfce4/." "${HOMEDIR}/.config/xfce4/"
 
 #--------------------------------------------------------------------------
@@ -194,8 +151,12 @@ cp -a "${DOTREPO}/.fonts/." "${HOMEDIR}/.fonts/"
 
 # Run Hardcode Fixer
 
-cd ${CODELAB}/hardcode-fixer
-chmod +x fix.sh
-sudo ./fix.sh
+echo "Running Hardcode Fixer"
+echo
 
+# cd ${CODELAB}/hardcode-fixer
+# chmod +x fix.sh
+# sudo ./fix.sh
+
+echo
 echo "Done!"

@@ -3,7 +3,9 @@
 #  Arch Linux Post Install Setup and Configuration
 #--------------------------------------------------------------------------
 
+echo
 echo "INSTALLING AUDIO COMPONENTS"
+echo
 
 PKGS=(
             'alsa-utils'        # Advanced Linux Sound Architecture (ALSA) Components https://alsa.opensrc.org/
@@ -14,11 +16,12 @@ PKGS=(
             'volumeicon'        # System tray volume control
 )
 
-
 for PKG in "${PKGS[@]}"; do
-
     echo "INSTALLING ${PKG}"
-
-    # sudo pacman -S "$PKG" --noconfirm --needed
-
+    sudo pacman -S "$PKG" --noconfirm --needed
 done
+
+
+echo
+echo "Done!"
+echo

@@ -4,11 +4,17 @@ BIOS:
 
 Boot from USB installer
     Insert USB
-    Hold F12 during startup
+    Hold F2 (or F12) during startup
 
-Install Arch Base and install git
+# -----------------------------------------------------------------
+
+Install Arch Base along with git, dialog, and wpa_supplicant
 
 Boot into new installation
+
+Run: sudo wifi-menu
+
+# -----------------------------------------------------------------
 
 Initialize Git
 
@@ -19,19 +25,39 @@ Initialize Git
     git config --global credential.helper 'cache --timeout=31536000'
 
 
-mkdir /home/CodeLab'
-
+mkdir /home/CodeLab
 
 Clone Archomatic
 
     git clone https://github.com/rickellis/Archomatic.git
 
-Run Archomatic files except personal setup
+# -----------------------------------------------------------------
 
-Reboot and launch Firefox
+Run Archomatic files 01-07. 
+
+Do not install software yet.
+
+Copy .xinitrc file from Archomatic to root
+
+reboot
+
+# -----------------------------------------------------------------
+
+Run: xinit
+
+You should now be booted into XFCE
+
+# -----------------------------------------------------------------
+
+Run 08-software-pacman.sh
+
+Launch Firefox
+
+# -----------------------------------------------------------------
+
+Run 09-software-aur.sh
+
+# -----------------------------------------------------------------
 
 Run Archomatic/personal-setup.sh
 
-
-
-ENABLE TRACKPAD ON OLD LAPTOP!!

@@ -25,7 +25,6 @@ PKGS=(
     'inxi'                  # System information utility
     'jq'                    # JSON parsing library
     'jshon'                 # JSON parsing library
-    'neofetch'              # System info with terminal launch
     'numlockx'              # Turns on numlock in X11
     'rsync'                 # Remote file sync utility
     'speedtest-cli'         # Internet speed via terminal

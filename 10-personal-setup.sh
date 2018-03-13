@@ -33,7 +33,7 @@ HOMEDIRS=(
         '.local/share/applications'
         '.local/share/icons'
         '.local/share/themes'
-        '.mozilla/firefox/1godna46.default/chrome'
+        '.mozilla/firefox/ee2kdll2.default/chrome'
         '.vscode'
 )
 
@@ -139,7 +139,7 @@ cp "${DOTREPO}/.cache/yahoo_weather.png" "${HOMEDIR}/.cache/"
 
 echo "Copying Firefox CSS"
 echo
-cp -a "${DOTREPO}/.mozilla/firefox/1godna46.default/chrome/." "${HOMEDIR}/.mozilla/firefox/1godna46.default/chrome/"
+cp -a "${DOTREPO}/.mozilla/firefox/1godna46.default/chrome/." "${HOMEDIR}/.mozilla/firefox/ee2kdll2.default/chrome/"
 
 #--------------------------------------------------------------------------
 
@@ -154,9 +154,9 @@ cp -a "${DOTREPO}/.fonts/." "${HOMEDIR}/.fonts/"
 echo "Running Hardcode Fixer"
 echo
 
-# cd ${CODELAB}/hardcode-fixer
-# chmod +x fix.sh
-# sudo ./fix.sh
+cd ${CODELAB}/hardcode-fixer
+chmod +x fix.sh
+sudo ./fix.sh
 
 echo
 echo "Done!"

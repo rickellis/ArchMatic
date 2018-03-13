@@ -17,11 +17,13 @@ PKGS=(
     # TERMINAL UTILITIES --------------------------------------------------
 
     'hyper'                 # Terminal emulator built on Electron
+    'neofetch'              # System info with terminal launch
 
     # UTILITIES -----------------------------------------------------------
 
     'dropbox'               # Cloud file storage
     'enpass-bin'            # Password manager
+    'slimlock'              # Screen locker
 
     # DEVELOPMENT ---------------------------------------------------------
     
@@ -31,7 +33,7 @@ PKGS=(
 
     'spotify'               # Music player
     'screenkey'             # Screencast your keypresses
-    'aftershotpro3'         # Photo editor
+    #'aftershotpro3'         # Photo editor
 
     # POST PRODUCTION -----------------------------------------------------
 
@@ -39,7 +41,7 @@ PKGS=(
 
     # COMMUNICATIONS ------------------------------------------------------
 
-    'skypeforlinux-stable-bin' # Skype
+    #'skypeforlinux-stable-bin' # Skype
 
 )
 

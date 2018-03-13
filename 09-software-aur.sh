@@ -40,6 +40,7 @@ PKGS=(
     # COMMUNICATIONS ------------------------------------------------------
 
     'skypeforlinux-stable-bin' # Skype
+
 )
 
 

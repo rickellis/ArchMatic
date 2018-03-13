@@ -14,7 +14,7 @@ PKGS=(
         'wpa_supplicant'
         'dialog'
         'networkmanager'
-        'network-manager-applet'
+        #'network-manager-applet'
         'networkmanager-vpnc'
         'dhclient'
         'libsecret'

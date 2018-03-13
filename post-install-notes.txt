@@ -109,6 +109,16 @@ To solve the giant cursor problem, comment out inherits=theme:
 
 # -------------------------------------------------------------------------
 
+Suspend on Laptop lid close:
+
+sudo nano /etc/systemd/logind.conf
+
+Change this:
+
+HandleLidSwitch = suspend
+
+# -------------------------------------------------------------------------
+
 VS Code
 
 {
@@ -201,5 +211,8 @@ Add these:
 extension=bz2.so
 extension=mcrypt.so
 
+#-------------------------------------------------------------------------
 
+i3 Monitor config:
 
+xrandr --output DP1 --mode 2560x1440 --above eDP1

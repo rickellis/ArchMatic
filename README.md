@@ -5,7 +5,7 @@ This README contains all of the steps I do to fully configure and setup a new in
 
 The shell scripts in this repo allow me to automate the package installation.
 
-These steps likely will not work for you...
+These steps will likely not work for you...
 
 ...but they might help you develop your own installers.
 
@@ -59,12 +59,12 @@ These are the scripts in this repo.
 
 Run the following scripts:
 
-01-git-setup.sh
-02-xorg-xfce.sh
-03-network.sh
-04-bluetooth.sh
-05-audio.sh
-06-printers.sh
+01-git-setup.sh 
+02-xorg-xfce.sh 
+03-network.sh 
+04-bluetooth.sh 
+05-audio.sh 
+06-printers.sh 
 
 Then reboot
 

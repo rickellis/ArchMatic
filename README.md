@@ -107,18 +107,18 @@ You should now have an Arch system running XFCE. Congrats!
 
 Run these scripts:
 
-07-software-pacman.sh
-08-software-aur.sh
-
----
-
-### Launch Firefox
-
-Then verify the name of the folder where we put the `chrome` folder so we can update `personal-setup.sh`
+* 07-software-pacman.sh
+* 08-software-aur.sh
 
 ---
 
 ### Run 10-personal-setup.sh
+
+__IMPORTANT:__ Before running the script, launch Firefox so it will create the `.mozilla` folder.
+
+Then verify the name of the folder where we will put our Firefox CSS fix.
+
+Update the personal setup script with this info, then run it.
 
 ---
 

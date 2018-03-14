@@ -124,7 +124,7 @@ Update the personal setup script with this info, then run it.
 
 ### Copy local themes to system
 
-In order for some windows to recognize our theme choice we need to copy:
+In order for some XFCE system windows to recognize our theme choice we need to copy:
 
     ~/.local/share/themes/*
 

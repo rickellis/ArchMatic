@@ -108,11 +108,11 @@ Run: personal-setup.sh
 
 In order for some windows to recognize theme choice we need to copy:
 
-    /home/rickellis/local/share/themes
+    /home/rickellis/local/share/themes/*
 
 And paste the themes here:
 
-    /usr/share/thmemes
+    /usr/share/themes
 
 
 # -----------------------------------------------------------------

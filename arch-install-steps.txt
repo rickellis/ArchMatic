@@ -106,6 +106,17 @@ Run: personal-setup.sh
 
 # -----------------------------------------------------------------
 
+In order for some windows to recognize theme choice we need to copy:
+
+    /home/rickellis/local/share/themes
+
+And paste the themes here:
+
+    /usr/share/thmemes
+
+
+# -----------------------------------------------------------------
+
 Enable Network Time Protocol to set time using network:
 
     $   sudo ntpd -qg
@@ -120,3 +131,29 @@ In it, put this:
 
     KEYMAP=us
     FONT=ter-v32b
+
+# -----------------------------------------------------------------
+
+Move slimlock themes into:
+
+    /usr/share/slim/themes
+
+Create slimlock config file: 
+
+    /etc/slimlock.conf
+
+Put this in it:
+
+dpms_standby_timeout            60
+dpms_off_timeout                600
+wrong_passwd_timeout            1
+passwd_feedback_x               8%
+passwd_feedback_y               54%
+passwd_feedback_msg             Authentication failed
+passwd_feedback_capslock        Authentication failed (CapsLock is on)
+show_username                   0
+show_welcome_msg                0
+tty_lock                        0
+current_theme                   wall
+
+# -----------------------------------------------------------------

@@ -140,6 +140,12 @@ This package allows our system to update its clock via the network. This is espe
 
     $   sudo ntpd -qg
 
+Configure it to start at boot:
+
+    $   sudo systemctl enable ntpd.service
+
+    $   sudo systemctl start ntpd.service
+
 ---
 
 ### Create vconsole.config

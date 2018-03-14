@@ -5,14 +5,18 @@ These are my personal installation scripts.
 
 This README contains all of the steps I do to fully configure and setup a new installation.
 
+These steps likely will not work for you...
 
-## Install Arch Linux
+...but they might help you develop your own installers.
+
+
+### Install Arch Linux
 
 Follow the stops in my __[Arch Linux Installation Gude](https://github.com/rickellis/Arch-Linux-Install-Guide)__.
 
 ---
 
-## Boot into new installation, and:
+### Boot into new installation, and:
 
     $   sudo wifi-menu
 

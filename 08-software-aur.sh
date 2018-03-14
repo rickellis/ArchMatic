@@ -57,5 +57,3 @@ done
 echo
 echo "Done!"
 echo
-echo "Now would be a good time to setup Dropbox and Enpass"
-echo

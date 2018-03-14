@@ -24,7 +24,7 @@ Then run:
 
 # -----------------------------------------------------------------
 
-Install Arch Base along with git, dialog, and wpa_supplicant
+Follow the Arch-Linux-Install guide.
 
 Boot into new installation
 
@@ -32,9 +32,19 @@ Boot into new installation
 
 # -----------------------------------------------------------------
 
-Initialize the .gitconfig file
+Install reflector. First update the databases:
 
-    # git init # Probably not necessary
+    $   sudo pacman -Sy
+
+    $   sudo pacman -S reflector rsync curl
+
+Now generate mirrorlist:
+
+    $   reflector --verbose --country 'United States' -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+
+# -----------------------------------------------------------------
+
+Initialize the .gitconfig file
     
     git config --global user.name "rickellis"
     git config --global user.email "rickellis@gmail.com"
@@ -55,17 +65,23 @@ Run Archomatic files 01-07.
 
 Do not install software yet.
 
-Copy .xinitrc file from Dotfiles to root
+# -----------------------------------------------------------------
 
-reboot
+In order to startx and XFCE we first need to copy the .xinitrc file to home:
+
+    $   cp /home/rickellis/CodeLab/Dotfiles/.xinitrc /home/rickellis/.xinitrc
+
+    $   poweroff
+
+Then reboot
 
 # -----------------------------------------------------------------
 
-Run: 
+Initialize Xorg:
 
     $   xinit
 
-If it doesn't boot you into XFCE, run:
+If it doesn't boot you into XFCE run:
 
     $   startx
 
@@ -84,17 +100,23 @@ Launch Firefox
 Then verify the name of the folder where we put chrome so you
 can update the personal-setup.sh
 
+# -----------------------------------------------------------------
 
 Run: personal-setup.sh
 
 # -----------------------------------------------------------------
 
+Enable Network Time Protocol to set time using network:
+
+    $   sudo ntpd -qg
+
+# -----------------------------------------------------------------
+
 For larger default terminal fonts create a config file at:
 
-/etc/vconsole.config
+    $   sudo nano /etc/vconsole.config
 
 In it, put this:
 
-KEYMAP=us
-FONT=ter-v32b
-
+    KEYMAP=us
+    FONT=ter-v32b

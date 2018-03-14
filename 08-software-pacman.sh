@@ -25,6 +25,7 @@ PKGS=(
     'inxi'                  # System information utility
     'jq'                    # JSON parsing library
     'jshon'                 # JSON parsing library
+    'ntp'                   # Network Time Protocol to set time via network. Useful if you travel.
     'numlockx'              # Turns on numlock in X11
     'rsync'                 # Remote file sync utility
     'speedtest-cli'         # Internet speed via terminal

@@ -8,28 +8,46 @@ Boot from USB installer
 
 # -----------------------------------------------------------------
 
+Boot from USB
+
+    $   wifi-menu
+
+# -----------------------------------------------------------------
+
+If font is too small, install terminus fonts:
+
+    $   pacman -S terminus-font
+
+Then run:
+
+    $   setfont ter-v32b
+
+# -----------------------------------------------------------------
+
 Install Arch Base along with git, dialog, and wpa_supplicant
 
 Boot into new installation
 
-Run: sudo wifi-menu
+    $   sudo wifi-menu
 
 # -----------------------------------------------------------------
 
-Initialize Git
+Initialize the .gitconfig file
 
-    git init
+    # git init # Probably not necessary
+    
     git config --global user.name "rickellis"
     git config --global user.email "rickellis@gmail.com"
     git config --global credential.helper cache
     git config --global credential.helper 'cache --timeout=31536000'
 
-
-mkdir /home/CodeLab
+# -----------------------------------------------------------------
 
 Clone Archomatic
 
-    git clone https://github.com/rickellis/Archomatic.git
+    $   mkdir /home/CodeLab
+
+    $   git clone https://github.com/rickellis/Archomatic.git
 
 # -----------------------------------------------------------------
 
@@ -37,27 +55,46 @@ Run Archomatic files 01-07.
 
 Do not install software yet.
 
-Copy .xinitrc file from Archomatic to root
+Copy .xinitrc file from Dotfiles to root
 
 reboot
 
 # -----------------------------------------------------------------
 
-Run: xinit
+Run: 
 
-You should now be booted into XFCE
+    $   xinit
+
+If it doesn't boot you into XFCE, run:
+
+    $   startx
 
 # -----------------------------------------------------------------
 
-Run 08-software-pacman.sh
+Run: 08-software-pacman.sh
+
+# -----------------------------------------------------------------
+
+Run: 09-software-aur.sh
+
+# -----------------------------------------------------------------
 
 Launch Firefox
 
+Then verify the name of the folder where we put chrome so you
+can update the personal-setup.sh
+
+
+Run: personal-setup.sh
+
 # -----------------------------------------------------------------
 
-Run 09-software-aur.sh
+For larger default terminal fonts create a config file at:
 
-# -----------------------------------------------------------------
+/etc/vconsole.config
 
-Run Archomatic/personal-setup.sh
+In it, put this:
+
+KEYMAP=us
+FONT=ter-v32b
 

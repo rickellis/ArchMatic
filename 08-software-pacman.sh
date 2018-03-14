@@ -28,6 +28,7 @@ PKGS=(
     'numlockx'              # Turns on numlock in X11
     'rsync'                 # Remote file sync utility
     'speedtest-cli'         # Internet speed via terminal
+    'terminus-font'         # Font package with some bigger fonts for when booting into terminal
     'tlp'                   # Advanced laptop power management
     'unrar'                 # RAR compression program
     'unzip'                 # Zip compression program

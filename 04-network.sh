@@ -10,11 +10,17 @@ echo
 # NOTE: Do I need: networkmanager-openvpn
 # Or is networkmanager-vpnc all I need for VPN?
 
+
+# The following packages are needed, but they should
+# have been installed with pacstrap:
+#
+#   wpa_supplicant
+#   dialog
+#
+#   network-manager-applet  can be added for wifi GUI
+
 PKGS=(
-        'wpa_supplicant'
-        'dialog'
         'networkmanager'
-        #'network-manager-applet'
         'networkmanager-vpnc'
         'dhclient'
         'libsecret'

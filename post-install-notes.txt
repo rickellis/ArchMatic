@@ -1,10 +1,5 @@
 To get network name: iwconfig
 
-To determine what video card I have: lspci
-
-To update system information:  /etc/lsb-release
-
-
 # -------------------------------------------------------------------------
 
 #   sudo systemctl list-units
@@ -52,7 +47,7 @@ Whisker menu:
 
 Preferred Applications
      Set default browser to Firefox
-     Set xfce-terminal to default terminal
+     Set hyper to default terminal
 
 # -------------------------------------------------------------------------
 

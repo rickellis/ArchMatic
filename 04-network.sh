@@ -21,6 +21,7 @@ echo
 
 PKGS=(
         'networkmanager'
+        'openvpn'
         'networkmanager-vpnc'
         'dhclient'
         'libsecret'
@@ -57,6 +58,8 @@ sudo systemctl start NetworkManager.service
 sudo ip link set dev ${LINK} up
 
 echo "Done!"
+echo 
+echo "Reboot now."
 echo
 echo "Run WifiVPN to get online"
 echo

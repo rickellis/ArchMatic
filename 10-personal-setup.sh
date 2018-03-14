@@ -8,6 +8,7 @@ HOMEDIR="${HOME}"
 CODELAB="${HOME}/CodeLab"
 DOTREPO="${HOME}/CodeLab/Dotfiles"
 BASHDIR="${HOME}/CodeLab/BashRC"
+MOZDIR="ee2kdll2.default"
 
 # TESTING
 # HOMEDIR="${HOME}/FAKEHOME"
@@ -76,7 +77,6 @@ fi
 echo "Copying .config files"
 echo
 
-
 cp -a "${DOTREPO}/.config/autostart/." "${HOMEDIR}/.config/autostart/"
 cp -a "${DOTREPO}/.config/Code/." "${HOMEDIR}/.config/Code/"
 cp -a "${DOTREPO}/.config/Hyper/." "${HOMEDIR}/.config/Hyper/"
@@ -124,22 +124,9 @@ cp "${DOTREPO}/.hyper.js" "${HOMEDIR}/.hyper.js";
 
 #--------------------------------------------------------------------------
 
-echo "Copying weather icons into .cache"
-echo
-cp "${DOTREPO}/.cache/wallpaper-palette.png" "${HOMEDIR}/.cache/"
-cp "${DOTREPO}/.cache/yahoo_forecast1.png" "${HOMEDIR}/.cache/"
-cp "${DOTREPO}/.cache/yahoo_forecast2.png" "${HOMEDIR}/.cache/"
-cp "${DOTREPO}/.cache/yahoo_forecast3.png" "${HOMEDIR}/.cache/"
-cp "${DOTREPO}/.cache/yahoo_forecast4.png" "${HOMEDIR}/.cache/"
-cp "${DOTREPO}/.cache/yahoo_forecast5.png" "${HOMEDIR}/.cache/"
-cp "${DOTREPO}/.cache/yahoo_weather.json" "${HOMEDIR}/.cache/"
-cp "${DOTREPO}/.cache/yahoo_weather.png" "${HOMEDIR}/.cache/"
-
-#--------------------------------------------------------------------------
-
 echo "Copying Firefox CSS"
 echo
-cp -a "${DOTREPO}/.mozilla/firefox/1godna46.default/chrome/." "${HOMEDIR}/.mozilla/firefox/ee2kdll2.default/chrome/"
+cp -a "${DOTREPO}/.mozilla/firefox/${MOZDIR}/chrome/." "${HOMEDIR}/.mozilla/firefox/${MOZDIR}/chrome/"
 
 #--------------------------------------------------------------------------
 

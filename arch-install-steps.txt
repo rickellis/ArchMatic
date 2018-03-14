@@ -134,6 +134,14 @@ In it, put this:
 
 # -----------------------------------------------------------------
 
+Update font cache:
+
+    $   sudo fc-cache -fv   # System fonts
+
+    $   sudo fc-cache -fv ~/.fonts  $ Local fonts
+
+# -----------------------------------------------------------------
+
 Move slimlock themes into:
 
     /usr/share/slim/themes
@@ -157,3 +165,89 @@ tty_lock                        0
 current_theme                   wall
 
 # -----------------------------------------------------------------
+
+Set closing of the laptop lid to suspend:
+     sudo nano /etc/systemd/logind.conf
+     Change this:
+     HandleLidSwitch = suspend
+
+# -------------------------------------------------------------------------
+
+Firefox: deactivate middle button paste:
+     about:config
+     middlemouse.paste = false
+     middlemouse.opennewwindow = false
+
+
+# -------------------------------------------------------------------------
+
+Using 8 cores for MAKEPKG
+
+Open  /etc/makepkg.conf
+And set these:
+
+MAKEFLAGS="-j$(nproc)"
+COMPRESSXZ=(xz -c -T 8 -z -)
+
+# -------------------------------------------------------------------------
+
+To solve the giant cursor problem, comment out inherits=theme:
+
+    $ sudo nano /usr/share/icons/default/index.theme
+
+[Icon Theme]
+#Inherits=Theme
+
+# -------------------------------------------------------------------------
+
+MariaDB SETUP
+
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+systemctl enable mysqld
+
+COMMANDS
+
+systemctl start mysqld
+
+systemctl start mysqld
+
+systemctl status mysqld
+
+CHANGE ROOT PASSWORD:
+
+First start mysql, then:
+
+mysql_secure_installation
+
+
+# -------------------------------------------------------------------------
+
+PHP SETUP
+
+
+EDIT: /etc/httpd/conf/httpd.conf
+
+Find the following line and COMMENT IT OUT:
+
+#LoadModule mpm_event_module modules/mod_mpm_event.so
+
+
+Then, add the following lines at the bottom:
+
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+LoadModule php7_module modules/libphp7.so
+AddHandler php7-script php
+Include conf/extra/php7_module.conf
+
+Then run:  systemctl restart httpd
+
+
+EDIT: /etc/php/php.ini
+
+Uncomment this:
+extension=mysqli
+
+Add these:
+extension=bz2.so
+extension=mcrypt.so

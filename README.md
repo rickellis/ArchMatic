@@ -330,3 +330,27 @@ CHANGE ROOT PASSWORD:
 First start mysql, then:
 
     mysql_secure_installation
+
+---
+
+### LTS Kernel Install
+
+Install LTS Kernel
+
+    sudo pacman -S linux-lts
+
+Make a copy of the arch.conf file
+
+    cd /boot/loader/entries
+    cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
+
+Edit the new conf file
+
+    sudo nano /boot/loader/entries/arch-lts.conf
+
+Add "lts" in various places
+
+    title   Arch Linux LTS Kernel
+    linux   /vmlinuz-linux-lts
+    initrd  /intel-ucode.img
+    initrd  /initramfs-linux-lts.img

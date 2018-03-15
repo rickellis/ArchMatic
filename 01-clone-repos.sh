@@ -31,7 +31,11 @@ GITREPOS=(
 )
 
 for repo in "${GITREPOS[@]}"; do
-    git clone "https://github.com/rickellis/${repo}.git"
+
+    git clone git@github.com:rickellis/${repo}.git
+
+    # HTTP:
+    # git clone "https://github.com/rickellis/${repo}.git"
     echo
 done
 

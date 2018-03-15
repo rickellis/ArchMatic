@@ -21,21 +21,22 @@ MOZDIR="ee2kdll2.default"
 
 # Create home directories
 HOMEDIRS=(
-        'Archive'
-        'Archive/Documents'
-        'CodeLab'
-        'Desktop'
-        'Downloads'
-        'Safeties'
-        '.cache'
-        '.config'
-        '.fonts'
-        '.local'
-        '.local/share/applications'
-        '.local/share/icons'
-        '.local/share/themes'
-        '.mozilla/firefox/ee2kdll2.default/chrome'
-        '.vscode'
+        "Archive"
+        "Archive/Documents"
+        "CodeLab"
+        "Desktop"
+        "Downloads"
+        "Safeties"
+        ".cache"
+        ".config"
+        ".fonts"
+        ".local"
+        ".local/share/applications"
+        ".local/share/icons"
+        ".local/share/themes"
+        ".mozilla/firefox/${MOZDIR}/chrome"
+        ".slimlock-themes"
+        ".vscode"
 )
 
 echo "Creating home directories"
@@ -111,6 +112,12 @@ cp -a "${DOTREPO}/.vscode/." "${HOMEDIR}/.vscode/"
 echo "Copying Hyper terminal settings"
 echo
 cp -a "${DOTREPO}/.hyper_plugins/." "${HOMEDIR}/.hyper_plugins/"
+
+#--------------------------------------------------------------------------
+
+echo "Copying Slimlock Themes"
+echo
+cp -a "${DOTREPO}/.slimlock-themes/." "${HOMEDIR}/.slimlock-themes/"
 
 #--------------------------------------------------------------------------
 

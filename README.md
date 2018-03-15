@@ -88,6 +88,21 @@ Create it and put this in it:
     source /etc/xdg/xfce4/xinitrc
     exit 0
 
+
+Then update the __startx__ file so it won't pollute our home folder with `.serverauth` files.
+
+Open:
+
+    /bin/startx
+
+And comment out:
+
+    # xserverauthfile=$HOME/.serverauth.$$
+
+And add:
+
+    xserverauthfile=$XAUTHORITY
+
 ---
 
 ### Initialize Xorg:
@@ -99,7 +114,9 @@ If it doesn't automatically boot into XFCE run:
     $   startx
 
 
-You should now have an Arch system running XFCE. Congrats!
+You should now have an Arch system running XFCE.
+
+Congrats!
 
 ---
 
@@ -171,27 +188,30 @@ In it, put this:
 
 ### Install Slimlock Themes
 
-Move slimlock themes into:
+Travel into the slim folder:
 
-    /usr/share/slim/themes
+    cd /usr/share/slim
 
-Create slimlock config file: 
+Then DELETE the existing themes folder:
 
-    /etc/slimlock.conf
+    sudo rm -rf /usr/share/slim/themes
 
-Put this in it:
+Create a symbolic link to the `home/rickellis/.slimlock-themes`
 
-    dpms_standby_timeout            60
-    dpms_off_timeout                600
-    wrong_passwd_timeout            1
-    passwd_feedback_x               8%
-    passwd_feedback_y               54%
-    passwd_feedback_msg             Authentication failed
-    passwd_feedback_capslock        Authentication failed (CapsLock is on)
-    show_username                   0
-    show_welcome_msg                0
-    tty_lock                        0
-    current_theme                   wall
+    sudo ln -s /home/rickellis/.slimlock-themes themes
+
+
+Travel into etc
+
+    cd /etc/
+
+DELETE the `slimlock.conf` file
+
+    sudo rm slimlock.conf
+
+Create a symbolic link to the `slimlock.conf` file in the home config folder:
+
+    sudo ln -s /home/rickellis/.config/slimlock/slimlock.conf slimlock.conf
 
 ---
 
@@ -236,6 +256,20 @@ Comment OUT:
 
     [Icon Theme]
     #Inherits=Theme
+
+----
+
+### Disallow .esd_auth
+
+Pulse audio loads the `esound-protocol` module, which best I can tell is rarely needed. That module creates a file called `.esd_auth` in the home directory which I'd prefer to not be there. So...
+
+Edit:
+
+    /etc/pulse/default.pa
+
+And comment out:
+
+    load-module module-esound-protocol-unix
 
 ----
 

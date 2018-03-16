@@ -273,6 +273,18 @@ And comment out:
 
 ----
 
+### Setup SSH
+
+    $   ssh-keygen -t rsa -b 4096 -C "rickellis@gmail.com"
+
+Hit Enter to accept defaults
+
+Then add the SSH key to the agent:
+
+    $   ssh-add
+
+----
+
 ### PHP SETUP
 
 Edit the httpd.conf file:

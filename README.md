@@ -3,12 +3,7 @@ Arch Linux Post Installation Setup and Configuration Scripts.
 
 This README contains all of the steps I do to fully configure and setup a new installation.
 
-The shell scripts in this repo allow me to automate the package installation.
-
-These steps will likely not work for you...
-
-...but they might help you develop your own installers.
-
+The shell scripts in this repo allow me to automate the package and desktop environment installation.
 
 ### Install Arch Linux
 
@@ -59,12 +54,12 @@ These are the scripts in this repo.
 
 Run the following scripts:
 
-* 01-git-setup.sh 
-* 02-xorg-xfce.sh 
-* 03-network.sh 
-* 04-bluetooth.sh 
-* 05-audio.sh 
-* 06-printers.sh 
+* 1-git-setup.sh 
+* 2-xorg-xfce.sh 
+* 3-network.sh 
+* 4-bluetooth.sh 
+* 5-audio.sh 
+* 6-printers.sh 
 
 Then reboot
 
@@ -124,12 +119,12 @@ Congrats!
 
 Run these scripts:
 
-* 07-software-pacman.sh
-* 08-software-aur.sh
+* 7-software-pacman.sh
+* 8-software-aur.sh
 
 ---
 
-### Run 10-personal-setup.sh
+### Run 9-personal-setup.sh
 
 __IMPORTANT:__ Before running the script, launch Firefox so it will create the `.mozilla` folder.
 

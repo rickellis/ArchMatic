@@ -61,7 +61,9 @@ Run the following scripts:
 * 5-audio.sh 
 * 6-printers.sh 
 
-Then reboot
+Then reboot, but first:
+
+Run WifiVPN so that networkmanager will load the wifi plugin.
 
 ---
 

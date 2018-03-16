@@ -15,6 +15,7 @@ PKGS=(
     'bc'                    # Precision calculator language
     'bleachbit'             # File deletion utility
     'curl'                  # Remote content retrieval
+    'elinks'                # Terminal based web browser
     'feh'                   # Terminal-based image viewer/manipulator
     'file-roller'           # Archive utility
     'gnome-keyring'         # System password storage

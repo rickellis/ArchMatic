@@ -285,7 +285,81 @@ Then add the SSH key to the agent:
 
 ----
 
+
+### LTS Kernel Install
+
+It's really handy to have both the rolling kernel and the LTS installed, so if the rolling one borks you can boot using the LTS.
+
+Install LTS Kernel
+
+    sudo pacman -S linux-lts
+
+Make a copy of the arch.conf file
+
+    cd /boot/loader/entries
+    cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
+
+Edit the new conf file
+
+    sudo nano /boot/loader/entries/arch-lts.conf
+
+Add "lts" in various places
+
+    title   Arch Linux LTS Kernel
+    linux   /vmlinuz-linux-lts
+    initrd  /intel-ucode.img
+    initrd  /initramfs-linux-lts.img
+
+---
+
+### APACHE SETUP
+
+Make a backup copy of the httpd.conf file:
+
+    sudo cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd-orig.conf
+
+Replace httpd.conf with my custom one:
+
+    sudo cp /home/rickellis/CodeLab/WebServer/httpd-conf/httpd-linux.conf /etc/httpd/conf/httpd.conf
+
+Start Apache (using my bash script)
+
+    $   apachestart
+
+Or the old fashioned way:
+
+    $   sudo apachectl start
+    $   httpd -v
+
+---
+
+### MariaDB SETUP
+
+    sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+    sudo systemctl enable mysqld
+
+COMMANDS
+
+    systemctl start mysqld
+
+    systemctl stop mysqld
+
+    systemctl status mysqld
+
+CHANGE ROOT PASSWORD:
+
+First start mysql, then:
+
+    mysql_secure_installation
+
+---
+
 ### PHP SETUP
+
+#### IMPORTANT: If you set up APACHE as indicated above, PHP will automatically be set up as well.
+
+These instructions are just in case you need to set it up from scratch
 
 Edit the httpd.conf file:
 
@@ -320,49 +394,3 @@ Add these:
 
     extension=bz2.so
     extension=mcrypt.so
-
----
-
-### MariaDB SETUP
-
-    sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
-
-    systemctl enable mysqld
-
-COMMANDS
-
-    systemctl start mysqld
-
-    systemctl start mysqld
-
-    systemctl status mysqld
-
-CHANGE ROOT PASSWORD:
-
-First start mysql, then:
-
-    mysql_secure_installation
-
----
-
-### LTS Kernel Install
-
-Install LTS Kernel
-
-    sudo pacman -S linux-lts
-
-Make a copy of the arch.conf file
-
-    cd /boot/loader/entries
-    cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
-
-Edit the new conf file
-
-    sudo nano /boot/loader/entries/arch-lts.conf
-
-Add "lts" in various places
-
-    title   Arch Linux LTS Kernel
-    linux   /vmlinuz-linux-lts
-    initrd  /intel-ucode.img
-    initrd  /initramfs-linux-lts.img

@@ -119,8 +119,6 @@ PKGS=(
     # VIRTUALIZATION ------------------------------------------------------
 
     'virtualbox'
-    'virtualbox-guest-utils'
-    'virtualbox-host-modules-arch'
 )
 
 

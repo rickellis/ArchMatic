@@ -10,19 +10,13 @@ echo
 # NOTE: Do I need: networkmanager-openvpn
 # Or is networkmanager-vpnc all I need for VPN?
 
-
-# The following packages are needed, but they should
-# have been installed with pacstrap:
-#
-#   wpa_supplicant
-#   dialog
-#
-#   network-manager-applet  can be added for wifi GUI
-
 PKGS=(
+        'wpa_supplicant'
+        'dialog'
         'networkmanager'
         'openvpn'
         'networkmanager-vpnc'
+        'network-manager-applet'
         'dhclient'
         'libsecret'
         'gnome-keyring'
@@ -33,12 +27,12 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-# -------------------------------------------------------------------------
+
 
 echo
-echo "SETUP YOUR NETWORK"
+echo "NETWORK SETUP"
 echo
-echo "FIND YOUR IP LINK:"
+echo "FIND YOUR IP LINK NAME:"
 echo
 
 ip link
@@ -59,7 +53,3 @@ sudo ip link set dev ${LINK} up
 
 echo "Done!"
 echo 
-echo "Reboot now."
-echo
-echo "Run WifiVPN to get online"
-echo

@@ -7,6 +7,12 @@ echo
 echo "INSTALLING AUR SOFTWARE"
 echo
 
+cd "${HOME}"
+
+echo "CLOING: AURIC"
+git clone "https://github.com/rickellis/AURIC.git"
+
+
 PKGS=(
 
     # SYSTEM UTILITIES ----------------------------------------------------
@@ -41,12 +47,21 @@ PKGS=(
 
     # COMMUNICATIONS ------------------------------------------------------
 
-    #'skypeforlinux-stable-bin' # Skype
+    'skypeforlinux-stable-bin' # Skype
+
+    # THEMES --------------------------------------------------------------
+
+    'gtk-theme-arc-git'
+    'adapta-gtk-theme-git'
+    'paper-icon-theme'
+    'tango-icon-theme'
+    'tango-icon-theme-extras'
+    'sardi-icons'
 
 )
 
 
-cd ${HOME}/CodeLab/AURIC
+cd ${HOME}/AURIC
 chmod +x auric.sh
 
 for PKG in "${PKGS[@]}"; do

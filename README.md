@@ -2,6 +2,8 @@
 
 This README contains the steps I do to configure and set up a new Arch Linux installation running XFCE Desktop and all my preferred applications. The shell scripts in this repo allow the entire process to be automated. I also run some personal scripts that configure my dotfiles and various other things. Those are not available publicly. I'm posting this publicly in case it might be useful to someone.
 
+---
+
 ### Don't just run these scripts. Examine them. Customize them for your needs.
 
 ---

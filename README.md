@@ -1,5 +1,4 @@
-# Archomatic
-## Arch Linux Post Installation Setup and Configuration Scripts.
+# Archomatic: Arch Linux Post Installation Setup and Configuration Scripts.
 
 This README contains the steps I do to configure and set up a new installation.
 

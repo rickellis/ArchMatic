@@ -5,6 +5,10 @@ This README contains the steps I do to configure and set up a new installation.
 
 The shell scripts in this repo allow automated package and desktop environment installation.
 
+I'm posting this publicly in case it might be useful to someone.
+
+Don't just run these scripts. Examine and customize them for your needs.
+
 The install steps are as follows:
 
 ### Install Arch Linux

@@ -24,6 +24,8 @@ done
 
 # ------------------------------------------------------------------------
 
+echo "Disabling Pulse .esd_auth module"
+
 # Disallow .esd_auth
 # Pulse audio loads the `esound-protocol` module, which best I can tell is rarely needed.
 # That module creates a file called `.esd_auth` in the home directory which I'd prefer to not be there. So...

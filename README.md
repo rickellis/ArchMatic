@@ -1,12 +1,18 @@
 # Arch Linux Post Installation Setup and Config Scripts
 
-This README contains the steps I do to configure and set up a new Arch Linux installation.
-
-The shell scripts in this repo allow automated package and desktop environment installation.
+This README contains the steps I do to configure and set up a new Arch Linux installation running XFCE Desktop and all my preferred applications. The shell scripts in this repo allow the entire process to be automated. I also run some personal scripts that configure my dotfiles and various other things. Those are not available publicly.
 
 I'm posting this publicly in case it might be useful to someone.
 
 Don't just run these scripts. Examine and customize them for your needs.
+
+
+### Description
+I run XFCE desktop since it's fast and lightweight. I don't install a greeter, preferring to always boot into the terminal by default. That way, if there is ever a show-stopping problem with the GUI I can fix it without having to bood from an external drive.
+
+I also install the LTS Kernel along side the rolling one and configure my bootloader to offer both as a choice during startup. This enables me to switch kernels in the event of a problem with a new version.
+
+I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network connectivity, and __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management.
 
 The install steps are as follows:
 

@@ -49,7 +49,6 @@ These are the scripts in this repo.
 
 Run the following scripts:
 
-
     $   ./1-xorg.sh
     $   ./2-xfce.sh 
     $   ./3-network.sh 
@@ -58,6 +57,7 @@ Run the following scripts:
     $   ./6-printers.sh 
     $   ./7-software-pacman.sh
     $   ./8-software-aur.sh
+    $   ./9-setup.sh
 
 ### Reboot
 

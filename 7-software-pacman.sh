@@ -100,7 +100,7 @@ PKGS=(
     'lollypop'              # Music player
     'simplescreenrecorder'  # Record your screen
     'vlc'                   # Video player
-    'xfce4-screenshooter'   # Screen capture. Does this get installed with XFCE?
+    'xfce4-screenshooter'   # Screen capture.
 
     # GRAPHICS AND DESIGN -------------------------------------------------
 
@@ -114,7 +114,7 @@ PKGS=(
     # PRODUCTIVITY --------------------------------------------------------
 
     'galculator'            # Gnome calculator
-    'evince'                # Multi format document viewer !!INVESTIGATE
+    'evince'                # Multi format document viewer
     'hunspell'              # Spellcheck libraries
     'hunspell-en'           # English spellcheck library
     'libreoffice-fresh'     # Libre office with extra features

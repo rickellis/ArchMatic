@@ -30,6 +30,7 @@ PKGS=(
     'dropbox'                   # Cloud file storage
     'enpass-bin'                # Password manager
     'slimlock'                  # Screen locker
+    'oomox'                     # Theme editor
 
     # DEVELOPMENT ---------------------------------------------------------
     
@@ -39,7 +40,7 @@ PKGS=(
 
     'spotify'                   # Music player
     'screenkey'                 # Screencast your keypresses
-    'aftershotpro3'             # Photo editor
+    # 'aftershotpro3'             # Photo editor
 
     # POST PRODUCTION -----------------------------------------------------
 
@@ -56,6 +57,7 @@ PKGS=(
     'paper-icon-theme'
     'tango-icon-theme'
     'tango-icon-theme-extras'
+    'numix-icon-theme-git'
     'sardi-icons'
 )
 

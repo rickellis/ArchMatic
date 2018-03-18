@@ -10,7 +10,7 @@ Note: Some of the configuration steps are specific to the laptop I'm currently r
 
 ---
 
-### Don't just run these scripts. Examine them. Customize them to your needs.
+### Don't just run these scripts. Examine them. Customize them to suit your needs.
 
 ---
 

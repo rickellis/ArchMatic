@@ -6,7 +6,7 @@ This README contains the steps I do to install and configure a fully-functional 
 
 The shell scripts in this repo allow the entire process to be automated. I also run some personal scripts that configure my dotfiles and various other things. Those are not available publicly since they would provide little use to anyone else.
 
-Note: Some of the configuration steps are specific to the laptop I'm currently running: Dell XPS 13. So...
+Note: Some of the configuration steps are specific to the laptop I'm currently running, a Dell XPS 13. So...
 
 ---
 

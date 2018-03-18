@@ -40,8 +40,6 @@ Follow the steps in my __[Arch Linux Installation Gude](https://github.com/ricke
 
 ### Install Reflector. 
 
-First update the pacman databases:
-
     $   sudo pacman -Sy
 
     $   sudo pacman -S reflector rsync curl
@@ -55,7 +53,7 @@ Now generate mirrorlist:
 ### Initialize .gitconfig file
 
     git config --global user.name "rickellis"
-    git config --global user.email "rickellis@gmail.com"
+    git config --global user.email "email@gmail.com"
 
 ---
 
@@ -88,8 +86,6 @@ Run the following scripts:
 At the terminal, run:
 
     $   xinit
-
-If it doesn't automatically boot into XFCE run:
 
     $   startx
 

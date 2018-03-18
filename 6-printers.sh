@@ -8,7 +8,6 @@ echo "INSTALLING PRINTER DRIVERS"
 echo
 
 PKGS=(
-
     'cups'                  # Open source printer drivers
     'cups-pdf'              # PDF support for cups
     'ghostscript'           # PostScript interpreter

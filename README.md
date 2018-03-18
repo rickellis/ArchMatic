@@ -2,7 +2,11 @@
 
 <img src="https://i.imgur.com/uFysgdN.png" />
 
-This README contains the steps I do to configure and set up a new Arch Linux installation running XFCE Desktop and all my preferred applications. The shell scripts in this repo allow the entire process to be automated. I also run some personal scripts that configure my dotfiles and various other things. Those are not available publicly since they would provide little use to anyone else.
+This README contains the steps necesary to configure and install the desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. This document assumes you have installed __[Arch Linux](https://github.com/rickellis/Arch-Linux-Install-Guide)__.
+
+The shell scripts in this repo allow the entire process to be automated. I also run some personal scripts that configure my dotfiles and various other things. Those are not available publicly since they would provide little use to anyone else.
+
+Note: Some of the configuration steps are specific to the laptop I'm currently running: Dell XPS 13. So...
 
 ---
 
@@ -18,7 +22,6 @@ I also install the LTS Kernel along side the rolling one, and configure my bootl
 I set up my machines as development environments since that mostly what I do. To that end I install lots of dev tools and customize various things. For exmple, I set up Apache server to run as me, with the WebServer directory located in my home folder.
 
 I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network connectivity, and __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management.
-
 
 Since I use Mac as well, I mirror as much as possible on both systems via git and Dropbox, so I can switch back and forth with no interruption in productivity.
 

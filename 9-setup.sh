@@ -13,7 +13,7 @@ echo "Configuring LTS Kernel as a secondary boot option"
 
 # Install LTS Kernel
 # Create a copy of the arch.conf file
-sudo cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
+sudo touch /boot/loader/entries/arch-lts.conf
 
 # Add the relevant info
 sudo cat <<EOF > /boot/loader/entries/arch-lts.conf

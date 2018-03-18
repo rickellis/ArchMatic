@@ -28,6 +28,10 @@ done
 echo
 echo "Genaerating .xinitrc file"
 
+if [ ! -d ${HOME}/.xinitrc ]; then
+    touch ${HOME}/.xinitrc
+fi
+
 cat <<EOF > ${HOME}/.xinitrc
 #!/bin/bash
 

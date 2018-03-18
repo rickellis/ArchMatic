@@ -10,6 +10,8 @@ I run XFCE desktop since it's fast and lightweight. I don't install a greeter, p
 
 I also install the LTS Kernel along side the rolling one and configure my bootloader to offer both as a choice during startup. This enables me to switch kernels in the event of a problem with a new version.
 
+I set up my machines as development environments since that mostly what I do. To that end, I customize lots of things. For exmple, I set up Apache server to run as me, with he WebServer directory located in my home folder.
+
 I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network connectivity, and __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management.
 
 The install steps are as follows:

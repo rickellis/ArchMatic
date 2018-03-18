@@ -12,11 +12,11 @@ The install steps are as follows:
 
 ### Install Arch Linux
 
-Follow the steps in my __[Arch Linux Installation Gude](https://github.com/rickellis/Arch-Linux-Install-Guide)__.
+Follow the steps in my __[Arch Linux Installation Gude](https://github.com/rickellis/Arch-Linux-Install-Guide)__. Then:
 
 ---
 
-### Boot into new installation, and:
+### Boot into new installation
 
     $   sudo wifi-menu
 
@@ -24,7 +24,7 @@ Follow the steps in my __[Arch Linux Installation Gude](https://github.com/ricke
 
 ### Install Reflector. 
 
-First update the databases:
+First update the pacman databases:
 
     $   sudo pacman -Sy
 

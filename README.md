@@ -1,4 +1,4 @@
-# Arch Linux Post Installation Setup and Configuration Scripts.
+# Arch Linux Post Installation Setup and Config Scripts
 
 This README contains the steps I do to configure and set up a new installation.
 

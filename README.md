@@ -2,17 +2,23 @@
 
 This README contains the steps I do to configure and set up a new Arch Linux installation running XFCE Desktop and all my preferred applications. The shell scripts in this repo allow the entire process to be automated. I also run some personal scripts that configure my dotfiles and various other things. Those are not available publicly. I'm posting this publicly in case it might be useful to someone.
 
-### Don't just run these scripts. Examine and customize them for your needs.
+### Don't just run these scripts. Examine them. Customize them for your needs.
 
+---
 
-## Description
+### Description
 I run XFCE desktop since it's fast and lightweight. I don't install a greeter, preferring to always boot into the terminal by default. That way, if there is ever a show-stopping problem with the GUI I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal.
 
 I also install the LTS Kernel along side the rolling one, and configure my bootloader to offer both as a choice during startup. This enables me to switch kernels in the event of a problem with a new version.
 
-I set up my machines as development environments since that mostly what I do. To that end, I customize lots of things. For exmple, I set up Apache server to run as me, with he WebServer directory located in my home folder.
+I set up my machines as development environments since that mostly what I do. To that end I install lots of dev tools and customize various things. For exmple, I set up Apache server to run as me, with the WebServer directory located in my home folder.
 
 I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network connectivity, and __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management.
+
+
+Since I use Mac as well, I mirror as much as possible on both systems via git and Dropbox, so I can switch back and forth with no interruption in productivity.
+
+---
 
 The install steps are as follows:
 

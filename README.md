@@ -1,13 +1,9 @@
 # Archomatic
 Arch Linux Post Installation Setup and Configuration Scripts.
 
-This README contains the steps I do to configure and set up a new installation.
+This README contains the steps I do to configure and set up a new installation. The shell scripts in this repo allow automated package and desktop environment installation.
 
-The shell scripts in this repo allow automated package and desktop environment installation.
-
-I'm posting this publicly in case it might be useful to someone.
-
-Don't just run these scripts. Examine and customize them for your needs.
+I'm posting this publicly in case it might be useful to someone. Don't just run these scripts. Examine and customize them for your needs.
 
 The install steps are as follows:
 

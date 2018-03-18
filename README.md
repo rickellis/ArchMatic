@@ -6,7 +6,7 @@ This README contains the steps I do to configure and set up a new Arch Linux ins
 
 
 ## Description
-I run XFCE desktop since it's fast and lightweight. I don't install a greeter, preferring to always boot into the terminal by default. That way, if there is ever a show-stopping problem with the GUI I can fix it without having to boot from an external drive.
+I run XFCE desktop since it's fast and lightweight. I don't install a greeter, preferring to always boot into the terminal by default. That way, if there is ever a show-stopping problem with the GUI I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal.
 
 I also install the LTS Kernel along side the rolling one, and configure my bootloader to offer both as a choice during startup. This enables me to switch kernels in the event of a problem with a new version.
 

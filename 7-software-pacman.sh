@@ -123,9 +123,7 @@ PKGS=(
     # VIRTUALIZATION ------------------------------------------------------
 
     'virtualbox'
-
 )
-
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"

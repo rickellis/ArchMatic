@@ -23,7 +23,7 @@ for PKG in "${PKGS[@]}"; do
 done
 
 echo
-echo "SYSTEMCTL ENABLE CUPS.SERVICE"
+echo "Enabling systemctl cups.service"
 echo
 
 systemctl enable org.cups.cupsd.service

@@ -32,7 +32,7 @@ done
 echo
 echo "NETWORK SETUP"
 echo
-echo "FIND YOUR IP LINK NAME:"
+echo "Find your IP Link name:"
 echo
 
 ip link

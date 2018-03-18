@@ -24,6 +24,7 @@ done
 
 # ------------------------------------------------------------------------
 
+echo
 echo "Disabling Pulse .esd_auth module"
 
 # Disallow .esd_auth

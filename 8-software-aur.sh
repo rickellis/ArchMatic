@@ -17,19 +17,19 @@ PKGS=(
 
     # SYSTEM UTILITIES ----------------------------------------------------
 
-    'menulibre'             # Menu editor
-    'gtkhash'               # Checksum verifier
+    'menulibre'                 # Menu editor
+    'gtkhash'                   # Checksum verifier
 
     # TERMINAL UTILITIES --------------------------------------------------
 
-    'hyper'                 # Terminal emulator built on Electron
-    'neofetch'              # System info with terminal launch
+    'hyper'                     # Terminal emulator built on Electron
+    'neofetch'                  # System info with terminal launch
 
     # UTILITIES -----------------------------------------------------------
 
-    'dropbox'               # Cloud file storage
-    'enpass-bin'            # Password manager
-    'slimlock'              # Screen locker
+    'dropbox'                   # Cloud file storage
+    'enpass-bin'                # Password manager
+    'slimlock'                  # Screen locker
 
     # DEVELOPMENT ---------------------------------------------------------
     
@@ -37,17 +37,17 @@ PKGS=(
 
     # MEDIA ---------------------------------------------------------------
 
-    'spotify'               # Music player
-    'screenkey'             # Screencast your keypresses
-    #'aftershotpro3'         # Photo editor
+    'spotify'                   # Music player
+    'screenkey'                 # Screencast your keypresses
+    'aftershotpro3'             # Photo editor
 
     # POST PRODUCTION -----------------------------------------------------
 
-    'peek'                  # GIF animation screen recorder
+    'peek'                      # GIF animation screen recorder
 
     # COMMUNICATIONS ------------------------------------------------------
 
-    'skypeforlinux-stable-bin' # Skype
+    'skypeforlinux-stable-bin'  # Skype
 
     # THEMES --------------------------------------------------------------
 
@@ -57,7 +57,6 @@ PKGS=(
     'tango-icon-theme'
     'tango-icon-theme-extras'
     'sardi-icons'
-
 )
 
 
@@ -67,7 +66,6 @@ chmod +x auric.sh
 for PKG in "${PKGS[@]}"; do
     ./auric.sh -i $PKG
 done
-
 
 echo
 echo "Done!"

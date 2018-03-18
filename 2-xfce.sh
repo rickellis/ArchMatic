@@ -25,7 +25,8 @@ done
 # The reason I don't is because I like my computer to boot into the terminal
 # by default, rather than a GUI.
 
-echo "GENERATING: .xinitrc file"
+echo
+echo "Genaerating .xinitrc file"
 
 cat <<EOF > ${HOME}/.xinitrc
 #!/bin/bash
@@ -48,9 +49,9 @@ EOF
 # unique ID which gets added to the name, so over time we end up with a build-up of 
 # these files. This code updates the path so this doesn't happen.
 
-echo "UPDATING: /bin/startx"
+echo
+echo "Updating /bin/startx"
 sudo sed -i -e 's|xserverauthfile=\$HOME/.serverauth.\$\$|xserverauthfile=\$XAUTHORITY|g' /bin/startx
-
 
 echo
 echo "Done!"

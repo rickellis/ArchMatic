@@ -9,7 +9,7 @@ echo
 
 # ------------------------------------------------------------------------
 
-echo "Installing LTS Kernel as a boot option"
+echo "Configuring LTS Kernel as a secondary boot option"
 
 # Install LTS Kernel
 # Create a copy of the arch.conf file
@@ -23,7 +23,6 @@ initrd  /intel-ucode.img
 initrd  /initramfs-linux-lts.img
 EOF
 
-
 # ------------------------------------------------------------------------
 
 echo "Enabling Network Time Protocol"
@@ -32,7 +31,6 @@ echo "Enabling Network Time Protocol"
 sudo ntpd -qg
 sudo systemctl enable ntpd.service
 sudo systemctl start ntpd.service
-
 
 # ------------------------------------------------------------------------
 

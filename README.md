@@ -57,6 +57,8 @@ Now generate mirrorlist:
 
     git config --global user.name "rickellis"
     git config --global user.email "email@gmail.com"
+    git config credential.helper cache
+    git config credential.helper 'cache --timeout=700000'
 
 ---
 

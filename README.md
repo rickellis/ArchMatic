@@ -51,7 +51,7 @@ Reflector allows the fastest Arch mirrors to be used.
 
     $   sudo pacman -S reflector rsync curl
 
-Now generate mirrorlist:
+Now generate mirrorlist. Note: If you are not in the U.S. change "United States" to your own country.
 
     $   reflector --verbose --country 'United States' -l 5 --sort rate --save /etc/pacman.d/mirrorlist
 

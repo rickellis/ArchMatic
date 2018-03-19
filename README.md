@@ -68,7 +68,7 @@ So we can clone this repo...
 ---
 
 ### Clone Archomatic
-Typically I just clone them in the home folder and delete them later.
+Typically I just clone it into the home folder and delete it once I'm done.
 
     $   git clone https://github.com/rickellis/ArchoMatic.git
 

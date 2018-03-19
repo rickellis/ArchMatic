@@ -6,18 +6,16 @@ This README contains the steps I do to install and configure a fully-functional 
 
 The shell scripts in this repo allow the entire process to be automated. I also run some scripts that copy over my personal files, my git repos, and my dotfiles so all my settings and preferences get set by default Those are not available publicly since they would provide little use to anyone else
 
-Setting up an Arch system from scratch is usually a time-intensive process. My goal in developing these scripts and my __[installation guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__ was to be able to go from a blank hard drive to a fully functional Arch system with all my files, applications, and preferences set, as efficiently as possible. Typically a complete install takes me between two and three hours. Most of that time is just waiting for all the files to download, and invoking each script as needed.
+Setting up an Arch system from scratch is usually a time-intensive process. My goal in developing these scripts and my __[installation guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__ was to be able to go from a blank hard drive to a fully functional Arch system with all my files, applications, and preferences set, as efficiently as possible. Typically a complete install takes me between two and three hours. Much of that time is just waiting for all the files to download, and invoking each script as needed.
 
 Lastly, some of the configuration steps are specific to the laptop I'm currently running, a Dell XPS 13. So...
-
----
 
 ### Don't just run these scripts. Examine them. Customize them to suit your needs.
 
 ---
 
 ### System Description
-I run XFCE desktop since it's fast and lightweight. I don't install a greeter, preferring to always boot into the terminal by default. That way, if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal.
+I run XFCE desktop since it's fast and lightweight. I don't install a greeter, preferring to always boot into the terminal by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal.
 
 I also install the LTS Kernel along side the rolling one, and configure my bootloader to offer both as a choice during startup. This enables me to switch kernels in the event of a problem with a new version.
 

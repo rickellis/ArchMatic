@@ -2,7 +2,7 @@
 
 <img src="https://i.imgur.com/uFysgdN.png" />
 
-This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. This document assumes that a __[base Arch Linux Installation](https://github.com/rickellis/Arch-Linux-Install-Guide)__ has been installed.
+This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. This document assumes that a base __[Arch Linux Installation](https://github.com/rickellis/Arch-Linux-Install-Guide)__ has been completed.
 
 The shell scripts in this repo allow the entire process to be automated. I also run some personal scripts that configure my dotfiles and various other things. Those are not available publicly since they would provide little use to anyone else.
 

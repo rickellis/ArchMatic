@@ -30,6 +30,7 @@ PKGS=(
     'inxi'                  # System information utility
     'jq'                    # JSON parsing library
     'jshon'                 # JSON parsing library
+    'neofetch'              # System info with terminal launch
     'ntp'                   # Network Time Protocol to set time via network. Useful if you travel.
     'numlockx'              # Turns on numlock in X11
     'openssh'               # SSH connectivity tools

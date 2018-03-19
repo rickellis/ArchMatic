@@ -23,7 +23,6 @@ PKGS=(
     # TERMINAL UTILITIES --------------------------------------------------
 
     'hyper'                     # Terminal emulator built on Electron
-    'neofetch'                  # System info with terminal launch
 
     # UTILITIES -----------------------------------------------------------
 

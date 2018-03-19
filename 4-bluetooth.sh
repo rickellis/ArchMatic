@@ -23,18 +23,5 @@ for PKG in "${PKGS[@]}"; do
 done
 
 echo
-echo "Enabling bluetooth auto-start"
-echo
-
-sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
-
-echo
-echo "Starting systemctl bluetooth service"
-echo
-
-sudo systemctl enable bluetooth.service
-sudo systemctl start bluetooth.service
-
-echo
 echo "Done!"
 echo

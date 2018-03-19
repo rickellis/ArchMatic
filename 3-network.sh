@@ -27,29 +27,6 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-
-
 echo
-echo "NETWORK SETUP"
-echo
-echo "Find your IP Link name:"
-echo
-
-ip link
-
-echo
-read -p "ENTER IP LINK: " LINK
-
-echo
-echo "Enabling Network Manager"
-echo
-
-sudo systemctl disable dhcpcd.service
-sudo systemctl stop dhcpcd.service
-sudo ip link set dev ${LINK} down
-sudo systemctl enable NetworkManager.service
-sudo systemctl start NetworkManager.service
-sudo ip link set dev ${LINK} up
-
 echo "Done!"
-echo 
+echo

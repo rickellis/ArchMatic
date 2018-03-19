@@ -56,3 +56,32 @@ sudo cat <<EOF > /usr/share/icons/default/index.theme
 [Icon Theme]
 #Inherits=Theme
 EOF
+
+
+
+echo
+echo "NETWORK SETUP"
+echo
+echo "Find your IP Link name:"
+echo
+
+ip link
+
+echo
+read -p "ENTER IP LINK: " LINK
+
+echo
+echo "Enabling Network Manager"
+echo
+
+sudo systemctl disable dhcpcd.service
+sudo systemctl stop dhcpcd.service
+sudo ip link set dev ${LINK} down
+sudo systemctl enable NetworkManager.service
+sudo systemctl start NetworkManager.service
+sudo ip link set dev ${LINK} up
+
+echo "Done!"
+echo 
+echo "Reboot now"
+echo

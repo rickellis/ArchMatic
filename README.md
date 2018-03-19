@@ -38,6 +38,7 @@ Follow the steps in my __[Arch Linux Installation Gude](https://github.com/ricke
 ---
 
 ### Boot into new installation
+And get online...
 
     $   sudo wifi-menu
 

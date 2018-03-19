@@ -63,7 +63,7 @@ Now generate mirrorlist:
 ### Clone Archomatic
 These are the scripts in this repo.
 
-    $   git clone https://github.com/rickellis/Archomatic.git
+    $   git clone https://github.com/rickellis/ArchoMatic.git
 
 ---
 

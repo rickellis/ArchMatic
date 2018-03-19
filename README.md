@@ -45,6 +45,7 @@ And get online...
 ---
 
 ### Install Reflector. 
+Reflector allows the fastest Arch mirrors to be used.
 
     $   sudo pacman -Sy
 
@@ -57,23 +58,23 @@ Now generate mirrorlist:
 ---
 
 ### Initialize .gitconfig file
+So we can clone this repo...
 
-    git config --global user.name "rickellis"
-    git config --global user.email "email@gmail.com"
-    git config credential.helper cache
-    git config credential.helper 'cache --timeout=700000'
+    git config --global user.name "your-username"
+    git config --global user.email "your-email@gmail.com"
+    git config --global credential.helper cache
+    git config --global credential.helper 'cache --timeout=700000'
 
 ---
 
 ### Clone Archomatic
-These are the scripts in this repo.
+Typically I just clone them in the home folder and delete them later.
 
     $   git clone https://github.com/rickellis/ArchoMatic.git
 
 ---
 
 ### Run Archomatic files
-
 Run the following scripts:
 
     $   ./1-xorg.sh
@@ -95,9 +96,11 @@ At the terminal, run:
 
     $   xinit
 
+On subsequent logins use:
+
     $   startx
 
 
-You should now have an Arch system running XFCE.
-
 Congrats!
+
+You should now have an Arch system running XFCE.

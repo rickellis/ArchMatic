@@ -34,13 +34,13 @@ PKGS=(
     'inxi'                  # System information utility
     'jq'                    # JSON parsing library
     'jshon'                 # JSON parsing library
-    'neofetch'              # System info with terminal launch
-    'ntp'                   # Network Time Protocol to set time via network. Useful if you travel.
+    'neofetch'              # Shows system info when you launch terminal
+    'ntp'                   # Network Time Protocol to set time via network.
     'numlockx'              # Turns on numlock in X11
     'openssh'               # SSH connectivity tools
     'rsync'                 # Remote file sync utility
     'speedtest-cli'         # Internet speed via terminal
-    'terminus-font'         # Font package with some bigger fonts for when booting into terminal
+    'terminus-font'         # Font package with some bigger fonts for login terminal
     'tlp'                   # Advanced laptop power management
     'unrar'                 # RAR compression program
     'unzip'                 # Zip compression program

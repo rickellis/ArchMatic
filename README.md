@@ -27,7 +27,7 @@ I don't run an application doc. The Whisker Menu (which I trigger via a shortcut
 
 I set up my machines as development environments since that's mostly what I do. To that end I install lots of dev tools and customize various things to increase productivity. For exmple, I set up Apache server to run as me, with the WebServer directory located in my home folder.
 
-I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network/VPN connectivity, and __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management.
+I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network/VPN connectivity, __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management, and __[ConkyMatic](https://github.com/rickellis/ConkyMatic)__ to theme my Conky whenever I switch wallpaper.
 
 Since I use Mac as well, I mirror as much as possible on both systems via git and Dropbox, so I can switch back and forth with no interruption in productivity. Honestly though, I barely use my Mac these days. Linux, with all its quirks, it way more fun.
 

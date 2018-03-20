@@ -25,7 +25,7 @@ I also install the LTS Kernel along side the rolling one, and configure my bootl
 
 I don't run an application doc. The Whisker Menu (which I trigger via a shortcut) allows very fast lookup without needing a mouse. This is similar to Spotlight Search on Mac.
 
-I set up my machines as development environments since that mostly what I do. To that end I install lots of dev tools and customize various things to increase productivity. For exmple, I set up Apache server to run as me, with the WebServer directory located in my home folder.
+I set up my machines as development environments since that's mostly what I do. To that end I install lots of dev tools and customize various things to increase productivity. For exmple, I set up Apache server to run as me, with the WebServer directory located in my home folder.
 
 I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network/VPN connectivity, and __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management.
 

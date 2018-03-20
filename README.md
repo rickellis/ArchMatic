@@ -17,7 +17,11 @@ Lastly, some of the configuration steps are specific to the laptop I'm currently
 ### System Description
 I run XFCE desktop since it's fast and lightweight. I don't install a greeter, preferring to always boot into the terminal by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal.
 
+I use SystemD boot because it's minimalist, comes built-in, and since the Linux kernel has a built-in EFI image, all we need is a way to execute it. 
+
 I also install the LTS Kernel along side the rolling one, and configure my bootloader to offer both as a choice during startup. This enables me to switch kernels in the event of a problem with the rolling one.
+
+I don't run an application doc. The Whisker Menu (which I trigger via a shortcut) allows very fast lookup without needing a mouse. This is similar to Spotlight Search on Mac.
 
 I set up my machines as development environments since that mostly what I do. To that end I install lots of dev tools and customize various things to increase productivity. For exmple, I set up Apache server to run as me, with the WebServer directory located in my home folder.
 

@@ -31,10 +31,6 @@ I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for n
 
 Since I use Mac as well, I mirror as much as possible on both systems via git and Dropbox, like shared __[bash files](https://github.com/rickellis/BashRC)__, so I can switch back and forth with no interruption in productivity. Honestly though, I barely use my Mac these days. Linux, with all its quirks, it way more fun.
 
-
-
-https://github.com/rickellis/BashRC
-
 ---
 
 The install steps are as follows:

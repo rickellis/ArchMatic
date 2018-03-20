@@ -128,6 +128,7 @@ PKGS=(
     # VIRTUALIZATION ------------------------------------------------------
 
     'virtualbox'
+    'virtualbox-host-modules-arch'
 )
 
 for PKG in "${PKGS[@]}"; do

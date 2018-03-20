@@ -65,14 +65,14 @@ So we can clone this repo...
 
 ---
 
-### Clone Archomatic
+### Clone ArchMatic
 Typically I just clone it into the home folder and delete it once I'm done.
 
-    $   git clone https://github.com/rickellis/ArchoMatic.git
+    $   git clone https://github.com/rickellis/ArchMatic.git
 
 ---
 
-### Run Archomatic files
+### Run ArchMatic files
 Run the following scripts:
 
     $   ./1-xorg.sh

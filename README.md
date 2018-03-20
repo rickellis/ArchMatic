@@ -31,7 +31,7 @@ I set up my machines as development environments since that's mostly what I do. 
 
 I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network/VPN connectivity, __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management, and __[ConkyMatic](https://github.com/rickellis/ConkyMatic)__ to theme my Conky whenever I switch wallpaper.
 
-Since I use Mac as well, I mirror as much as possible on both systems via git and Dropbox, like shared __[bash files](https://github.com/rickellis/BashRC)__, so I can switch back and forth with no interruption in productivity. Honestly though, I barely use my Mac these days. Linux, with all its quirks, it way more fun.
+Since I use Mac as well, I mirror as much as possible on both systems via Git and Dropbox, like shared __[bash files](https://github.com/rickellis/BashRC)__, so I can switch back and forth with no interruption in productivity. Honestly though, I barely use my Mac these days. Linux, with all its quirks, it way more fun.
 
 ---
 

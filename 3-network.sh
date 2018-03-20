@@ -11,14 +11,12 @@ echo
 echo "INSTALLING NETWORK COMPONENTS"
 echo
 
-# NOTE: Do I need: networkmanager-openvpn
-# Or is networkmanager-vpnc all I need for VPN?
-
 PKGS=(
         'wpa_supplicant'
         'dialog'
         'networkmanager'
         'openvpn'
+        'networkmanager-openvpn'
         'networkmanager-vpnc'
         'network-manager-applet'
         'dhclient'

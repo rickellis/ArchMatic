@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
-#--------------------------------------------------------------------------
-#  Arch Linux Post Install Setup and Configuration
-#--------------------------------------------------------------------------
+#-------------------------------------------------------------------------
+#     _          _    __  __      _   _    
+#     /_\  _ _ __| |_ |  \/  |__ _| |_(_)__ 
+#    / _ \| '_/ _| ' \| |\/| / _` |  _| / _|
+#   /_/ \_\_| \__|_||_|_|  |_\__,_|\__|_\__| 
+#  Arch Linux Post Install Setup and Config
+#-------------------------------------------------------------------------
 
 echo
-echo "INSTALLING NETWORK PACKAGES"
+echo "INSTALLING NETWORK COMPONENTS"
 echo
 
 # NOTE: Do I need: networkmanager-openvpn

@@ -8,7 +8,7 @@ The shell scripts in this repo allow the entire process to be automated. I also 
 
 Setting up an Arch system from scratch is usually a time-intensive process. My goal in developing these scripts and my __[installation guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__ was to be able to go from a blank hard drive to a fully functional Arch system with all my files, applications, and preferences set, as efficiently as possible. Typically a complete install takes me between two and three hours. Much of that time is just waiting for all the files to download, and invoking each script as needed.
 
-Lastly, some of the package choices are specific to the laptop I'm currently running, a Dell XPS 13. So...
+Lastly, some of the package choices are specific to the laptop I'm currently running, a Dell XPS 13 (which kicks ass). So...
 
 ### Don't just run these scripts. Examine them. Customize them to suit your needs.
 

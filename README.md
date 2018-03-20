@@ -17,9 +17,9 @@ So...
 ---
 
 ### System Description
-I run XFCE desktop since it's fast and lightweight. I don't install a greeter, preferring to always boot into the terminal by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal.
+I run XFCE desktop. It's fast, lightweight, and doesn't annoy me with animations. I don't install a greeter, preferring to always boot into the login shell by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal. You can also pass an argument to startx if you run multiple Desktops.
 
-I use SystemD boot because it's minimalist, comes built-in, and since the Linux kernel has a built-in EFI image, all we need is a way to execute it. 
+I use Systemd boot because it's minimalist, comes built-in, and since the Linux kernel has a built-in EFI image, all we need is a way to execute it.
 
 I also install the LTS Kernel along side the rolling one, and configure my bootloader to offer both as a choice during startup. This enables me to switch kernels in the event of a problem with the rolling one.
 
@@ -27,9 +27,9 @@ I don't run an application doc. The Whisker Menu (which I trigger via a shortcut
 
 I set up my machines as development environments since that mostly what I do. To that end I install lots of dev tools and customize various things to increase productivity. For exmple, I set up Apache server to run as me, with the WebServer directory located in my home folder.
 
-I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network connectivity, and __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management.
+I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network/VPN connectivity, and __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management.
 
-Since I use Mac as well, I mirror as much as possible on both systems via git and Dropbox, so I can switch back and forth with no interruption in productivity.
+Since I use Mac as well, I mirror as much as possible on both systems via git and Dropbox, so I can switch back and forth with no interruption in productivity. Honestly though, I barely use my Mac these days. Linux, with all its quirks, it way more fun.
 
 ---
 

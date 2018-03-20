@@ -17,9 +17,9 @@ So...
 ---
 
 ### System Description
-I run XFCE desktop. It's fast, lightweight, and doesn't annoy me with animations. I don't install a greeter, preferring to always boot into the login shell by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal. You can also pass an argument to startx if you run multiple Desktops.
+I run XFCE desktop. It's fast, lightweight, and doesn't annoy me with animations. I don't install a greeter, preferring to always boot into the login shell by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal. You can also pass an argument to startx if you run multiple desktops.
 
-I use Systemd boot because it's minimalist, comes built-in, and since the Linux kernel has a built-in EFI image, all we need is a way to execute it.
+I use `systemd boot` because it's minimalist, comes built-in, and since the Linux kernel has a built-in EFI image, all we need is a way to execute it.
 
 I also install the LTS Kernel along side the rolling one, and configure my bootloader to offer both as a choice during startup. This enables me to switch kernels in the event of a problem with the rolling one.
 

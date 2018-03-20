@@ -19,7 +19,7 @@ So...
 ---
 
 ### System Description
-I run XFCE desktop. It's fast, lightweight, and doesn't annoy me with animations. I don't install a greeter, preferring to always boot into the login shell by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal. If you run multiple desktops you can pass path arguments to `startx` to initialize a specific desktop.
+I run XFCE desktop. It's fast, lightweight, and doesn't annoy me with animations. I don't install a greeter, preferring to always boot into the login shell by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal. If you run multiple desktops you can pass a path argument to `startx` pointing to the initialization file for the desktop you want to run.
 
 To boot I use `systemd` because it's minimalist, comes built-in, and since the Linux kernel has an EFI image, all we need is a way to execute it.
 

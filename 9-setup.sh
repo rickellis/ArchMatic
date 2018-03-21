@@ -50,7 +50,7 @@ echo "Configuring LTS Kernel as a secondary boot option"
 # Make a copy of the boot loader
 sudo cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
 
-# Swap various values in th new loader file
+# Swap various values in the new loader file
 sudo sed -i 's|Arch Linux|Arch Linux LTS Kernel|g' /boot/loader/entries/arch-lts.conf
 sudo sed -i 's|vmlinuz-linux|vmlinuz-linux-lts|g' /boot/loader/entries/arch-lts.conf
 sudo sed -i 's|initramfs-linux.img|initramfs-linux-lts.img|g' /boot/loader/entries/arch-lts.conf
@@ -70,7 +70,8 @@ EOF
 
 # ------------------------------------------------------------------------
 
-# Fix giant cursor problem
+# Fix giant cursor problem. When using multiple monitors, when you log in
+# the cursor is comedically big. This fixes it.
 
 echo
 echo "Disabling buggy cursor inheritance"
@@ -103,6 +104,8 @@ sudo sed -i 's|load-module module-esound-protocol-unix|#load-module module-esoun
 
 # ------------------------------------------------------------------------
 
+# Initialize the bluetooth deamon and set it to start automatically
+
 echo
 echo "Enabling bluetooth auto-start"
 
@@ -116,6 +119,8 @@ sudo systemctl start bluetooth.service
 
 # ------------------------------------------------------------------------
 
+# Initialize the cups service daemon and make it start automatically
+
 echo
 echo "Enabling systemctl cups.service"
 echo
@@ -125,7 +130,7 @@ systemctl start org.cups.cupsd.service
 
 # ------------------------------------------------------------------------
 
-### Enable Network Time Protocol to we can set clock via network
+# Enable Network Time Protocol to we can set clock via network
 
 echo
 echo "Enabling Network Time Protocol"
@@ -136,7 +141,8 @@ sudo systemctl start ntpd.service
 
 # ------------------------------------------------------------------------
 
-# Configure Network Manager
+# Initialize Network Manager. This last step disables the DHCP daemon and
+# and enables Network Manager.
 
 echo
 echo "NETWORK SETUP"
@@ -162,5 +168,5 @@ sudo ip link set dev ${LINK} up
 
 echo "Done!"
 echo 
-echo "Reboot now"
+echo "Reboot now..."
 echo

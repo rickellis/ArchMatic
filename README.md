@@ -8,7 +8,7 @@ The shell scripts in this repo allow the entire process to be automated. I also 
 
 Setting up an Arch system from scratch is usually a time-intensive process. My goal in developing these scripts and my __[installation guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__ was to be able to go from a blank hard drive to a fully functional Arch system with all my files, applications, and preferences set, as efficiently as possible.
 
-Typically a complete install takes me between two and three hours. About and hour for the base install, and one to two hours for all the packages to download. That's pretty fast, considering when I log into a new system everything is exactly where I left off on my previous system.
+Typically a complete install takes me between two and three hours. About and hour for the base install, and a couple hours for all the packages to download. That's pretty fast, considering when I log into a new system everything is exactly where I left off on my previous system. Well, almost everything. I run a Windows environemnt on VirtualBox, so getting all my development tools and applications installed takes some effort.
 
 Lastly, some of the package choices and tweaks are specific to the laptop I'm currently running, a Dell XPS 13...which kicks ass and runs Linux flawlessly.
 
@@ -19,19 +19,21 @@ So...
 ---
 
 ### System Description
-I run XFCE desktop. It's fast, lightweight, and doesn't annoy me with animations. I don't install a greeter, preferring to always boot into the login shell by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal. If you run multiple desktops you can pass a path argument to `startx` pointing to the initialization file for the desktop you want to run.
+I run XFCE desktop because it's fast, clean, and lightweight. I've tried nearly every other Linux desktop and a few window managers, but I keep coming back to XFCE.
+
+I don't install a greeter, preferring to always boot into the login shell by default. That way if there is ever a show-stopping problem with Xorg or XFCE I can fix it without having to boot from an external drive. To launch XFCE I enter `startx` in the terminal. If you run multiple desktops you can pass a path argument to `startx` pointing to the initialization file for the desktop you want to run.
+
+Since I don't use a greeter, to lock the screen I use Slimlock. I built a bunch of my own themes, and wrote a little shell script that randomizes the choice each time I lock the screen.
 
 To boot I use `systemd` because it's minimalist, comes built-in, and since the Linux kernel has an EFI image, all we need is a way to execute it.
 
 I also install the LTS Kernel along side the rolling one, and configure my bootloader to offer both as a choice during startup. This enables me to switch kernels in the event of a problem with the rolling one.
 
-I don't run an application dock. The Whisker Menu (which I trigger via a shortcut) allows very fast lookup without needing a mouse. This is similar to Spotlight Search on Mac.
+I don't run an application dock. The Whisker Menu (which I trigger via a shortcut) allows very fast lookup without needing a mouse. This is similar to Spotlight Search on Mac or the Start menu on Windows.
 
 I set up my machines as development environments since that's mostly what I do. To that end I install lots of dev tools and customize various things to increase productivity. For exmple, I set up Apache server to run as me, with the WebServer directory located in my home folder.
 
 I run my own utilites: __[WifiVPN](https://github.com/rickellis/WifiVPN)__ for network/VPN connectivity, __[AURIC](https://github.com/rickellis/AURIC)__ for AUR package management, and __[ConkyMatic](https://github.com/rickellis/ConkyMatic)__ to theme my Conky whenever I switch wallpaper.
-
-Since I use Mac as well, I mirror as much as possible on both systems via Git and Dropbox, like shared __[bash files](https://github.com/rickellis/BashRC)__, so I can switch back and forth with no interruption in productivity. Honestly though, I barely use my Mac these days. Linux, with all its quirks, is way more fun.
 
 ---
 

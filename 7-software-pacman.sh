@@ -44,7 +44,6 @@ PKGS=(
     'tlp'                   # Advanced laptop power management
     'unrar'                 # RAR compression program
     'unzip'                 # Zip compression program
-    'volumeicon'            # Volume control for system tray
     'wget'                  # Remote content retrieval
     'xfce4-terminal'        # Terminal emulator
     'zenity'                # Display graphical dialog boxes via shell scripts

@@ -83,7 +83,7 @@ PKGS=(
     'npm'                   # Node package manager
     'php'                   # Web application scripting language
     'php-apache'            # Apache driver
-    'postfix'               # SMTP agent
+    'postfix'               # SMTP mail server
     'python'                # Scripting language
     'qtcreator'             # C++ cross platform IDE
     'yarn'                  # Dependency management (Hyper needs this)

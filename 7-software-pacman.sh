@@ -60,8 +60,7 @@ PKGS=(
     'ntfs-3g'               # Open source implementation of NTFS file system 
     'parted'                # Disk utility
 
-
-    # UTILITIES -----------------------------------------------------------
+    # GENERAL UTILITIES ---------------------------------------------------
 
     'catfish'               # Filesystem search
     'conky'                 # System information viewer

@@ -73,6 +73,7 @@ PKGS=(
     # DEVELOPMENT ---------------------------------------------------------
 
     'apache'                # Apache web server
+    'cmake'                 # cross-platform open-source make system
     'electron'              # Cross-platform development using Javascript
     'git'                   # Version control system
     'gcc'                   # C/C++ compiler
@@ -85,6 +86,7 @@ PKGS=(
     'php-apache'            # Apache driver
     'postfix'               # SMTP agent
     'python'                # Scripting language
+    'qtcreator'             # C++ cross platform IDE
     'yarn'                  # Dependency management (Hyper needs this)
 
     # WEB TOOLS -----------------------------------------------------------

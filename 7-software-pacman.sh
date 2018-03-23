@@ -86,6 +86,7 @@ PKGS=(
     'postfix'               # SMTP mail server
     'python'                # Scripting language
     'qtcreator'             # C++ cross platform IDE
+    'qt5-examples'          # Project demos for Qt
     'yarn'                  # Dependency management (Hyper needs this)
 
     # WEB TOOLS -----------------------------------------------------------

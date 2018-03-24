@@ -4,7 +4,7 @@
 
 This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. This document assumes that a base __[Arch Linux Installation](https://github.com/rickellis/Arch-Linux-Install-Guide)__ has been completed.
 
-The shell scripts in this repo allow the entire process to be automated. I also run scripts that copy over my personal files, my git repos, and my dotfiles so all my settings and preferences get set by default Those are not available publicly since they would provide little use to anyone else
+The shell scripts in this repo allow the entire process to be automated. I also run scripts that copy over my personal files, my git repos, and my dotfiles so all my settings and preferences get set by default. Those are not available publicly since they would provide little use to anyone else
 
 Setting up an Arch system from scratch is usually a time-intensive process. My goal in developing these scripts and my __[installation guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__ was to be able to go from a blank hard drive to a fully functional Arch system with all my files, applications, and preferences set, as efficiently as possible.
 

@@ -72,7 +72,8 @@ PKGS=(
     # DEVELOPMENT ---------------------------------------------------------
 
     'apache'                # Apache web server
-    'cmake'                 # cross-platform open-source make system
+    'clang'                 # C Lang compiler
+    'cmake'                 # Cross-platform open-source make system
     'electron'              # Cross-platform development using Javascript
     'git'                   # Version control system
     'gcc'                   # C/C++ compiler
@@ -82,7 +83,7 @@ PKGS=(
     'nodejs'                # Javascript runtime environment
     'npm'                   # Node package manager
     'php'                   # Web application scripting language
-    'php-apache'            # Apache driver
+    'php-apache'            # Apache PHP driver
     'postfix'               # SMTP mail server
     'python'                # Scripting language
     'qtcreator'             # C++ cross platform IDE

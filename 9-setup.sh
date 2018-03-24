@@ -88,14 +88,6 @@ EOF
 # ------------------------------------------------------------------------
 
 echo
-echo "Updating font caches"
-
-sudo fc-cache -fv   # System fonts
-sudo fc-cache -fv ~/.fonts  $ Local fonts
-
-# ------------------------------------------------------------------------
-
-echo
 echo "Increasing file watcher count"
 
 # This prevents a "too many files" error in Visual Studio Code

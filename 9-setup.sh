@@ -60,7 +60,7 @@ sudo sed -i -e 's|[#]*COMPRESSXZ=.*|COMPRESSXZ=(xz -c -T 8 -z -)|g' makepkg.conf
 # ------------------------------------------------------------------------
 
 echo
-echo "Configuring vconsole.conf to set a default font size for login shell"
+echo "Configuring vconsole.conf to set a larger font for login shell"
 
 sudo cat <<EOF > /etc/vconsole.conf
 KEYMAP=us

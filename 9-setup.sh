@@ -9,16 +9,14 @@
 
 echo
 echo "FINAL SETUP AND CONFIGURATION"
-echo
 
 # ------------------------------------------------------------------------
-
-# Generate the .xinitrc file so we can launch XFCE from the
-# terminal using the "startx" command.
 
 echo
 echo "Genaerating .xinitrc file"
 
+# Generate the .xinitrc file so we can launch XFCE from the
+# terminal using the "startx" command
 cat <<EOF > ${HOME}/.xinitrc
 #!/bin/bash
 
@@ -35,11 +33,10 @@ EOF
 
 # ------------------------------------------------------------------------
 
-# By default, startx looks for the .serverauth file in our HOME folder.
-# Since it's not there we update the path
-
 echo
-echo "Updating /bin/startx"
+echo "Updating /bin/startx to use the correct path"
+
+# By default, startx incorrectly looks for the .serverauth file in our HOME folder.
 sudo sed -i 's|xserverauthfile=\$HOME/.serverauth.\$\$|xserverauthfile=\$XAUTHORITY|g' /bin/startx
 
 # ------------------------------------------------------------------------
@@ -47,18 +44,20 @@ sudo sed -i 's|xserverauthfile=\$HOME/.serverauth.\$\$|xserverauthfile=\$XAUTHOR
 echo
 echo "Configuring LTS Kernel as a secondary boot option"
 
-# Make a copy of the boot loader
 sudo cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
-
-# Swap various values in the new loader file
 sudo sed -i 's|Arch Linux|Arch Linux LTS Kernel|g' /boot/loader/entries/arch-lts.conf
 sudo sed -i 's|vmlinuz-linux|vmlinuz-linux-lts|g' /boot/loader/entries/arch-lts.conf
 sudo sed -i 's|initramfs-linux.img|initramfs-linux-lts.img|g' /boot/loader/entries/arch-lts.conf
 
 # ------------------------------------------------------------------------
 
-# Create vconsole.config
-# This lets us use larger console fonts in TT1
+echo
+echo "Configuring MAKEPKG to use all 8 cores"
+
+sudo sed -i -e 's|[#]*MAKEFLAGS=.*|MAKEFLAGS="-j$(nproc)"|g' makepkg.conf
+sudo sed -i -e 's|[#]*COMPRESSXZ=.*|COMPRESSXZ=(xz -c -T 8 -z -)|g' makepkg.conf
+
+# ------------------------------------------------------------------------
 
 echo
 echo "Configuring vconsole.conf to set a default font size for login shell"
@@ -70,12 +69,17 @@ EOF
 
 # ------------------------------------------------------------------------
 
-# Fix giant cursor problem. When using multiple monitors, when you log in
-# the cursor is comedically big. This fixes it.
+echo
+echo "Setting laptop lid close to suspend"
+
+sudo sed -i -e 's|[# ]*HandleLidSwitch[ ]*=[ ]*.*|HandleLidSwitch=suspend|g' /etc/systemd/logind.conf
+
+# ------------------------------------------------------------------------
 
 echo
 echo "Disabling buggy cursor inheritance"
 
+# When you boot with multiple monitors the cursor can look huge. This fixes it.
 sudo cat <<EOF > /usr/share/icons/default/index.theme
 [Icon Theme]
 #Inherits=Theme
@@ -83,66 +87,56 @@ EOF
 
 # ------------------------------------------------------------------------
 
-# Increase the number of file watchers.
-# This prevents a "too many files" error in Visual Studio Code
+echo
+echo "Updating font caches"
+
+sudo fc-cache -fv   # System fonts
+sudo fc-cache -fv ~/.fonts  $ Local fonts
+
+# ------------------------------------------------------------------------
 
 echo
 echo "Increasing file watcher count"
 
+# This prevents a "too many files" error in Visual Studio Code
 echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
 
 # ------------------------------------------------------------------------
 
-# Disallow .esd_auth
-# Pulse audio loads the `esound-protocol` module, which best I can tell is rarely needed.
-# That module creates a file called `.esd_auth` in the home directory which I'd prefer to not be there. So...
-
 echo
 echo "Disabling Pulse .esd_auth module"
 
+# Pulse audio loads the `esound-protocol` module, which best I can tell is rarely needed.
+# That module creates a file called `.esd_auth` in the home directory which I'd prefer to not be there. So...
 sudo sed -i 's|load-module module-esound-protocol-unix|#load-module module-esound-protocol-unix|g' /etc/pulse/default.pa
 
 # ------------------------------------------------------------------------
 
-# Initialize the bluetooth deamon and set it to start automatically
-
 echo
-echo "Enabling bluetooth auto-start"
+echo "Enabling bluetooth daemon and setting it to auto-start"
 
 sudo sed -i 's|#AutoEnable=false|AutoEnable=true|g' /etc/bluetooth/main.conf
-
-echo
-echo "Starting systemctl bluetooth service"
-
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 
 # ------------------------------------------------------------------------
 
-# Initialize the cups service daemon and make it start automatically
-
 echo
-echo "Enabling systemctl cups.service"
-echo
+echo "Enabling the cups service daemon so we can print"
 
 systemctl enable org.cups.cupsd.service
 systemctl start org.cups.cupsd.service
 
 # ------------------------------------------------------------------------
 
-# Enable Network Time Protocol to we can set clock via network
-
 echo
-echo "Enabling Network Time Protocol"
+echo "Enabling Network Time Protocol so clock will be set via the network"
 
 sudo ntpd -qg
 sudo systemctl enable ntpd.service
 sudo systemctl start ntpd.service
 
 # ------------------------------------------------------------------------
-
-# Initialize Network Manager. This last step disables the DHCP daemon and
-# and enables Network Manager.
 
 echo
 echo "NETWORK SETUP"
@@ -153,10 +147,10 @@ echo
 ip link
 
 echo
-read -p "ENTER IP LINK: " LINK
+read -p "ENTER YOUR IP LINK: " LINK
 
 echo
-echo "Enabling Network Manager"
+echo "Disabling DHCP and enabling Network Manager daemon"
 echo
 
 sudo systemctl disable dhcpcd.service

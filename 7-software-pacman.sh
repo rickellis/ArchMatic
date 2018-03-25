@@ -121,11 +121,11 @@ PKGS=(
     # PRODUCTIVITY --------------------------------------------------------
 
     'galculator'            # Gnome calculator
-    'evince'                # Multi format document viewer
     'hunspell'              # Spellcheck libraries
     'hunspell-en'           # English spellcheck library
     'libreoffice-fresh'     # Libre office with extra features
     'mousepad'              # XFCE simple text editor
+    'xpdf'                  # PDF viewer
 
     # VIRTUALIZATION ------------------------------------------------------
 

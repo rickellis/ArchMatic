@@ -6,7 +6,7 @@ This README contains the steps I do to install and configure a fully-functional 
 
 Setting up an Arch system from scratch is usually a time-intensive process. My goal in developing these scripts and my __[installation guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__ was to be able to go from a blank hard drive to a fully functional Arch system with all my files, applications, and preferences set, as efficiently as possible.
 
-Typically a complete install takes me between two and three hours. About and hour for the base install, and a couple hours for all the packages to download. In additon to the scripts in this repo, I run a script that copies over my dotfiles so all my settings and preferences get set by default. That way, when I log into a new system everything is exactly where I left off on my previous system.
+Typically a complete install takes me between two and three hours. About and hour for the base install, and a couple hours for all the packages to download. In addition to the scripts in this repo I run a script that copies over my dotfiles, preferences, fonts, git repos, etc., so that when I log into a new system everything is exactly where I left off on my previous one. Almost everything. I run a Windows dev environment on VirtualBox which takes additional setup time, and I have to enable some cloud services so I can access my files.
 
 Note: Some of the package choices and tweaks are specific to the laptop I'm currently running, a Dell XPS 13...which kicks ass and runs Linux flawlessly.
 

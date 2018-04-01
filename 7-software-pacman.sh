@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------
-#      _          _    __  __      _   _    
-#     /_\  _ _ __| |_ |  \/  |__ _| |_(_)__ 
+#      _          _    __  __      _   _
+#     /_\  _ _ __| |_ |  \/  |__ _| |_(_)__
 #    / _ \| '_/ _| ' \| |\/| / _` |  _| / _|
-#   /_/ \_\_| \__|_||_|_|  |_\__,_|\__|_\__| 
+#   /_/ \_\_| \__|_||_|_|  |_\__,_|\__|_\__|
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ PKGS=(
     'exfat-utils'           # Mount exFat drives
     'gparted'               # Disk utility
     'gnome-disks'           # Disk utility
-    'ntfs-3g'               # Open source implementation of NTFS file system 
+    'ntfs-3g'               # Open source implementation of NTFS file system
     'parted'                # Disk utility
 
     # GENERAL UTILITIES ---------------------------------------------------
@@ -71,6 +71,7 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
 
+    'atom'                  # Text editor
     'apache'                # Apache web server
     'clang'                 # C Lang compiler
     'cmake'                 # Cross-platform open-source make system

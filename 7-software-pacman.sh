@@ -117,6 +117,7 @@ PKGS=(
     'inkscape'              # Vector image creation app
     'imagemagick'           # Command line image manipulation tool
     'nomacs'                # Image viewer
+    'pngcrush'              # Tools for optimizing PNG images
     'ristretto'             # Multi image viewer
 
     # PRODUCTIVITY --------------------------------------------------------

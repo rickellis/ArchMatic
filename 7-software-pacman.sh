@@ -93,7 +93,6 @@ PKGS=(
 
     # WEB TOOLS -----------------------------------------------------------
 
-    'chromium'              # Web browser
     'firefox'               # Web browser
     'filezilla'             # FTP Client
     'flashplugin'           # Flash
@@ -106,7 +105,7 @@ PKGS=(
     # MEDIA ---------------------------------------------------------------
 
     'lollypop'              # Music player
-    'simplescreenrecorder'  # Record your screen
+    'obs-studio'  # Record your screen
     'vlc'                   # Video player
     'xfce4-screenshooter'   # Screen capture.
 

@@ -14,7 +14,7 @@ echo
 cd "${HOME}"
 
 echo "CLOING: AURIC"
-git clone "https://github.com/rickellis/AURIC.git"
+git clone "https://aur.archlinux.org/yay.git"
 
 
 PKGS=(
@@ -65,11 +65,11 @@ PKGS=(
 )
 
 
-cd ${HOME}/AURIC
-chmod +x auric.sh
+cd ${HOME}/yay
+makepkg -si
 
 for PKG in "${PKGS[@]}"; do
-    ./auric.sh -i $PKG
+    yay -S $PKG
 done
 
 echo

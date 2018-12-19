@@ -68,6 +68,7 @@ PKGS=(
     'veracrypt'             # Disc encryption utility
     'variety'               # Wallpaper changer
     'xfburn'                # CD burning application
+    'docky'                 # Dock Options
 
     # DEVELOPMENT ---------------------------------------------------------
 

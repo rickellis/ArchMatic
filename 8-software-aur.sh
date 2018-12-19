@@ -13,7 +13,7 @@ echo
 
 cd "${HOME}"
 
-echo "CLOING: AURIC"
+echo "CLOING: YAY"
 git clone "https://aur.archlinux.org/yay.git"
 
 

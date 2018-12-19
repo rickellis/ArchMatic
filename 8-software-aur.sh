@@ -35,6 +35,8 @@ PKGS=(
     'slimlock'                  # Screen locker
     'oomox'                     # Theme editor
     'samba'                     # Samba File Sharing
+    'gnome-vfs'                 # Gnome File System Access
+    'gvfs-smb'                  # More File System Stuff
 
     # DEVELOPMENT ---------------------------------------------------------
     

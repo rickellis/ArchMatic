@@ -31,7 +31,7 @@ PKGS=(
     # UTILITIES -----------------------------------------------------------
 
     'dropbox'                   # Cloud file storage
-    'enpass-bin'                # Password manager
+    'lastpass'                  # Password manager
     'slimlock'                  # Screen locker
     'oomox'                     # Theme editor
 
@@ -41,7 +41,6 @@ PKGS=(
 
     # MEDIA ---------------------------------------------------------------
 
-    'spotify'                   # Music player
     'screenkey'                 # Screencast your keypresses
     # 'aftershotpro3'             # Photo editor
 
@@ -51,7 +50,8 @@ PKGS=(
 
     # COMMUNICATIONS ------------------------------------------------------
 
-    'skypeforlinux-stable-bin'  # Skype
+    'google-chrome'             # Google Chrome
+    
 
     # THEMES --------------------------------------------------------------
 

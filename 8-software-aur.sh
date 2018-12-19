@@ -62,7 +62,6 @@ PKGS=(
     'tango-icon-theme-extras'
     'numix-icon-theme-git'
     'sardi-icons'
-    'xfce4-whiskermenu-plugin-gtk2'
     'alacarte-xfce'
     'mugshot'
 )
@@ -72,7 +71,7 @@ cd ${HOME}/yay
 makepkg -si
 
 for PKG in "${PKGS[@]}"; do
-    yay -S $PKG
+    yay -S --noconfirm $PKG
 done
 
 echo

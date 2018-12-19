@@ -34,6 +34,7 @@ PKGS=(
     'lastpass'                  # Password manager
     'slimlock'                  # Screen locker
     'oomox'                     # Theme editor
+    'samba'                     # Samba File Sharing
 
     # DEVELOPMENT ---------------------------------------------------------
     

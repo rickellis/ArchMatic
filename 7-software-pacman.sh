@@ -105,8 +105,9 @@ PKGS=(
 
     # MEDIA ---------------------------------------------------------------
 
+    'kdenlive'                 # Movie Render
     'lollypop'              # Music player
-    'obs-studio'  # Record your screen
+    'obs-studio'            # Record your screen
     'vlc'                   # Video player
     'xfce4-screenshooter'   # Screen capture.
 

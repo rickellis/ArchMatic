@@ -22,6 +22,7 @@ PKGS=(
     'bash-completion'       # Tab completion for Bash
     'bc'                    # Precision calculator language
     'bleachbit'             # File deletion utility
+    'cronie'                # cron jobs
     'curl'                  # Remote content retrieval
     'elinks'                # Terminal based web browser
     'feh'                   # Terminal-based image viewer/manipulator

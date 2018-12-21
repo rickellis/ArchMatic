@@ -64,6 +64,7 @@ PKGS=(
     'tango-icon-theme'
     'tango-icon-theme-extras'
     'numix-icon-theme-git'
+    'papirus-icon-theme' 
     'sardi-icons'
     'alacarte-xfce'
     'mugshot'

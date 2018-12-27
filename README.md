@@ -39,12 +39,15 @@ $ arch-chroot /mnt
 Edit /etc/pacman.d/mirrorlist and re-organize per you geolocation
 *Here is a handy command to do it for you if you reside in the United States change US to your country if not.
 
-$ pacman -S --no-confirm pacman-contrib
+$ pacman -S --no-confirm pacman-contrib curl
 
-$ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+$ git clone https://github.com/ChrisTitusTech/ArchMatic
 
-$ curl -s "https://www.archlinux.org/mirrorlist/?country=US&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist
+$ cd ArchMatic
 
+$ chmod +x *
+
+$ ./0-setupmirrors.sh
 
 Set Time Zone
 

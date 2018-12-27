@@ -6,11 +6,85 @@ This README contains the steps I do to install and configure a fully-functional 
 
 Setting up an Arch system from scratch is usually a time-intensive process. My goal in developing these scripts and my __[installation guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__ was to be able to go from a blank hard drive to a fully functional Arch system with all my files, applications, and preferences set, as efficiently as possible.
 
-Typically a complete install takes me between two and three hours. About and hour for the base install, and a couple hours for all the packages to download. In addition to the scripts in this repo I run a script that copies over my dotfiles, preferences, fonts, git repos, etc., so that when I log into a new system everything is exactly where I left off on my previous one. Almost everything. I run a Windows dev environment on VirtualBox which takes additional setup time, and I have to enable some cloud services so I can access my files.
+Titus Addition: (Install steps before running scripts)
 
-Note: Some of the package choices and tweaks are specific to the laptop I'm currently running, a Dell XPS 13...which kicks ass and runs Linux flawlessly.
+Good How To Guides:
+https://linoxide.com/distros/beginners-arch-linux-installation-guide/
+https://www.2daygeek.com/install-xfce-mate-kde-gnome-cinnamon-lxqt-lxde-budgie-deepin-enlightenment-desktop-environment-on-arch-linux/
 
-So...
+
+Install process
+$ timedatectl set-ntp true
+$ fdisk -l
+$ cfdisk /dev/sda
+*New Linux Partition
+*Make disk bootable and write
+$ mkfs.ext4 /dev/sda1
+$ mount /dev/sda1 /mnt
+
+$ pacstrap /mnt base base-devel
+$ genfstab -U /mnt >> /mnt/etc/fstab
+$ arch-chroot /mnt
+
+Edit /etc/pacman.d/mirrorlist and re-organize per you geolocation
+*Here is a handy command to do it for you if you reside in the United States change US to your country if not.
+
+$ pacman -S --no-confirm pacman-contrib
+$ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+$ curl -s "https://www.archlinux.org/mirrorlist/?country=US&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist
+
+
+Set Time Zone
+$ ln -sf /usr/share/zoneinfo/US/Central /etc/localtime
+$ hwclock --systohc
+
+Set Language
+Edit /etc/locale.gen and uncomment language
+$ echo LANG=en_US.UTF-8 > /etc/locale.conf
+
+Set Hostname
+$ echo archlinux > /etc/hostname
+Edit /etc/hosts
+
+Setup Users 
+$ useradd -m -G wheel,users -s /bin/bash titus
+$ passwd
+$ passwd titus
+Edit /etc/sudoers
+
+$ systemctl enable dhcpcd
+
+Install GRUB
+$ pacman -S grub
+$ grub-install --recheck --target=i386-pc /dev/sda
+$ grub-mkconfig -o /boot/grub/grub.cfg
+
+$ exit
+$ umount -R /mnt
+$ reboot
+
+Install Desktop Environment
+$ sudo pacman -Syu
+$ sudo pacman -S xorg xorg-server
+sudo pacman -S xfce4 xfce4-goodies
+
+Install Desktop Manager
+$ sudo pacman -S lightdm
+$ sudo pacman -S lightdm-gtk-greeter
+Edit /etc/lightdm/lightdm.conf
+greeter-session=lightdm-gtk-greeter
+$ sudo systemctl enable lightdm.service
+$ sudo systemctl start lightdm.service
+
+OR login via shell
+Edit $HOME/.bash_profile
+if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
+  startx
+fi
+
+Edit $HOME/.xinitrc 
+exec dbus-launch startxfce4 &>>/dev/null
+
 
 ### Don't just run these scripts. Examine them. Customize them. Create your own versions.
 

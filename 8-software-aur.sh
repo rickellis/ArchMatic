@@ -13,7 +13,7 @@ echo
 
 cd "${HOME}"
 
-echo "CLOING: AURIC"
+echo "CLONING: AURIC"
 git clone "https://github.com/rickellis/AURIC.git"
 
 

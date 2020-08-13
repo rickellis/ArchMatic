@@ -4,140 +4,26 @@
 
 This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. The shell scripts in this repo allow the entire process to be automated.
 
-Setting up an Arch system from scratch is usually a time-intensive process. My goal in developing these scripts and my __[installation guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__ was to be able to go from a blank hard drive to a fully functional Arch system with all my files, applications, and preferences set, as efficiently as possible.
+## Setup Boot and Arch ISO on USB key
 
-Titus Addition: (Install steps before running scripts)
+First, setup the boot USB, boot arch live iso, and run the `preinstall.sh` from terminal. 
 
-Good How To Guides:
+### Arch Live ISO (Pre-Install)
 
-https://linoxide.com/distros/beginners-arch-linux-installation-guide/
+This step installs arch to your hard drive. *IT WILL FORMAT THE DISK*
 
-https://www.2daygeek.com/install-xfce-mate-kde-gnome-cinnamon-lxqt-lxde-budgie-deepin-enlightenment-desktop-environment-on-arch-linux/
+```bash
 
-
-Install process
-
-$ timedatectl set-ntp true
-
-$ fdisk -l
-
-$ cfdisk /dev/sda
-
-*New Linux Partition
-*Make disk bootable and write
-
-$ mkfs.ext4 /dev/sda1
-
-$ mount /dev/sda1 /mnt
-
-$ pacstrap /mnt base base-devel
-
-$ genfstab -U /mnt >> /mnt/etc/fstab
-
-$ arch-chroot /mnt
-
-Edit /etc/pacman.d/mirrorlist and re-organize per you geolocation
-*Here is a handy command to do it for you if you reside in the United States change US to your country if not.
-
-$ pacman -S --no-confirm pacman-contrib curl
-
-$ git clone https://github.com/ChrisTitusTech/ArchMatic
-
-$ cd ArchMatic
-
-$ chmod +x *
-
-$ ./0-setupmirrors.sh
-
-Set Time Zone
-
-$ ln -sf /usr/share/zoneinfo/US/Central /etc/localtime
-
-$ hwclock --systohc
-
-
-Set Language
-
-Edit /etc/locale.gen and uncomment language
-
-$ echo LANG=en_US.UTF-8 > /etc/locale.conf
-
-
-Set Hostname
-
-$ echo archlinux > /etc/hostname
-
-Edit /etc/hosts
-
-
-Setup Users 
-
-$ useradd -m -G wheel,users -s /bin/bash titus
-
-$ passwd
-
-$ passwd titus
-
-Edit /etc/sudoers
-
-$ systemctl enable dhcpcd
-
-Install GRUB
-
-$ pacman -S grub
-
-$ grub-install --recheck --target=i386-pc /dev/sda
-
-$ grub-mkconfig -o /boot/grub/grub.cfg
-
-
-$ exit
-
-$ umount -R /mnt
-
-$ reboot
-
-
-Install Desktop Environment
-
-$ sudo pacman -Syu
-
-$ sudo pacman -S xorg xorg-server
-
-sudo pacman -S xfce4 xfce4-goodies
-
-
-Install Desktop Manager
-
-$ sudo pacman -S lightdm
-
-$ sudo pacman -S lightdm-gtk-greeter
-
-Edit /etc/lightdm/lightdm.conf
-
-greeter-session=lightdm-gtk-greeter
-
-$ sudo systemctl enable lightdm.service
-
-$ sudo systemctl start lightdm.service
-
-
-OR login via shell
-
-Edit $HOME/.bash_profile
-
-if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
-
-  startx
-  
-fi
-
-
-Edit $HOME/.xinitrc 
-
-exec dbus-launch startxfce4 &>>/dev/null
-
-
+```bash
+pacman -S --no-confirm pacman-contrib curl
+git clone https://github.com/ChrisTitusTech/ArchMatic
+cd ArchMatic
+./0-setup.sh
+./1-base.sh
+./2-software-pacman.sh
+./3-software-aur.sh
+./9-post-setup.sh
+```
 
 ### Don't just run these scripts. Examine them. Customize them. Create your own versions.
 

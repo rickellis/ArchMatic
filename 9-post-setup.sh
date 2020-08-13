@@ -41,8 +41,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-exec awesome
-
 exit 0
 EOF
 
@@ -101,6 +99,14 @@ echo "Disabling Pulse .esd_auth module"
 # Pulse audio loads the `esound-protocol` module, which best I can tell is rarely needed.
 # That module creates a file called `.esd_auth` in the home directory which I'd prefer to not be there. So...
 sudo sed -i 's|load-module module-esound-protocol-unix|#load-module module-esound-protocol-unix|g' /etc/pulse/default.pa
+
+# ------------------------------------------------------------------------
+
+echo
+echo "Enabling Login Display Manager"
+
+sudo systemctl enable lightdm.service
+sudo systemctl start lightdm.service
 
 # ------------------------------------------------------------------------
 

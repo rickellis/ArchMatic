@@ -1,3 +1,12 @@
+#!/usr/bin/env bash
+#-------------------------------------------------------------------------
+#      _          _    __  __      _   _
+#     /_\  _ _ __| |_ |  \/  |__ _| |_(_)__
+#    / _ \| '_/ _| ' \| |\/| / _` |  _| / _|
+#   /_/ \_\_| \__|_||_|_|  |_\__,_|\__|_\__|
+#  Arch Linux Post Install Setup and Config
+#-------------------------------------------------------------------------
+
 if ! source install.conf; then
 	echo "Please enter hostname:"
 	read hostname
@@ -24,7 +33,7 @@ fi
 echo "-------------------------------------------------"
 echo "Setting up mirrors for optimal download - US Only"
 echo "-------------------------------------------------"
-pacman -S --noconfirm pacman-contrib
+pacman -S --noconfirm pacman-contrib curl
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 curl -s "https://www.archlinux.org/mirrorlist/?country=US&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist
 

@@ -15,6 +15,7 @@ This step installs arch to your hard drive. *IT WILL FORMAT THE DISK*
 ```bash
 wget https://raw.githubusercontent.com/ChrisTitusTech/ArchMatic/master/preinstall.sh
 sh preinstall.sh
+reboot
 ```
 
 ### Arch Linux First Boot

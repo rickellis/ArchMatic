@@ -32,6 +32,7 @@ PKGS=(
     'ntp'                   # Network Time Protocol to set time via network.
     'numlockx'              # Turns on numlock in X11
     'openssh'               # SSH connectivity tools
+    'p7zip'                 # 7z compression program
     'rsync'                 # Remote file sync utility
     'speedtest-cli'         # Internet speed via terminal
     'terminus-font'         # Font package with some bigger fonts for login terminal
@@ -40,6 +41,7 @@ PKGS=(
     'unzip'                 # Zip compression program
     'wget'                  # Remote content retrieval
     'terminator'            # Terminal emulator
+    'vim'                   # Terminal Editor
     'zenity'                # Display graphical dialog boxes via shell scripts
     'zip'                   # Zip compression program
     'zsh'                   # ZSH shell
@@ -47,27 +49,39 @@ PKGS=(
 
     # DISK UTILITIES ------------------------------------------------------
 
+    'android-tools'         # ADB for Android
+    'android-file-transfer' # Android File Transfer
     'autofs'                # Auto-mounter
+    'btrfs-progs'           # BTRFS Support
+    'dosfstools'            # DOS Support
     'exfat-utils'           # Mount exFat drives
     'gparted'               # Disk utility
+    'gvfs-mtp'              # Read MTP Connected Systems
+    'gvfs-smb'              # More File System Stuff
+    'nautilus-share'        # File Sharing in Nautilus
     'ntfs-3g'               # Open source implementation of NTFS file system
     'parted'                # Disk utility
+    'samba'                 # Samba File Sharing
+    'smartmontools'         # Disk Monitoring
+    'smbclient'             # SMB Connection 
+    'xfsprogs'              # XFS Support
 
     # GENERAL UTILITIES ---------------------------------------------------
 
-    'catfish'               # Filesystem search
-    'conky'                 # System information viewer
+    'flameshot'             # Screenshots
+    'freerdp'               # RDP Connections
+    'libvncserver'          # VNC Connections
     'nautilus'              # Filesystem browser
+    'remmina'               # Remote Connection
     'veracrypt'             # Disc encryption utility
     'variety'               # Wallpaper changer
-    'xfburn'                # CD burning application
-    'docky'                 # Dock Options
 
     # DEVELOPMENT ---------------------------------------------------------
 
-    'kate'                  # Text editor
+    'gedit'                 # Text editor
     'clang'                 # C Lang compiler
     'cmake'                 # Cross-platform open-source make system
+    'code'                  # Visual Studio Code
     'electron'              # Cross-platform development using Javascript
     'git'                   # Version control system
     'gcc'                   # C/C++ compiler
@@ -76,23 +90,13 @@ PKGS=(
     'nodejs'                # Javascript runtime environment
     'npm'                   # Node package manager
     'python'                # Scripting language
-    'qtcreator'             # C++ cross platform IDE
-    'qt5-examples'          # Project demos for Qt
     'yarn'                  # Dependency management (Hyper needs this)
 
-    # WEB TOOLS -----------------------------------------------------------
-
-    'filezilla'             # FTP Client
-    
-    # COMMUNICATIONS ------------------------------------------------------
-
-    'hexchat'               # Multi format chat
-    
     # MEDIA ---------------------------------------------------------------
 
     'kdenlive'              # Movie Render
     'obs-studio'            # Record your screen
-    'vlc'                   # Video player
+    'celluloid'             # Video player
     
     # GRAPHICS AND DESIGN -------------------------------------------------
 
@@ -104,13 +108,8 @@ PKGS=(
 
     'hunspell'              # Spellcheck libraries
     'hunspell-en'           # English spellcheck library
-    'libreoffice-fresh'     # Libre office with extra features
     'xpdf'                  # PDF viewer
 
-    # VIRTUALIZATION ------------------------------------------------------
-
-    'virtualbox'
-    'virtualbox-host-modules-arch'
 )
 
 for PKG in "${PKGS[@]}"; do

@@ -8,12 +8,17 @@
 #-------------------------------------------------------------------------
 
 echo
-echo "INSTALLING XFCE"
+echo "INSTALLING Awesome"
 echo
 
 PKGS=(
-        'xfce4'                 # XFCE Desktop
-        'xfce4-goodies'         # All the extras
+        'awesome'               # Awesome Desktop
+        'xfce4-power-manager'   # Power Manager 
+        'rofi'                  # Menu System
+        'picom'                 # Translucent Windows
+        'xclip'                 # System Clipboard
+        'gnome-polkit'          # Elevate Applications
+        'lxappearance'          # Set System Themes
 )
 
 for PKG in "${PKGS[@]}"; do

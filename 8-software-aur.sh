@@ -19,55 +19,24 @@ git clone "https://aur.archlinux.org/yay.git"
 
 PKGS=(
 
-    # SYSTEM UTILITIES ----------------------------------------------------
-
-    'menulibre'                 # Menu editor
-    'gtkhash'                   # Checksum verifier
-
-    # TERMINAL UTILITIES --------------------------------------------------
-
-    'hyper'                     # Terminal emulator built on Electron
-
     # UTILITIES -----------------------------------------------------------
 
-    'dropbox'                   # Cloud file storage
-    'lastpass'                  # Password manager
-    'slimlock'                  # Screen locker
-    'oomox'                     # Theme editor
-    'samba'                     # Samba File Sharing
-    'gnome-vfs'                 # Gnome File System Access
-    'gvfs-smb'                  # More File System Stuff
-
-    # DEVELOPMENT ---------------------------------------------------------
+    'i3lock-fancy'              # Screen locker
+    'synology-drive'            # Synology Drive
     
-    'visual-studio-code-bin'    # Kickass text editor
-
     # MEDIA ---------------------------------------------------------------
 
     'screenkey'                 # Screencast your keypresses
-    # 'aftershotpro3'             # Photo editor
-
-    # POST PRODUCTION -----------------------------------------------------
-
-    'peek'                      # GIF animation screen recorder
 
     # COMMUNICATIONS ------------------------------------------------------
 
-    'google-chrome'             # Google Chrome
+    'brave-nightly-bin'         # Brave
     
 
     # THEMES --------------------------------------------------------------
 
-    'gtk-theme-arc-git'
-    'adapta-gtk-theme-git'
-    'paper-icon-theme'
-    'tango-icon-theme'
-    'tango-icon-theme-extras'
-    'numix-icon-theme-git'
+    'materia-gtk-theme'
     'papirus-icon-theme' 
-    'sardi-icons'
-    'alacarte-xfce'
-    'mugshot'
 )
 
 

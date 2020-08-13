@@ -15,11 +15,25 @@ echo "FINAL SETUP AND CONFIGURATION"
 echo
 echo "Genaerating .xinitrc file"
 
-# Generate the .xinitrc file so we can launch XFCE from the
+# Generate the .xinitrc file so we can launch Awesome from the
 # terminal using the "startx" command
 cat <<EOF > ${HOME}/.xinitrc
 #!/bin/bash
+# Disable bell
+xset -b
 
+# Disable all Power Saving Stuff
+xset -dpms
+xset s off
+
+# X Root window color
+xsetroot -solid darkgrey
+
+# Merge resources (optional)
+#xrdb -merge $HOME/.Xresources
+
+# Caps to Ctrl, no caps
+setxkbmap -layout us -option ctrl:nocaps
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
         [ -x "\$f" ] && . "\$f"
@@ -27,7 +41,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-source /etc/xdg/xfce4/xinitrc
+exec awesome
+
 exit 0
 EOF
 
@@ -48,14 +63,6 @@ sudo cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
 sudo sed -i 's|Arch Linux|Arch Linux LTS Kernel|g' /boot/loader/entries/arch-lts.conf
 sudo sed -i 's|vmlinuz-linux|vmlinuz-linux-lts|g' /boot/loader/entries/arch-lts.conf
 sudo sed -i 's|initramfs-linux.img|initramfs-linux-lts.img|g' /boot/loader/entries/arch-lts.conf
-
-# ------------------------------------------------------------------------
-
-echo
-echo "Configuring MAKEPKG to use all 4 cores"
-
-sudo sed -i -e 's|[#]*MAKEFLAGS=.*|MAKEFLAGS="-j$(nproc)"|g' makepkg.conf
-sudo sed -i -e 's|[#]*COMPRESSXZ=.*|COMPRESSXZ=(xz -c -T 4 -z -)|g' makepkg.conf
 
 # ------------------------------------------------------------------------
 
@@ -111,41 +118,34 @@ echo "Enabling the cups service daemon so we can print"
 
 systemctl enable org.cups.cupsd.service
 systemctl start org.cups.cupsd.service
-
-# ------------------------------------------------------------------------
-
-echo
-echo "Enabling Network Time Protocol so clock will be set via the network"
-
 sudo ntpd -qg
 sudo systemctl enable ntpd.service
 sudo systemctl start ntpd.service
-
-# ------------------------------------------------------------------------
-
-echo
-echo "NETWORK SETUP"
-echo
-echo "Find your IP Link name:"
-echo
-
-ip link
-
-echo
-read -p "ENTER YOUR IP LINK: " LINK
-
-echo
-echo "Disabling DHCP and enabling Network Manager daemon"
-echo
-
 sudo systemctl disable dhcpcd.service
 sudo systemctl stop dhcpcd.service
-sudo ip link set dev ${LINK} down
 sudo systemctl enable NetworkManager.service
 sudo systemctl start NetworkManager.service
-sudo ip link set dev ${LINK} up
+echo "
+###############################################################################
+# Cleaning
+###############################################################################
+"
+# Remove no password sudo rights
+sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+# Add sudo rights
+sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
-echo "Done!"
-echo 
-echo "Reboot now..."
-echo
+# Clean orphans pkg
+if [[ ! -n $(pacman -Qdt) ]]; then
+	echo "No orphans to remove."
+else
+	pacman -Rns $(pacman -Qdtq)
+fi
+
+# Replace in the same state
+cd $pwd
+echo "
+###############################################################################
+# Done
+###############################################################################
+"

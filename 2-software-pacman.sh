@@ -117,6 +117,4 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-echo
-echo "Done!"
-echo
+echo -e "\nDone!\n"

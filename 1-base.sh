@@ -7,9 +7,7 @@
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
 
-echo
-echo "Installing Base System"
-echo
+echo -e "\nInstalling Base System\n"
 
 PKGS=(
 
@@ -39,11 +37,9 @@ PKGS=(
     # --- Networking Setup
         'wpa_supplicant'            # Key negotiation for WPA wireless networks
         'dialog'                    # Enables shell scripts to trigger dialog boxex
-        'networkmanager'            # Network connection manager
         'openvpn'                   # Open VPN support
         'networkmanager-openvpn'    # Open VPN plugin for NM
         'network-manager-applet'    # System tray icon/utility for network connectivity
-        'dhclient'                  # DHCP client
         'libsecret'                 # Library for storing passwords
     
     # --- Audio
@@ -68,7 +64,6 @@ PKGS=(
         'gsfonts'               # Adobe Postscript replacement fonts
         'hplip'                 # HP Drivers
         'system-config-printer' # Printer setup  utility
-)
 )
 
 for PKG in "${PKGS[@]}"; do

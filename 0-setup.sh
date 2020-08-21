@@ -8,17 +8,13 @@
 #-------------------------------------------------------------------------
 
 if ! source install.conf; then
-	echo "Please enter hostname:"
-	read hostname
+	read -p "Please enter hostname:" hostname
 
-	echo "Please enter username:"
-	read username
+	read -p "Please enter username:" username
 
-	echo "Please enter password:"
-	read -s password
+	read -ps "Please enter password:" password
 
-	echo "Please repeat password:"
-	read -s password2
+	read -sp "Please repeat password:" password2
 
 	# Check both passwords match
 	if [ "$password" != "$password2" ]; then
@@ -58,16 +54,6 @@ localectl --no-ask-password set-keymap us
 
 # Hostname
 hostnamectl --no-ask-password set-hostname $hostname
-
-echo "##############################################################################"
-echo "# User part"
-echo "###############################################################################"
-# Create user with home
-if ! id -u $username; then
-	useradd -m --groups users,wheel $username
-	echo "$username:$password" | chpasswd
-	chsh -s /bin/zsh $username
-fi
 
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers

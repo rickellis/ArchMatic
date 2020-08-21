@@ -105,8 +105,7 @@ sudo sed -i 's|load-module module-esound-protocol-unix|#load-module module-esoun
 echo
 echo "Enabling Login Display Manager"
 
-sudo systemctl enable lightdm.service
-sudo systemctl start lightdm.service
+sudo systemctl enable --now lightdm.service
 
 # ------------------------------------------------------------------------
 
@@ -114,23 +113,19 @@ echo
 echo "Enabling bluetooth daemon and setting it to auto-start"
 
 sudo sed -i 's|#AutoEnable=false|AutoEnable=true|g' /etc/bluetooth/main.conf
-sudo systemctl enable bluetooth.service
-sudo systemctl start bluetooth.service
+sudo systemctl enable --now bluetooth.service
 
 # ------------------------------------------------------------------------
 
 echo
 echo "Enabling the cups service daemon so we can print"
 
-systemctl enable org.cups.cupsd.service
-systemctl start org.cups.cupsd.service
+systemctl enable --now org.cups.cupsd.service
 sudo ntpd -qg
-sudo systemctl enable ntpd.service
-sudo systemctl start ntpd.service
+sudo systemctl enable --now ntpd.service
 sudo systemctl disable dhcpcd.service
 sudo systemctl stop dhcpcd.service
-sudo systemctl enable NetworkManager.service
-sudo systemctl start NetworkManager.service
+sudo systemctl enable --now NetworkManager.service
 echo "
 ###############################################################################
 # Cleaning

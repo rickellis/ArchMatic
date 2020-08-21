@@ -7,9 +7,7 @@
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
 
-echo
-echo "Installing Base System"
-echo
+echo -e "\nInstalling Base System\n"
 
 PKGS=(
 

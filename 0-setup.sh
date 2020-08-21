@@ -61,7 +61,7 @@ hostnamectl --no-ask-password set-hostname $hostname
 
 echo "##############################################################################"
 echo "# User part"
-echo "###############################################################################""
+echo "###############################################################################"
 # Create user with home
 if ! id -u $username; then
 	useradd -m --groups users,wheel $username

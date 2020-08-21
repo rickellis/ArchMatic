@@ -77,6 +77,12 @@ initrd  /initramfs-linux.img
 options root=${DISK}1 rw
 EOF
 
+echo "--------------------------------------"
+echo "--      Set Password for Root       --"
+echo "--------------------------------------"
+echo "Enter password for root user: "
+passwd root
+
 exit
 umount -R /mnt
 

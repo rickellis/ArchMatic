@@ -7,6 +7,29 @@
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
 
+if ! source install.conf; then
+	echo "Please enter hostname:"
+	read hostname
+
+	echo "Please enter username:"
+	read username
+
+	echo "Please enter password:"
+	read -s password
+
+	echo "Please repeat password:"
+	read -s password2
+
+	# Check both passwords match
+	if [ "$password" != "$password2" ]; then
+	    echo "Passwords do not match"
+	    exit 1
+	fi
+  printf "hostname="$hostname"\n" >> "install.conf"
+  printf "username="$username"\n" >> "install.conf"
+  printf "password="$password"\n" >> "install.conf"
+fi
+
 echo "-------------------------------------------------"
 echo "Setting up mirrors for optimal download - US Only"
 echo "-------------------------------------------------"
@@ -76,6 +99,19 @@ linux /vmlinuz-linux
 initrd  /initramfs-linux.img  
 options root=${DISK}1 rw
 EOF
+
+echo "# User part"
+
+# Create user with home
+if ! id -u $username; then
+	useradd -m -G users,wheel -s /bin/zsh $username
+	echo "$username:$password" | chpasswd
+	chsh -s /bin/zsh $username
+fi
+
+echo "Base Networking"
+pacman -S networkmanager dhclient --noconfirm --needed
+systemctl enable networkmanager
 
 exit
 umount -R /mnt

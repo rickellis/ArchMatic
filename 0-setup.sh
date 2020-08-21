@@ -59,16 +59,6 @@ localectl --no-ask-password set-keymap us
 # Hostname
 hostnamectl --no-ask-password set-hostname $hostname
 
-echo "##############################################################################"
-echo "# User part"
-echo "###############################################################################"
-# Create user with home
-if ! id -u $username; then
-	useradd -m --groups users,wheel $username
-	echo "$username:$password" | chpasswd
-	chsh -s /bin/zsh $username
-fi
-
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 

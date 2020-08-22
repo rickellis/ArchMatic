@@ -7,9 +7,7 @@
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
 
-echo
-echo "INSTALLING SOFTWARE"
-echo
+echo -e "\nINSTALLING SOFTWARE\n"
 
 PKGS=(
 

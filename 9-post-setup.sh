@@ -7,13 +7,11 @@
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
 
-echo
-echo "FINAL SETUP AND CONFIGURATION"
+echo -e "\nFINAL SETUP AND CONFIGURATION"
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Genaerating .xinitrc file"
+echo -e "\nGenaerating .xinitrc file"
 
 # Generate the .xinitrc file so we can launch Awesome from the
 # terminal using the "startx" command
@@ -46,16 +44,14 @@ EOF
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Updating /bin/startx to use the correct path"
+echo -e "\nUpdating /bin/startx to use the correct path"
 
 # By default, startx incorrectly looks for the .serverauth file in our HOME folder.
 sudo sed -i 's|xserverauthfile=\$HOME/.serverauth.\$\$|xserverauthfile=\$XAUTHORITY|g' /bin/startx
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Configuring LTS Kernel as a secondary boot option"
+echo -e "\nConfiguring LTS Kernel as a secondary boot option"
 
 sudo cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
 sudo sed -i 's|Arch Linux|Arch Linux LTS Kernel|g' /boot/loader/entries/arch-lts.conf
@@ -64,8 +60,7 @@ sudo sed -i 's|initramfs-linux.img|initramfs-linux-lts.img|g' /boot/loader/entri
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Configuring vconsole.conf to set a larger font for login shell"
+echo -e "\nConfiguring vconsole.conf to set a larger font for login shell"
 
 sudo cat <<EOF > /etc/vconsole.conf
 KEYMAP=us
@@ -74,8 +69,7 @@ EOF
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Disabling buggy cursor inheritance"
+echo -e "\nDisabling buggy cursor inheritance"
 
 # When you boot with multiple monitors the cursor can look huge. This fixes it.
 sudo cat <<EOF > /usr/share/icons/default/index.theme
@@ -85,16 +79,14 @@ EOF
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Increasing file watcher count"
+echo -e "\nIncreasing file watcher count"
 
 # This prevents a "too many files" error in Visual Studio Code
 echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Disabling Pulse .esd_auth module"
+echo -e "\nDisabling Pulse .esd_auth module"
 
 # Pulse audio loads the `esound-protocol` module, which best I can tell is rarely needed.
 # That module creates a file called `.esd_auth` in the home directory which I'd prefer to not be there. So...
@@ -102,23 +94,20 @@ sudo sed -i 's|load-module module-esound-protocol-unix|#load-module module-esoun
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Enabling Login Display Manager"
+echo -e "\nEnabling Login Display Manager"
 
 sudo systemctl enable --now lightdm.service
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Enabling bluetooth daemon and setting it to auto-start"
+echo -e "\nEnabling bluetooth daemon and setting it to auto-start"
 
 sudo sed -i 's|#AutoEnable=false|AutoEnable=true|g' /etc/bluetooth/main.conf
 sudo systemctl enable --now bluetooth.service
 
 # ------------------------------------------------------------------------
 
-echo
-echo "Enabling the cups service daemon so we can print"
+echo -e "\nEnabling the cups service daemon so we can print"
 
 systemctl enable --now org.cups.cupsd.service
 sudo ntpd -qg

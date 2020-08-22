@@ -7,9 +7,7 @@
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
 
-echo
-echo "INSTALLING AUR SOFTWARE"
-echo
+echo -e "\nINSTALLING AUR SOFTWARE\n"
 
 cd "${HOME}"
 
@@ -50,6 +48,4 @@ for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
 
-echo
-echo "Done!"
-echo
+echo -e "\nDone!\n"

@@ -13,12 +13,11 @@
 
 # Verify Arch Linux is running
 if [ ! -f /usr/bin/pacman ]; then
-    echo "Pacman Package Manager was not found this system, execution aborted."
+    echo "Pacman Package Manager was not found in this system, execution aborted."
     exit
     else
-        pacman -Syyy && pacman -S lsb-release --noconfirm --needed &>/dev/null
-        os=$(lsb-release -ds | sed 's/"//g')
-fi
+        pacman -Sy && sudo pacman -Syyy && pacman -S lsb-release --noconfirm --needed &>/dev/null
+        os=$(lsb_release -ds | sed 's/"//g')
 
 if [ "${os}" != "Arch Linux" ]; then
     echo "You must be using Arch Linux to execute this script."

@@ -80,7 +80,7 @@ EOF
 echo "--------------------------------------"
 echo "--          Network Setup           --"
 echo "--------------------------------------"
-pacman -S network-manager dhclient --noconfirm --needed
+pacman -S networkmanager dhclient --noconfirm --needed
 systemctl enable --now NetworkManager
 
 echo "--------------------------------------"

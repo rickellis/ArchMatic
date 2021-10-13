@@ -10,60 +10,173 @@
 echo -e "\nInstalling Base System\n"
 
 PKGS=(
-
-    # --- XORG Display Rendering
-        'xorg'                  # Base Package
-        'xorg-drivers'          # Display Drivers 
-        'xterm'                 # Terminal for TTY
-        'xorg-server'           # XOrg server
-        'xorg-apps'             # XOrg apps group
-        'xorg-xinit'            # XOrg init
-        'xorg-xinput'           # Xorg xinput
-        'mesa'                  # Open source version of OpenGL
-
-    # --- Setup Desktop
-        'awesome'               # Awesome Desktop
-        'xfce4-power-manager'   # Power Manager 
-        'rofi'                  # Menu System
-        'picom'                 # Translucent Windows
-        'xclip'                 # System Clipboard
-        'gnome-polkit'          # Elevate Applications
-        'lxappearance'          # Set System Themes
-
-    # --- Login Display Manager
-        'lightdm'                   # Base Login Manager
-        'lightdm-webkit2-greeter'   # Framework for Awesome Login Themes
-
-    # --- Networking Setup
-        'wpa_supplicant'            # Key negotiation for WPA wireless networks
-        'dialog'                    # Enables shell scripts to trigger dialog boxex
-        'openvpn'                   # Open VPN support
-        'networkmanager-openvpn'    # Open VPN plugin for NM
-        'network-manager-applet'    # System tray icon/utility for network connectivity
-        'libsecret'                 # Library for storing passwords
-    
-    # --- Audio
-        'alsa-utils'        # Advanced Linux Sound Architecture (ALSA) Components https://alsa.opensrc.org/
-        'alsa-plugins'      # ALSA plugins
-        'pulseaudio'        # Pulse Audio sound components
-        'pulseaudio-alsa'   # ALSA configuration for pulse audio
-        'pavucontrol'       # Pulse Audio volume control
-        'pnmixer'           # System tray volume control
-
-    # --- Bluetooth
-        'bluez'                 # Daemons for the bluetooth protocol stack
-        'bluez-utils'           # Bluetooth development and debugging utilities
-        'bluez-firmware'        # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
-        'blueberry'             # Bluetooth configuration tool
-        'pulseaudio-bluetooth'  # Bluetooth support for PulseAudio
-    
-    # --- Printers
-        'cups'                  # Open source printer drivers
-        'cups-pdf'              # PDF support for cups
-        'ghostscript'           # PostScript interpreter
-        'gsfonts'               # Adobe Postscript replacement fonts
-        'hplip'                 # HP Drivers
-        'system-config-printer' # Printer setup  utility
+'alsa-plugins' # audio plugins
+'alsa-utils' # audio utils
+'amd-ucode' # AMD CPU ucode driver
+'ark' # compression
+'audiocd-kio' 
+'autoconf' # build
+'automake' # build
+'base'
+'bash-completion'
+'bind'
+'binutils'
+'bison'
+'bluedevil'
+'bluez'
+'bluez-libs'
+'breeze'
+'breeze-gtk'
+'bridge-utils'
+'btrfs-progs'
+'celluloid' # video players
+'cmatrix'
+'code' # Visual Studio code
+'cronie'
+'dhcpcd'
+'dialog'
+'discover'
+'dmidecode'
+'dnsmasq'
+'dolphin'
+'dosfstools'
+'drkonqi'
+'edk2-ovmf'
+'efibootmgr' # EFI boot
+'exfat-utils'
+'flex'
+'fuse2'
+'fuse3'
+'fuseiso'
+'gamemode'
+'gcc'
+'gimp' # Photo editing
+'git'
+'gparted' # partition management
+'gptfdisk'
+'groff'
+'grub'
+'grub-customizer'
+'gst-libav'
+'gst-plugins-good'
+'gst-plugins-ugly'
+'haveged'
+'htop'
+'iptables-nft'
+'jdk-openjdk' # Java 17
+'kactivitymanagerd'
+'kate'
+'kcalc'
+'kcharselect'
+'kcron'
+'kde-cli-tools'
+'kde-gtk-config'
+'kdecoration'
+'kdenetwork-filesharing'
+'kdeplasma-addons'
+'kdesdk-thumbnailers'
+'kdialog'
+'keychain'
+'kfind'
+'kgamma5'
+'kgpg'
+'khotkeys'
+'kinfocenter'
+'kmenuedit'
+'kmix'
+'konsole'
+'kscreen'
+'kscreenlocker'
+'ksshaskpass'
+'ksystemlog'
+'ksystemstats'
+'kwallet-pam'
+'kwalletmanager'
+'kwayland-integration'
+'kwayland-server'
+'kwin'
+'kwrite'
+'kwrited'
+'layer-shell-qt'
+'libguestfs'
+'libkscreen'
+'libksysguard'
+'libnewt'
+'libtool'
+'linux'
+'linux-firmware'
+'linux-headers'
+'lsof'
+'lutris'
+'lzop'
+'m4'
+'make'
+'milou'
+'nano'
+'nautilus' # GNOME file manager
+'neofetch'
+'networkmanager'
+'ntfs-3g'
+'okular'
+'openbsd-netcat'
+'openssh'
+'os-prober'
+'oxygen'
+'p7zip'
+'pacman-contrib'
+'patch'
+'pkgconf'
+'plasma-browser-integration'
+'plasma-desktop'
+'plasma-disks'
+'plasma-firewall'
+'plasma-integration'
+'plasma-nm'
+'plasma-pa'
+'plasma-sdk'
+'plasma-systemmonitor'
+'plasma-thunderbolt'
+'plasma-vault'
+'plasma-workspace'
+'plasma-workspace-wallpapers'
+'polkit-kde-agent'
+'powerdevil'
+'print-manager'
+'pulseaudio'
+'pulseaudio-alsa'
+'pulseaudio-bluetooth'
+'python-pip'
+'qemu'
+'rsync'
+'sddm-kcm'
+'spectacle'
+'steam'
+'sudo'
+'swtpm'
+'synergy'
+'systemsettings'
+'terminator'
+'texinfo'
+'traceroute'
+'ufw'
+'unrar'
+'unzip'
+'usbutils'
+'vde2'
+'vim'
+'virt-manager'
+'virt-viewer'
+'wget'
+'which'
+'wine-gecko'
+'wine-mono'
+'winetricks'
+'xdg-desktop-portal-kde'
+'xdg-user-dirs'
+'xorg-server'
+'xorg-xinit'
+'zeroconf-ioslave'
+'zip'
 )
 
 for PKG in "${PKGS[@]}"; do

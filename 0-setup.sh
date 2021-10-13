@@ -30,8 +30,9 @@ echo "-------------------------------------------------"
 echo "Setting up mirrors for optimal download - US Only"
 echo "-------------------------------------------------"
 pacman -S --noconfirm pacman-contrib curl
-mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-curl -s "https://www.archlinux.org/mirrorlist/?country=US&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist
+pacman -S --noconfirm mirrorlist
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+reflector -a 48 -c us -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 nc=$(grep -c ^processor /proc/cpuinfo)
 echo "You have " $nc" cores."
@@ -55,7 +56,10 @@ localectl --no-ask-password set-keymap us
 
 # Hostname
 hostnamectl --no-ask-password set-hostname $hostname
+pacstrap /mnt base linux linux-firmware sudo 
 
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+
+
 

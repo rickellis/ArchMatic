@@ -188,8 +188,8 @@ echo -e "\nDone!\n"
 
 if [ $(whoami) = "root"  ];
 then
-	useradd -m -G wheel $username
-	sudo -u $username
+    [ ! -d "/home/$username" ] && useradd -m -G wheel $username
+	su $username
     echo "Switched to user mode"
 else
 	echo "You are already a user proceed with aur installs"

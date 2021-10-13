@@ -57,14 +57,14 @@ echo -e "\nCreating Filesystems...\n$HR"
 
 mkfs.vfat -F32 -n "UEFISYS" "${DISK}1"
 mkfs.btrfs -L "ROOT" "${DISK}2"
-mount -t btrfs -o "${DISK}2" /mnt
+mount -t btrfs "${DISK}2" /mnt
 btrfs subvolume create /mnt/@
 umount /mnt
 ;;
 esac
 
 # mount target
-mount -t btrfs -o subvol=@ "${DISK}2" /mnt/@
+mount -t btrfs -o subvol=@ "${DISK}2" /mnt
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mount -t vfat "${DISK}1" /mnt/boot/

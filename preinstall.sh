@@ -15,7 +15,7 @@ pacman -S --noconfirm pacman-contrib
 pacman -S --noconfirm reflector rsync
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 reflector -a 48 -c us -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
-
+mkdir /mnt
 
 
 echo -e "\nInstalling prereqs...\n$HR"
@@ -29,9 +29,9 @@ echo "Please enter disk to work on: (example /dev/sda)"
 read DISK
 echo "THIS WILL FORMAT AND DELETE ALL DATA ON THE DISK"
 read -p "are you sure you want to continue (Y/N):" formatdisk
-if [ $formatdisk = "Y|y" ]
-then
+case $formatdisk in
 
+y|Y|yes|Yes|YES)
 echo "--------------------------------------"
 echo -e "\nFormatting disk...\n$HR"
 echo "--------------------------------------"
@@ -57,10 +57,14 @@ echo -e "\nCreating Filesystems...\n$HR"
 
 mkfs.vfat -F32 -n "UEFISYS" "${DISK}1"
 mkfs.btrfs -L "ROOT" "${DISK}2"
-fi
+mount -t btrfs -o "${DISK}2" /mnt
+btrfs subvolume create /mnt/@
+umount /mnt
+;;
+esac
+
 # mount target
-mkdir /mnt
-mount -t ext4 "${DISK}2" /mnt
+mount -t btrfs -o subvol=@ "${DISK}2" /mnt/@
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mount -t vfat "${DISK}1" /mnt/boot/

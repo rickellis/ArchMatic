@@ -24,13 +24,15 @@ if ! source install.conf; then
   printf "hostname="$hostname"\n" >> "install.conf"
   printf "username="$username"\n" >> "install.conf"
   printf "password="$password"\n" >> "install.conf"
+  export hostname=$hostname
+  export username=$username
 fi
 
 echo "-------------------------------------------------"
 echo "Setting up mirrors for optimal download - US Only"
 echo "-------------------------------------------------"
 pacman -S --noconfirm pacman-contrib curl
-pacman -S --noconfirm mirrorlist
+pacman -S --noconfirm mirrorlist rsync
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 reflector -a 48 -c us -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 

@@ -9,7 +9,7 @@
 
 echo -e "\nINSTALLING AUR SOFTWARE\n"
 # You can solove users running this script as root with this and then doing the same for the next for statement. Howerver I will leave this up to you.
-if [ whoami -eq "root"  ];
+if [ $(whoami) = "root"  ];
 then
 	useradd -m -G wheel $username
 	su $username

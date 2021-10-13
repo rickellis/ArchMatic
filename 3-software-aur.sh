@@ -14,7 +14,7 @@ echo "CLOING: YAY"
 cd ~
 git clone "https://aur.archlinux.org/yay.git"
 cd ${HOME}/yay
-makepkg -si
+makepkg -si --noconfirm
 
 
 

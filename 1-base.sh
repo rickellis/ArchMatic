@@ -104,6 +104,7 @@ PKGS=(
 'libnewt'
 'libtool'
 'linux'
+'linux-lts'
 'linux-firmware'
 'linux-headers'
 'lsof'

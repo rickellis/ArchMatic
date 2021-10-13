@@ -12,8 +12,9 @@ echo "Setting up mirrors for optimal download - US Only"
 echo "-------------------------------------------------"
 timedatectl set-ntp true
 pacman -S --noconfirm pacman-contrib
+pacman -S --noconfirm reflector rsync
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-curl -s "https://www.archlinux.org/mirrorlist/?country=US&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist
+reflector -a 48 -c us -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 
 
@@ -24,8 +25,13 @@ echo "-------------------------------------------------"
 echo "-------select your disk to format----------------"
 echo "-------------------------------------------------"
 lsblk
-echo "Please enter disk: (example /dev/sda)"
+echo "Please enter disk to work on: (example /dev/sda)"
 read DISK
+echo "THIS WILL FORMAT AND DELETE ALL DATA ON THE DISK"
+read -p "are you sure you want to continue (Y/N):" formatdisk
+if [ $formatdisk = "Y|y" ]
+then
+
 echo "--------------------------------------"
 echo -e "\nFormatting disk...\n$HR"
 echo "--------------------------------------"
@@ -50,8 +56,8 @@ sgdisk -c 2:"ROOT" ${DISK}
 echo -e "\nCreating Filesystems...\n$HR"
 
 mkfs.vfat -F32 -n "UEFISYS" "${DISK}1"
-mkfs.ext4 -L "ROOT" "${DISK}2"
-
+mkfs.btrfs -L "ROOT" "${DISK}2"
+fi
 # mount target
 mkdir /mnt
 mount -t ext4 "${DISK}2" /mnt

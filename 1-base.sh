@@ -143,6 +143,7 @@ PKGS=(
 'plasma-workspace-wallpapers'
 'polkit-kde-agent'
 'powerdevil'
+'powerline-fonts'
 'print-manager'
 'pulseaudio'
 'pulseaudio-alsa'
@@ -158,6 +159,7 @@ PKGS=(
 'synergy'
 'systemsettings'
 'terminator'
+'terminus-font'
 'texinfo'
 'traceroute'
 'ufw'
@@ -197,7 +199,12 @@ then
     echo "--------------------------------------"
     echo "Enter password for $username user: "
     passwd $username
-	su $username
+    cp /etc/skel/.bash_profile /home/$username/
+    cp /etc/skel/.bash_logout /home/$username/
+    cp ~/ArchMatic/.bashrc /home/$username/.bashrc
+    cp ~/ArchMatic/.bashrc /root/.bashrc
+    chown -R $username: /home/$username
+    su $username
     echo "Switched to user mode"
 else
 	echo "You are already a user proceed with aur installs"

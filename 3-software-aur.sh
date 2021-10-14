@@ -8,9 +8,9 @@
 #-------------------------------------------------------------------------
 
 echo -e "\nINSTALLING AUR SOFTWARE\n"
-# You can solove users running this script as root with this and then doing the same for the next for statement. Howerver I will leave this up to you.
+# You can solve users running this script as root with this and then doing the same for the next for statement. However I will leave this up to you.
 
-echo "CLOING: YAY"
+echo "CLONING: YAY"
 cd ~
 git clone "https://aur.archlinux.org/yay.git"
 cd ${HOME}/yay

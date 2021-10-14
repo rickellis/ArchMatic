@@ -88,8 +88,9 @@ initrd  /initramfs-linux.img
 options root=${DISK}2 rw rootflags=subvol=@
 EOF
 cp -R ~/ArchMatic /mnt/root/
-arch-chroot /mnt
 echo "--------------------------------------"
 echo "--   SYSTEM READY FOR 0-setup       --"
 echo "--------------------------------------"
+arch-chroot /mnt
+
 ) 2>&1 | tee installlog.txt

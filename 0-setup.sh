@@ -63,6 +63,11 @@ hostnamectl --no-ask-password set-hostname $hostname
 
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+sed -i 's/^#Para/Para/' /etc/pacman.conf
+cat <<EOF >> /etc/pacman.conf
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+EOF
 
 
 

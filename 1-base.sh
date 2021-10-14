@@ -6,7 +6,7 @@
 #   /_/ \_\_| \__|_||_|_|  |_\__,_|\__|_\__|
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
-
+source install.conf
 echo -e "\nInstalling Base System\n"
 
 PKGS=(
@@ -190,7 +190,8 @@ echo -e "\nDone!\n"
 
 if [ $(whoami) = "root"  ];
 then
-    [ ! -d "/home/$username" ] && useradd -m -G wheel $username
+    [ ! -d "/home/$username" ] && useradd -m -g users -G wheel -s /bin/bash $username 
+    cp -R /root/ArchMatic /home/$username/
     echo "--------------------------------------"
     echo "--      Set Password for $username  --"
     echo "--------------------------------------"

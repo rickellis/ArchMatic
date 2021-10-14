@@ -33,6 +33,7 @@ PKGS=(
 'cmatrix'
 'code' # Visual Studio code
 'cronie'
+'cups'
 'dhcpcd'
 'dialog'
 'discover'
@@ -190,6 +191,11 @@ echo -e "\nDone!\n"
 if [ $(whoami) = "root"  ];
 then
     [ ! -d "/home/$username" ] && useradd -m -G wheel $username
+    echo "--------------------------------------"
+    echo "--      Set Password for $username  --"
+    echo "--------------------------------------"
+    echo "Enter password for $username user: "
+    passwd $username
 	su $username
     echo "Switched to user mode"
 else

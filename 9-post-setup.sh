@@ -44,13 +44,6 @@ EOF
 
 # ------------------------------------------------------------------------
 
-echo -e "\nUpdating /bin/startx to use the correct path"
-
-# By default, startx incorrectly looks for the .serverauth file in our HOME folder.
-sudo sed -i 's|xserverauthfile=\$HOME/.serverauth.\$\$|xserverauthfile=\$XAUTHORITY|g' /bin/startx
-
-# ------------------------------------------------------------------------
-
 echo -e "\nConfiguring LTS Kernel as a secondary boot option"
 
 sudo cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-lts.conf
@@ -64,17 +57,7 @@ echo -e "\nConfiguring vconsole.conf to set a larger font for login shell"
 
 sudo cat <<EOF > /etc/vconsole.conf
 KEYMAP=us
-FONT=ter-v32b
-EOF
-
-# ------------------------------------------------------------------------
-
-echo -e "\nDisabling buggy cursor inheritance"
-
-# When you boot with multiple monitors the cursor can look huge. This fixes it.
-sudo cat <<EOF > /usr/share/icons/default/index.theme
-[Icon Theme]
-#Inherits=Theme
+FONT=ter-v16b
 EOF
 
 # ------------------------------------------------------------------------
@@ -96,7 +79,7 @@ sudo sed -i 's|load-module module-esound-protocol-unix|#load-module module-esoun
 
 echo -e "\nEnabling Login Display Manager"
 
-sudo systemctl enable --now lightdm.service
+sudo systemctl enable --now sddm.service
 
 # ------------------------------------------------------------------------
 
@@ -109,7 +92,7 @@ sudo systemctl enable --now bluetooth.service
 
 echo -e "\nEnabling the cups service daemon so we can print"
 
-systemctl enable --now org.cups.cupsd.service
+systemctl enable --now cups.service
 sudo ntpd -qg
 sudo systemctl enable --now ntpd.service
 sudo systemctl disable dhcpcd.service

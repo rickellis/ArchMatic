@@ -6,24 +6,26 @@
 #   /_/ \_\_| \__|_||_|_|  |_\__,_|\__|_\__|
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
+echo "--------------------------------------"
+echo "--          Network Setup           --"
+echo "--------------------------------------"
+pacman -S networkmanager dhclient --noconfirm --needed
+systemctl enable --now NetworkManager
+
+echo "--------------------------------------"
+echo "--      Set Password for Root       --"
+echo "--------------------------------------"
+echo "Enter password for root user: "
+passwd root
 
 if ! source install.conf; then
 	read -p "Please enter hostname:" hostname
 
 	read -p "Please enter username:" username
 
-	read -sp "Please enter password:" password
 
-	read -sp "Please repeat password:" password2
-
-	# Check both passwords match
-	if [ "$password" != "$password2" ]; then
-	    echo "Passwords do not match"
-	    exit 1
-	fi
   printf "hostname="$hostname"\n" >> "install.conf"
   printf "username="$username"\n" >> "install.conf"
-  printf "password="$password"\n" >> "install.conf"
   export hostname=$hostname
   export username=$username
 fi
@@ -32,7 +34,7 @@ echo "-------------------------------------------------"
 echo "Setting up mirrors for optimal download - US Only"
 echo "-------------------------------------------------"
 pacman -S --noconfirm pacman-contrib curl
-pacman -S --noconfirm mirrorlist rsync
+pacman -S --noconfirm reflector rsync
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 reflector -a 48 -c us -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 
@@ -58,7 +60,6 @@ localectl --no-ask-password set-keymap us
 
 # Hostname
 hostnamectl --no-ask-password set-hostname $hostname
-pacstrap /mnt base linux linux-firmware sudo 
 
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers

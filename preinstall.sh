@@ -73,9 +73,9 @@ mount -t vfat "${DISK}1" /mnt/boot/
 echo "--------------------------------------"
 echo "-- Arch Install on Main Drive       --"
 echo "--------------------------------------"
-pacstrap /mnt base base-devel linux linux-firmware vim nano sudo --noconfirm --needed
+pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring --noconfirm --needed
 genfstab -U /mnt >> /mnt/etc/fstab
-
+echo "keyserver hkp://keyserver.ubuntu.com" >> /mnt/etc/pacman.d/gnupg/gpg.conf
 echo "--------------------------------------"
 echo "-- Bootloader Systemd Installation  --"
 echo "--------------------------------------"
@@ -87,8 +87,10 @@ linux /vmlinuz-linux
 initrd  /initramfs-linux.img  
 options root=${DISK}2 rw rootflags=subvol=@
 EOF
-arch-chroot /mnt
+cp -R ~/ArchMatic /mnt/root/
 echo "--------------------------------------"
 echo "--   SYSTEM READY FOR 0-setup       --"
 echo "--------------------------------------"
+arch-chroot /mnt
+
 ) 2>&1 | tee installlog.txt

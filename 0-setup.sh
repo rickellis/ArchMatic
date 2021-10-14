@@ -72,6 +72,7 @@ cat <<EOF >> /etc/pacman.conf
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 EOF
+pacman -Sy --noconfirm
 
 
 

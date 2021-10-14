@@ -75,14 +75,13 @@ echo "-- Arch Install on Main Drive       --"
 echo "--------------------------------------"
 pacstrap /mnt base base-devel linux linux-firmware vim nano sudo --noconfirm --needed
 genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt
 
 echo "--------------------------------------"
 echo "-- Bootloader Systemd Installation  --"
 echo "--------------------------------------"
-bootctl install
-[ ! -d "/boot/loader/entries" ] && mkdir -p /boot/loader/entries
-cat <<EOF > /boot/loader/entries/arch.conf
+bootctl install --esp-path=/mnt/boot
+[ ! -d "/mnt/boot/loader/entries" ] && mkdir -p /mnt/boot/loader/entries
+cat <<EOF > /mnt/boot/loader/entries/arch.conf
 title Arch Linux  
 linux /vmlinuz-linux  
 initrd  /initramfs-linux.img  

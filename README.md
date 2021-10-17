@@ -46,7 +46,7 @@ I also install the LTS Kernel along side the rolling one, and configure my bootl
 
 ### Troubleshooting Arch Linux
 
-__[Arch Linux Installation Gude](https://github.com/rickellis/Arch-Linux-Install-Guide)__
+__[Arch Linux Installation Guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__
 
 #### No Wifi
 

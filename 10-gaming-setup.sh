@@ -31,6 +31,8 @@ Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
 cd /home/$(whoami)/Documents/
 mkdir temp
 
+pacman -Syy --noconfirm 
+
 PS3='Please enter your GPU choice: '
 options=("Nvidia-tkg" "AmdVLK" "AMDGPU" "Quit")
 select opt in "${options[@]}"

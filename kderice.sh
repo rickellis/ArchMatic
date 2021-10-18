@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cp ~/.config/ ~/ArchMatic/KDErice
-cp /etc/sddm.conf.d/ ~/ArchMatic/KDErice
-cp ~/.kde4/share/config/ ~/ArchMatic/KDErice
-cp ~/.local/share/dolphin ~/ArchMatic/KDErice
-cp ~/.local/share/kwin ~/ArchMatic/KDErice
-cp ~/.local/share/plasma ~/ArchMatic/KDErice
+cp $HOME/.config/ $HOME/ArchMatic/KDErice
+cp /etc/sddm.conf.d/ $HOME/ArchMatic/KDErice
+cp $HOME/.kde4/share/config/ $HOME/ArchMatic/KDErice
+cp $HOME/.local/share/dolphin $HOME/ArchMatic/KDErice
+cp $HOME/.local/share/kwin $HOME/ArchMatic/KDErice
+cp $HOME/.local/share/plasma $HOME/ArchMatic/KDErice

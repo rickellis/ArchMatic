@@ -84,6 +84,7 @@ PKGS=(
 'kgpg'
 'khotkeys'
 'kinfocenter'
+'kitty'
 'kmenuedit'
 'kmix'
 'konsole'
@@ -159,7 +160,6 @@ PKGS=(
 'swtpm'
 'synergy'
 'systemsettings'
-'terminator'
 'terminus-font'
 'texinfo'
 'traceroute'
@@ -208,7 +208,7 @@ then
     cp /etc/skel/.bashrc /home/$username/.bashrc
     chown -R $username: /home/$username
     sed -n '#/home/'"$username"'/#,s#bash#zsh#' /etc/passwd
-    su - $username
+    su -l -s /bin/bash $username
     echo "Switched to user mode"
 else
 	echo "You are already a user proceed with aur installs"

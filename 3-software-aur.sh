@@ -54,5 +54,7 @@ for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
 
+cp -r $HOME/ArchMatic/dotfiles/.config $HOME/.config/
+
 echo -e "\nDone!\n"
 exit

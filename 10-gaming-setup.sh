@@ -18,6 +18,9 @@ PKGS=(
 'auto-cpufreq'
 'vkBasalt'
 'goverlay'
+'earlyoom'
+'ananicy-git'
+'libva-vdpau-driver'
 )
 
 pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -103,6 +106,7 @@ echo -e "\nInstalling Base System Complete\n"
 echo -e "\nEnableing Services and Tweaking\n"
 
 systemctl --user enable gamemoded && systemctl --user start gamemoded
+systemctl enable --now earlyoom
 
 #if($nvidia == true) then
  #   nvidia-xconfig
@@ -117,8 +121,70 @@ git clone https://gitlab.com/garuda-linux/themes-and-settings/settings/performan
 cd performance-tweaks
 makepkg -si --noconfirm
 
+touch /etc/init.d/titusscript
+
+cat '#!/bin/bash 
+sysctl -w net.core.netdev_max_backlog = 16384
+sysctl -w net.core.somaxconn = 8192
+sysctl -w net.core.rmem_default = 1048576
+sysctl -w net.core.rmem_max = 16777216
+sysctl -w net.core.wmem_default = 1048576
+sysctl -w net.core.wmem_max = 16777216
+sysctl -w net.core.optmem_max = 65536
+sysctl -w net.ipv4.tcp_rmem = 4096 1048576 2097152
+sysctl -w net.ipv4.tcp_wmem = 4096 65536 16777216
+sysctl -w net.ipv4.udp_rmem_min = 8192
+sysctl -w net.ipv4.udp_wmem_min = 8192
+sysctl -w net.ipv4.tcp_fastopen = 3
+sysctl -w net.ipv4.tcp_max_syn_backlog = 8192
+sysctl -w net.ipv4.tcp_max_tw_buckets = 2000000
+sysctl -w vm.swappiness = 10
+' >> /etc/init.d/titusscript
+chmod +x /etc/init.d/titusscript
+update-rc titusscript defaults 40 1
+
+touch /etc/pacman.d/hooks/nvidia.hook
+cat '
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=nvidia
+
+[Action]
+Depends=mkinitcpio
+When=PostTransaction
+Exec=/usr/bin/mkinitcpio -P
+' >> /etc/pacman.d/hooks/nvidia.hook
+
+touch /home/$(whoami)/.config/mpv/mpv.conf
+cat '
+vo=vdpau
+profile=opengl-hq
+hwdec=vdpau
+hwdec-codecs=all
+scale=ewa_lanczossharp
+cscale=ewa_lanczossharp
+interpolation
+tscale=oversample
+' >> /home/$(whoami)/.config/mpv/mpv.conf
+
+systemctl enable fstrim.timer
+systemctl enable --now ananicy
+mkinitcpio -p linux
+
+
 echo -e "\nDone!\n"
 
 rm -rf /home/$(whoami)/Documents/temp
 
 <<EOF>>/home/$(whoami)/Documents/install.log
+
+################################################################################
+#
+# Chris, if you read this. Please look into here!
+# https://gitlab.com/gabmus/bestArch#use-systemd-boot
+# This is a blessing from the gods.
+#
+################################################################################

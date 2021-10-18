@@ -116,7 +116,6 @@ PKGS=(
 'make'
 'milou'
 'nano'
-'nautilus' # GNOME file manager
 'neofetch'
 'networkmanager'
 'ntfs-3g'

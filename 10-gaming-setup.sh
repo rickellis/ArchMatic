@@ -91,8 +91,6 @@ esac
 
 # sudo pacman -S yuzu-early-access --noconfirm --needed
 
-rm -rf /home/$(whoami)/Documents/temp
-
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
     sudo pacman -S "$PKG" --noconfirm --needed
@@ -118,3 +116,7 @@ cd performance-tweaks
 makepkg -si --noconfirm
 
 echo -e "\nDone!\n"
+
+rm -rf /home/$(whoami)/Documents/temp
+
+<<EOF>>/home/$(whoami)/Documents/install.log

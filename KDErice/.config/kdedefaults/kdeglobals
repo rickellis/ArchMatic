@@ -1,0 +1,8 @@
+[General]
+ColorScheme=VortexDarkColor
+
+[Icons]
+Theme=Vortex-Dark-Icons
+
+[KDE]
+widgetStyle=Breeze

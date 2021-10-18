@@ -1,0 +1,31 @@
+[$Version]
+update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
+
+[General]
+confirmLogout=false
+loginMode=emptySession
+offerShutdown=false
+
+[LegacySession: saved at previous logout]
+clientMachine1=localhost
+command1=terminator
+count=1
+
+[Session: saved at previous logout]
+clientId1=10145dbd1dd000163430854100000005530005
+clientId2=10145dbd1dd000163423588100000005500005
+clientId3=10145dbd1dd000163430854100000005530007
+count=3
+discardCommand2[$e]=rm,$HOME/.config/session/kmix_10145dbd1dd000163423588100000005500005_1634308679_965680
+program1=/usr/lib/DiscoverNotifier
+program2=/usr/bin/kmix
+program3=pulseaudio
+restartCommand1=/usr/lib/DiscoverNotifier,-session,10145dbd1dd000163430854100000005530005_1634308679_965683
+restartCommand2=/usr/bin/kmix,-session,10145dbd1dd000163423588100000005500005_1634308679_965680
+restartCommand3=
+restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
+userId1=user
+userId2=user
+userId3=user

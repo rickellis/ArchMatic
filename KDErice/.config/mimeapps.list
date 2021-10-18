@@ -1,0 +1,10 @@
+[Added Associations]
+inode/directory=org.kde.dolphin.desktop;
+x-scheme-handler/http=brave-browser.desktop;
+x-scheme-handler/https=brave-browser.desktop;
+
+[Default Applications]
+inode/directory=org.kde.dolphin.desktop;
+text/html=brave-browser.desktop
+x-scheme-handler/http=brave-browser.desktop;
+x-scheme-handler/https=brave-browser.desktop;

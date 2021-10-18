@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="56"
+   height="56"
+   viewBox="0 0 56 56"
+   id="svg2"
+   version="1.1"
+   sodipodi:docname="glowbar.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     id="namedview100"
+     showgrid="false"
+     inkscape:lockguides="true"
+     inkscape:zoom="4.2142857"
+     inkscape:cx="96.05749"
+     inkscape:cy="49.249717"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     inkscape:document-rotation="0" />
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient951">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop945"
+         offset="0"
+         style="stop-color:#4b8bd4;stop-opacity:1" />
+      <stop
+         style="stop-color:#4b8bd4;stop-opacity:1"
+         offset="0.5"
+         id="stop947"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop949"
+         offset="1"
+         style="stop-color:#4b8bd4;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient948">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop942"
+         offset="0"
+         style="stop-color:#00cccc;stop-opacity:1" />
+      <stop
+         style="stop-color:#00cccc;stop-opacity:1"
+         offset="0.5"
+         id="stop944"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop946"
+         offset="1"
+         style="stop-color:#00cccc;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient943">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop937"
+         offset="0"
+         style="stop-color:#00d4aa;stop-opacity:1" />
+      <stop
+         style="stop-color:#00d4aa;stop-opacity:1"
+         offset="0.5"
+         id="stop939"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop941"
+         offset="1"
+         style="stop-color:#00d4aa;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1004">
+      <stop
+         style="stop-color:#ff00ff;stop-opacity:1"
+         offset="0"
+         id="stop998"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1000"
+         offset="0.5"
+         style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop
+         style="stop-color:#ff00ff;stop-opacity:0.00080966"
+         offset="1"
+         id="stop1002"
+         class="ColorScheme-ButtonFocus" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient992">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop986"
+         offset="0"
+         style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop
+         style="stop-color:#ff00ff;stop-opacity:1"
+         offset="0.5"
+         id="stop988"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop990"
+         offset="1"
+         style="stop-color:#ff00ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient913">
+      <stop
+         style="stop-color:#4e9fac;stop-opacity:1"
+         offset="0"
+         id="stop907"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop909"
+         offset="0.5"
+         style="stop-color:#4e9fac;stop-opacity:1" />
+      <stop
+         style="stop-color:#4e9fac;stop-opacity:0"
+         offset="1"
+         id="stop911"
+         class="ColorScheme-ButtonFocus" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1576">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1572"
+         offset="0"
+         style="stop-color:#3daee9;stop-opacity:0.87450981" />
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0.627451"
+         offset="0.5"
+         id="stop1578"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1574"
+         offset="1"
+         style="stop-color:#3daee9;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1568">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1564"
+         offset="0"
+         style="stop-color:#3daee9;stop-opacity:0.87450981" />
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0.627451"
+         offset="0.5"
+         id="stop1570"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1566"
+         offset="1"
+         style="stop-color:#3daee9;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1560">
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0.87450981"
+         offset="0"
+         id="stop1556"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0;"
+         offset="1"
+         id="stop1558"
+         class="ColorScheme-ButtonFocus" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1554">
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0.87450981"
+         offset="0"
+         id="stop1550"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0;"
+         offset="1"
+         id="stop1552"
+         class="ColorScheme-ButtonFocus" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1454">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1446"
+         offset="0"
+         style="stop-color:#3daee9;stop-opacity:1;" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1452"
+         offset="1"
+         style="stop-color:#3daee9;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1444">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1436"
+         offset="0"
+         style="stop-color:#3daee9;stop-opacity:1;" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1442"
+         offset="1"
+         style="stop-color:#3daee9;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1267">
+      <stop
+         style="stop-color:#3daee9;stop-opacity:1;"
+         offset="0"
+         id="stop1259"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         id="stop1261"
+         offset="0.66666514"
+         style="stop-color:#3daee9;stop-opacity:0.74901962;"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         id="stop1263"
+         offset="0.79166669"
+         style="stop-color:#3daee9;stop-opacity:0.49803922;"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0;"
+         offset="1"
+         id="stop1265"
+         class="ColorScheme-ButtonFocus" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1247">
+      <stop
+         style="stop-color:#3daee9;stop-opacity:1;"
+         offset="0"
+         id="stop1239"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         id="stop1241"
+         offset="0.66666669"
+         style="stop-color:#3daee9;stop-opacity:0.667"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         id="stop1243"
+         offset="0.79166669"
+         style="stop-color:#3daee9;stop-opacity:0.49803922;"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0;"
+         offset="1"
+         id="stop1245"
+         class="ColorScheme-ButtonFocus" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1233">
+      <stop
+         style="stop-color:#3daee9;stop-opacity:1;"
+         offset="0"
+         id="stop1225"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         id="stop1227"
+         offset="0.625"
+         style="stop-color:#3daee9;stop-opacity:0.75"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         id="stop1229"
+         offset="0.82999998"
+         style="stop-color:#3daee9;stop-opacity:0.5"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0;"
+         offset="1"
+         id="stop1231"
+         class="ColorScheme-ButtonFocus" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1054">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1046"
+         offset="0"
+         style="stop-color:#3daee9;stop-opacity:1;" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         style="stop-color:#3daee9;stop-opacity:0.74901962;"
+         offset="0.58999997"
+         id="stop1048" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         style="stop-color:#3daee9;stop-opacity:0.49803922;"
+         offset="0.79166669"
+         id="stop1050" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop1052"
+         offset="1"
+         style="stop-color:#3daee9;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient997">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop989"
+         offset="0"
+         style="stop-color:#3daee9;stop-opacity:1;" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop995"
+         offset="1"
+         style="stop-color:#3daee9;stop-opacity:0.67" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient987">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop979"
+         offset="0"
+         style="stop-color:#3daee9;stop-opacity:1;" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         style="stop-color:#3daee9;stop-opacity:0.74901962;"
+         offset="0.55555403"
+         id="stop981" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         style="stop-color:#3daee9;stop-opacity:0.49803922;"
+         offset="0.77777624"
+         id="stop983" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop985"
+         offset="1"
+         style="stop-color:#3daee9;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient975">
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop967"
+         offset="0"
+         style="stop-color:#3daee9;stop-opacity:1;" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         style="stop-color:#3daee9;stop-opacity:0.74901962;"
+         offset="0.66666669"
+         id="stop969" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         style="stop-color:#3daee9;stop-opacity:0.49803922;"
+         offset="0.82999998"
+         id="stop971" />
+      <stop
+         class="ColorScheme-ButtonFocus"
+         id="stop973"
+         offset="1"
+         style="stop-color:#3daee9;stop-opacity:0;" />
+    </linearGradient>
+    <style
+       type="text/css"
+       id="current-color-scheme" />
+    <linearGradient
+       id="linearGradient4211">
+      <stop
+         style="stop-color:#3daee9;stop-opacity:1;"
+         offset="0"
+         id="stop4213"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         id="stop4221"
+         offset="0.60000002"
+         style="stop-color:#3daee9;stop-opacity:0.74901962;"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         id="stop4219"
+         offset="0.80000001"
+         style="stop-color:#3daee9;stop-opacity:0.49803922;"
+         class="ColorScheme-ButtonFocus" />
+      <stop
+         style="stop-color:#3daee9;stop-opacity:0;"
+         offset="1"
+         id="stop4215"
+         class="ColorScheme-ButtonFocus" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient951"
+       id="linearGradient888"
+       x1="28"
+       y1="926.36218"
+       x2="28"
+       y2="914.36218"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-2.8217188e-5)" />
+    <linearGradient
+       xlink:href="#linearGradient951"
+       id="linearGradient888-2"
+       x1="28.000004"
+       y1="926.36218"
+       x2="28"
+       y2="914.36218"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(904.36215,-960.36221)" />
+    <linearGradient
+       xlink:href="#linearGradient951"
+       id="linearGradient888-9"
+       x1="28"
+       y1="926.36224"
+       x2="28"
+       y2="914.36218"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-1864.7244)" />
+    <linearGradient
+       xlink:href="#linearGradient951"
+       id="linearGradient888-6"
+       x1="28.000027"
+       y1="926.36218"
+       x2="28"
+       y2="914.36218"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-960.36218,-904.36221)" />
+    <radialGradient
+       xlink:href="#linearGradient992"
+       id="radialGradient1434"
+       cx="22"
+       cy="21.999973"
+       fx="22"
+       fy="21.999973"
+       r="6"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-7.6817312e-8,-1.9999999,2,-7.6817319e-8,-21.999945,970.36212)" />
+    <radialGradient
+       xlink:href="#linearGradient951"
+       id="radialGradient1434-2"
+       cx="22"
+       cy="21.999973"
+       fx="22"
+       fy="21.999973"
+       r="6"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(7.6817312e-8,-1.9999999,-2,-7.6817319e-8,77.999945,970.36212)" />
+    <radialGradient
+       xlink:href="#linearGradient951"
+       id="radialGradient1434-9"
+       cx="22"
+       cy="21.999973"
+       fx="22"
+       fy="21.999973"
+       r="6"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(7.6817312e-8,1.9999999,-2,7.6817319e-8,77.999945,894.36218)" />
+    <radialGradient
+       xlink:href="#linearGradient951"
+       id="radialGradient1434-4"
+       cx="22"
+       cy="21.999973"
+       fx="22"
+       fy="21.999973"
+       r="6"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-7.6817312e-8,1.9999999,2,7.6817319e-8,-21.999945,894.36218)" />
+    <radialGradient
+       r="6"
+       fy="21.999973"
+       fx="22"
+       cy="21.999973"
+       cx="22"
+       gradientTransform="matrix(-7.6817312e-8,-1.9999999,2,-7.6817319e-8,-21.999945,970.36212)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient957"
+       xlink:href="#linearGradient951"
+       inkscape:collect="always" />
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     y="2.6194605e-06"
+     x="51.007565"
+     height="5"
+     width="5"
+     id="hint-glow-radius"
+     style="opacity:0.003;fill:#ff00ff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.69999981;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <rect
+     style="opacity:0.006;fill:#4e51ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.69999981;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="hint-tile-center"
+     width="5"
+     height="5"
+     x="51.091461"
+     y="51.051094" />
+  <g
+     transform="translate(0,-904.36218)"
+     id="top">
+    <rect
+       ry="0"
+       rx="0"
+       y="914.36218"
+       x="22"
+       height="12"
+       width="12"
+       id="rect853"
+       style="opacity:0.5;fill:url(#linearGradient888);fill-opacity:1.0;fill-rule:evenodd" />
+    <rect
+       y="914.36218"
+       x="22"
+       height="12"
+       width="12"
+       id="rect4301"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none" />
+  </g>
+  <g
+     transform="translate(0,-904.36218)"
+     id="left">
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none"
+       id="rect4315"
+       width="12"
+       height="12"
+       x="10"
+       y="926.36218" />
+    <rect
+       transform="rotate(-90)"
+       ry="0"
+       rx="0"
+       y="10"
+       x="-938.36218"
+       height="12"
+       width="12"
+       id="rect853-20"
+       style="opacity:0.5;fill:url(#linearGradient888-6);fill-opacity:1.0;fill-rule:evenodd" />
+  </g>
+  <g
+     transform="translate(0,-904.36218)"
+     id="right">
+    <rect
+       transform="rotate(90)"
+       ry="0"
+       rx="0"
+       y="-46"
+       x="926.36218"
+       height="12"
+       width="12"
+       id="rect853-0"
+       style="opacity:0.5;fill:url(#linearGradient888-2);fill-opacity:1.0;fill-rule:evenodd" />
+  </g>
+  <g
+     transform="translate(0,-904.36218)"
+     id="center">
+    <rect
+       y="926.36218"
+       x="22"
+       height="12"
+       width="12"
+       id="rect4313"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none" />
+    <rect
+       y="926.36218"
+       x="22"
+       height="11.999968"
+       width="12"
+       id="rect1580"
+       style="opacity:0.5;fill:#4b8bd4;fill-opacity:1;fill-rule:evenodd" />
+  </g>
+  <g
+     transform="translate(0,-904.36218)"
+     id="bottom">
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none"
+       id="rect4307"
+       width="12"
+       height="12"
+       x="22"
+       y="938.36218" />
+    <rect
+       transform="scale(1,-1)"
+       ry="0"
+       rx="0"
+       y="-950.36218"
+       x="22"
+       height="12"
+       width="12"
+       id="rect853-2"
+       style="opacity:0.5;fill:url(#linearGradient888-9);fill-opacity:1.0;fill-rule:evenodd" />
+  </g>
+  <g
+     transform="translate(0,-904.36218)"
+     id="bottomright">
+    <rect
+       y="938.36218"
+       x="34"
+       height="12"
+       width="12"
+       id="rect4305"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none" />
+    <path
+       id="path1420-8"
+       d="m 34,950.36215 a 12,11.999997 0 0 0 12,-12 H 34 Z"
+       style="opacity:0.5;fill:url(#radialGradient1434-9);fill-opacity:1.0;fill-rule:evenodd" />
+  </g>
+  <g
+     transform="translate(0,-904.36218)"
+     id="topright">
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none"
+       id="rect4303"
+       width="12"
+       height="12"
+       x="34"
+       y="914.36218" />
+    <path
+       id="path1420-1"
+       d="m 34,914.36215 a 12,11.999997 0 0 1 12,12 H 34 Z"
+       style="opacity:0.5;fill:url(#radialGradient1434-2);fill-opacity:1.0;fill-rule:evenodd" />
+  </g>
+  <g
+     transform="translate(0,-904.36218)"
+     id="bottomleft">
+    <rect
+       y="938.36218"
+       x="10"
+       height="12"
+       width="12"
+       id="rect4309"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none" />
+    <path
+       id="path1420-3"
+       d="m 22,950.36215 a 12,11.999997 0 0 1 -12,-12 h 12 z"
+       style="opacity:0.5;fill:url(#radialGradient1434-4);fill-opacity:1.0;fill-rule:evenodd" />
+  </g>
+  <g
+     transform="translate(0,-904.36218)"
+     id="topleft">
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none"
+       id="rect4299"
+       width="12"
+       height="12"
+       x="10"
+       y="914.36218" />
+    <path
+       id="path1420"
+       d="m 22,914.36215 a 12,11.999997 0 0 0 -12,12 h 12 z"
+       style="opacity:0.5;fill:url(#radialGradient957);fill-opacity:1;fill-rule:evenodd" />
+  </g>
+</svg>

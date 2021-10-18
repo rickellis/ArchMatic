@@ -16,6 +16,8 @@ PKGS=(
 'wine-tkg-fsync-git'
 'lutris'
 'auto-cpufreq'
+'vkBasalt'
+'goverlay'
 )
 
 pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -36,6 +38,7 @@ do
     case $opt in
         "Nvidia-tkg")
             echo "You chose Nvidia-tkg"
+            $nvidia = true
             git clone https://github.com/Frogging-Family/nvidia-all.git
             cd nvidia-all
             makepkg -si
@@ -94,5 +97,24 @@ for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
     sudo pacman -S "$PKG" --noconfirm --needed
 done
+
+echo -e "\nInstalling Base System Complete\n"
+
+echo -e "\nEnableing Services and Tweaking\n"
+
+systemctl --user enable gamemoded && systemctl --user start gamemoded
+
+#if($nvidia == true) then
+ #   nvidia-xconfig
+ #   mv /etc/X11/xorg.conf /etc/X11/xorg.conf.d/20-nvidia.conf
+# cat 'Option         "TripleBuffer" "on"
+#Option         "Coolbits" "28"' >> /etc/X11/xorg.conf.d/20-nvidia.conf
+#
+#
+#fi
+
+git clone https://gitlab.com/garuda-linux/themes-and-settings/settings/performance-tweaks.git
+cd performance-tweaks
+makepkg -si --noconfirm
 
 echo -e "\nDone!\n"

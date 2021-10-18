@@ -1,0 +1,11 @@
+[Number]
+NumberOfWindows=1
+
+[WindowProperties1]
+ClassName=KMixWindow
+ObjectName=KMixWindow
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAAAAAAAAAAAAAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Virtual-1 XPosition 1024x768=0
+Virtual-1 YPosition 1024x768=0

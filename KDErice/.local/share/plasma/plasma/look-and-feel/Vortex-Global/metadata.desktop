@@ -1,0 +1,18 @@
+[Desktop Entry]
+Comment=Vortex-Global Look And Feel
+Encoding=UTF-8
+Keywords=Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;
+Name=Vortex-Global
+Type=Service
+X-KDE-PluginInfo-Author=l4k1
+X-KDE-PluginInfo-Category=Plasma Look And Feel
+X-KDE-PluginInfo-Email=l4k1987@gmail.com
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-License=GPLv3
+X-KDE-PluginInfo-Name=Vortex-Global
+X-KDE-PluginInfo-Version=3.3
+X-KDE-PluginInfo-Website=
+X-KDE-fallbackPackage=org.kde.breeze.desktop
+X-Plasma-MainScript=defaults
+X-KDE-ServiceTypes=Plasma/LookAndFeel
+X-KPackage-Dependencies=kns://colorschemes.knsrc/api.kde-look.org/1493428,kns://plasma-themes.knsrc/api.kde-look.org/1493451,kns://aurorae.knsrc/api.kde-look.org/1493425,kns://icons.knsrc/api.kde-look.org/1493433,kns://icons.knsrc/api.kde-look.org/1493432,kns://icons.knsrc/api.kde-look.org/1281798,kns://icons.knsrc/api.kde-look.org/1298508,kns://wallpaper.knsrc/api.kde-look.org/1493412,kns://wallpaper.knsrc/api.kde-look.org/1493413,kns://wallpaper.knsrc/api.kde-look.org/1303886,kns://sddmtheme.knsrc/api.kde-look.org/1493421

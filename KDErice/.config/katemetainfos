@@ -1,0 +1,23 @@
+[file:///home/user/.bashrc]
+Bookmarks=
+Checksum=a32073b67d06f5766571cd292fa02d562133dc75
+Encoding=UTF-8
+Highlighting=Bash
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=Bash
+Mode Set By User=false
+Time=2021,10,15,14,15,53.73
+URL=file:///home/user/.bashrc
+
+[file:///home/user/yay/src/gopath/pkg/mod/github.com/!morganamilo/go-srcinfo@v1.0.0/testdata/srcinfos/good/cover-thumbnailer]
+Bookmarks=
+Checksum=e89cb54db75c550b205d01bdf16a3b44f094f6f8
+Encoding=UTF-8
+Highlighting=None
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=Normal
+Mode Set By User=false
+Time=2021,10,15,16,4,35.918
+URL=file:///home/user/yay/src/gopath/pkg/mod/github.com/!morganamilo/go-srcinfo@v1.0.0/testdata/srcinfos/good/cover-thumbnailer

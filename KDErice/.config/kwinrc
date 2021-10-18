@@ -1,0 +1,28 @@
+[$Version]
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend
+
+[Compositing]
+OpenGLIsUnsafe=false
+
+[Desktops]
+Id_1=a9293cb9-258e-4fad-b1fc-1cd5bc683cef
+Id_2=a5937461-0b18-42fa-aa3b-04a311b34344
+Id_3=8778d3f0-807e-48cd-a80d-202453a58eac
+Id_4=cacd5e00-a50a-432f-9b38-f6b67ea3f081
+Name_2=New Desktop
+Name_3=New Desktop
+Name_4=New Desktop
+Number=4
+Rows=4
+
+[Effect-Blur]
+BlurStrength=12
+NoiseStrength=3
+
+[Plugins]
+blurEnabled=true
+kwin4_effect_lightlyshadersEnabled=true
+
+[org.kde.kdecoration2]
+library=org.kde.lightly
+theme=Lightly

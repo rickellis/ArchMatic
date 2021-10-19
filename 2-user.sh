@@ -53,7 +53,23 @@ for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
 
-cp -r $HOME/ArchMatic/dotfiles/.config $HOME/.config/
+cat <<EOF >> /home/$(whoami)/.config/mpv/mpv.conf
+vo=vdpau
+profile=opengl-hq
+hwdec=vdpau
+hwdec-codecs=all
+scale=ewa_lanczossharp
+cscale=ewa_lanczossharp
+interpolation
+tscale=oversample
+EOF
+
+export PATH=$PATH:~/.local/bin
+cp -r $HOME/ArchMatic/dotfiles/* $HOME/.config/
+pip install konsave
+konsave -i $HOME/ArchMatic/kde.knsv
+sleep 1
+konsave -a kde
 
 echo -e "\nDone!\n"
 exit

@@ -100,36 +100,6 @@ sudo sysctl -w net.ipv4.tcp_max_syn_backlog = 8192
 sudo sysctl -w net.ipv4.tcp_max_tw_buckets = 2000000
 sudo sysctl -w vm.swappiness = 10
 
-sudo cat <<EOF >> /etc/pacman.d/hooks/nvidia.hook
-[Trigger]
-Operation=Install
-Operation=Upgrade
-Operation=Remove
-Type=Package
-Target=nvidia
-
-[Action]
-Depends=mkinitcpio
-When=PostTransaction
-Exec=/usr/bin/mkinitcpio -P
-EOF
-
-
-cat <<EOF >> /home/$(whoami)/.config/mpv/mpv.conf
-vo=vdpau
-profile=opengl-hq
-hwdec=vdpau
-hwdec-codecs=all
-scale=ewa_lanczossharp
-cscale=ewa_lanczossharp
-interpolation
-tscale=oversample
-EOF
-
-sudo systemctl enable fstrim.timer
-sudo systemctl enable --now ananicy
-sudo mkinitcpio -p linux
-
 
 echo -e "\nDone!\n"
 

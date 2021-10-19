@@ -33,7 +33,7 @@ CHOICE=$(dialog --clear \
 clear
 case $CHOICE in
         1)
-            sh 0-preinstall.sh -i
+            bash 0-preinstall.sh
             ;;
         2)
             archchroot 1-setup.sh

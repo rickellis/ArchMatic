@@ -22,12 +22,8 @@ if ! source install.conf; then
 	read -p "Please enter hostname:" hostname
 
 	read -p "Please enter username:" username
-
-
-  printf "hostname="$hostname"\n" >> "install.conf"
-  printf "username="$username"\n" >> "install.conf"
-  export hostname=$hostname
-  export username=$username
+echo "username=$username" >> ${HOME}/ArchMatic/install.conf
+echo "password=$password" >> ${HOME}/ArchMatic/install.conf
 fi
 
 echo "-------------------------------------------------"

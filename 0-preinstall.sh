@@ -7,7 +7,17 @@
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
 (
+if ! source install.conf; then
+	read -p "Please enter hostname:" hostname
 
+	read -p "Please enter username:" username
+
+
+  printf "hostname="$hostname"\n" >> "install.conf"
+  printf "username="$username"\n" >> "install.conf"
+  export hostname=$hostname
+  export username=$username
+fi
 echo "-------------------------------------------------"
 echo "Setting up mirrors for optimal download          "
 echo "-------------------------------------------------"
@@ -75,7 +85,7 @@ mount -t vfat "${DISK}1" /mnt/boot/
 echo "--------------------------------------"
 echo "-- Arch Install on Main Drive       --"
 echo "--------------------------------------"
-pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring --noconfirm --needed
+pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "keyserver hkp://keyserver.ubuntu.com" >> /mnt/etc/pacman.d/gnupg/gpg.conf
 echo "--------------------------------------"
@@ -90,9 +100,9 @@ initrd  /initramfs-linux.img
 options root=${DISK}2 rw rootflags=subvol=@
 EOF
 cp -R ~/ArchMatic /mnt/root/
+cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 echo "--------------------------------------"
 echo "--   SYSTEM READY FOR 0-setup       --"
 echo "--------------------------------------"
-arch-chroot /mnt
 
 ) 2>&1 | tee installlog.txt

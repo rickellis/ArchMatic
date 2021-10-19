@@ -6,7 +6,74 @@
 #   /_/ \_\_| \__|_||_|_|  |_\__,_|\__|_\__|
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
-source install.conf
+echo "--------------------------------------"
+echo "--          Network Setup           --"
+echo "--------------------------------------"
+pacman -S networkmanager dhclient --noconfirm --needed
+systemctl enable --now NetworkManager
+
+echo "--------------------------------------"
+echo "--      Set Password for Root       --"
+echo "--------------------------------------"
+echo "Enter password for root user: "
+passwd root
+
+if ! source install.conf; then
+	read -p "Please enter hostname:" hostname
+
+	read -p "Please enter username:" username
+
+
+  printf "hostname="$hostname"\n" >> "install.conf"
+  printf "username="$username"\n" >> "install.conf"
+  export hostname=$hostname
+  export username=$username
+fi
+
+echo "-------------------------------------------------"
+echo "Setting up mirrors for optimal download          "
+echo "-------------------------------------------------"
+pacman -S --noconfirm pacman-contrib curl
+pacman -S --noconfirm reflector rsync
+iso=$(curl -4 ifconfig.co/country-iso)
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+
+nc=$(grep -c ^processor /proc/cpuinfo)
+echo "You have " $nc" cores."
+echo "-------------------------------------------------"
+echo "Changing the makeflags for "$nc" cores."
+sudo sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$nc"/g' /etc/makepkg.conf
+echo "Changing the compression settings for "$nc" cores."
+sudo sed -i 's/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g' /etc/makepkg.conf
+
+echo "-------------------------------------------------"
+echo "       Setup Language to US and set locale       "
+echo "-------------------------------------------------"
+sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+locale-gen
+timedatectl --no-ask-password set-timezone America/Chicago
+timedatectl --no-ask-password set-ntp 1
+localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_COLLATE="" LC_TIME="en_US.UTF-8"
+
+# Set keymaps
+localectl --no-ask-password set-keymap us
+
+# Hostname
+hostnamectl --no-ask-password set-hostname $hostname
+
+# Add sudo no password rights
+sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+
+#Add parallel downloading
+sed -i 's/^#Para/Para/' /etc/pacman.conf
+
+#Enable multilib
+cat <<EOF >> /etc/pacman.conf
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+EOF
+pacman -Sy --noconfirm
+
 echo -e "\nInstalling Base System\n"
 
 PKGS=(
@@ -208,8 +275,7 @@ then
     cp /etc/skel/.bashrc /home/$username/.bashrc
     chown -R $username: /home/$username
     sed -n '#/home/'"$username"'/#,s#bash#zsh#' /etc/passwd
-    su -l -s /bin/zsh $username
-    echo "Switched to user mode"
 else
 	echo "You are already a user proceed with aur installs"
 fi
+

@@ -10,7 +10,7 @@ function archchroot(){
 }
 
 function preinstall(){
-    sh preisntall.sh -i
+    sh 0-preisntall.sh -i
 }
 
 function baseinstall(){

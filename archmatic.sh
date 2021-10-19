@@ -9,63 +9,43 @@ function archchroot(){
 	echo "exit"
 }
 
-function preinstall(){
-    sh 0-preinstall.sh -i
-}
+HEIGHT=15
+WIDTH=80
+CHOICE_HEIGHT=5
+BACKTITLE="Like & Subscribe"
+TITLE="Arch Titus Setup Script"
+MENU="Choose one of the following options:"
+TERMINAL=$(tty)
 
-function baseinstall(){
-    archchroot 1-setup.sh
-}
+OPTIONS=(1 "Pre-Install - Format, Erase, and Ready Install"
+         2 "Base Setup - Install Packages and Environment"
+         3 "User Setup - Extra Packages and Customization"
+		 4 "Post-Install - Cleanup and Ready First Boot")
 
-function userinstall(){
-    source /mnt/root/ArchMatic/install.conf
-	arch-chroot /mnt /usr/bin/runuser -u $username -- /home/$username/ArchMatic/2-user.sh
-	rm /mnt/root/$(basename "${0}")
-	echo "exit"
-}
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >$TERMINAL)
 
-function postinstall(){
-    archchroot 3-post-setup.sh
-}
+clear
+case $CHOICE in
+        1)
+            sh 0-preinstall.sh -i
+            ;;
+        2)
+            archchroot 1-setup.sh
+            ;;
+        3)
+            source /mnt/root/ArchMatic/install.conf
+			arch-chroot /mnt /usr/bin/runuser -u $username -- /home/$username/ArchMatic/2-user.sh
+			rm /mnt/root/$(basename "${0}")
+			echo "exit"
+            ;;
+		4)
+			archchroot 3-post-setup.sh
+			;;
+esac
 
-##
-# Color  Variables
-##
-green='\e[32m'
-blue='\e[34m'
-clear='\e[0m'
-
-##
-# Color Functions
-##
-
-ColorGreen(){
-	echo -ne $green$1$clear
-}
-ColorBlue(){
-	echo -ne $blue$1$clear
-}
-
-### display main menu ###
-menu(){
-echo -ne "
-Arch Titus Setup Script
-$(ColorGreen '1)') Pre-Install - Format, Erase, and Ready Install
-$(ColorGreen '2)') Base Setup - Install Packages and Environment
-$(ColorGreen '3)') User Setup - Extra Packages and Customization
-$(ColorGreen '4)') Post-Install - Cleanup and Ready First Boot
-$(ColorGreen '0)') Exit
-$(ColorBlue 'Choose an option:') "
-        read a
-        case $a in
-	        1) preinstall ; menu ;;
-	        2) baseinstall ; menu ;;
-	        3) userinstall ; menu ;;
-	        4) postinstall ; menu ;;
-			0) exit 0 ;;
-			*) echo -e $red"Wrong option."$clear; WrongCommand;;
-        esac
-}
-
-# call menu
-menu

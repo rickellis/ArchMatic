@@ -5,3 +5,4 @@
     source /mnt/root/ArchMatic/install.conf
 	arch-chroot /mnt /usr/bin/runuser -u $username -- /home/$username/ArchMatic/2-user.sh
     arch-chroot /mnt /root/ArchMatic/3-post-setup.sh
+	arch-chroot /mnt /usr/bin/runuser -u $username -- /home/$username/ArchMatic/kderice-restore.sh

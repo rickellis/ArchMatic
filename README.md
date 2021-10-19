@@ -14,8 +14,9 @@ Note: Still working on automated Intel systems and Gaming tweaks
 
 ```
 pacman -Sy git
-git clone https://github.com/ChrisTitusTech/
-
+git clone https://github.com/ChrisTitusTech/ArchMatic
+cd ArchMatic
+./archmatic.sh
 ```
 
 ### System Description

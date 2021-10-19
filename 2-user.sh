@@ -27,7 +27,6 @@ PKGS=(
 'brave-bin' # Brave Browser
 'dxvk-bin' # DXVK DirectX to Vulcan
 'github-desktop-bin' # Github Desktop sync
-'kvantum-theme-nordic-git'
 'lightly-git'
 'lightlyshaders-git'
 'mangohud' # Gaming FPS Counter
@@ -38,6 +37,7 @@ PKGS=(
 'nordic-kde-git'
 'nordic-theme'
 'noto-fonts-emoji'
+'papirus-icon-theme'
 'sddm-nordic-theme-git'
 'ocs-url' # install packages from websites
 'timeshift-bin'
@@ -45,7 +45,6 @@ PKGS=(
 'ttf-hack'
 'ttf-meslo' # Nerdfont package
 'ttf-roboto'
-'zafiro-icon-theme'
 'zoom' # video conferences
 
 )

@@ -6,7 +6,7 @@
 #   /_/ \_\_| \__|_||_|_|  |_\__,_|\__|_\__|
 #  Arch Linux Post Install Setup and Config
 #-------------------------------------------------------------------------
-(
+
 if ! source install.conf; then
 	read -p "Please enter hostname:" hostname
 
@@ -104,5 +104,3 @@ cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 echo "--------------------------------------"
 echo "--   SYSTEM READY FOR 0-setup       --"
 echo "--------------------------------------"
-
-) 2>&1 | tee installlog.txt

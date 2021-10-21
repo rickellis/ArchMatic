@@ -81,6 +81,27 @@ echo -e "\nEnabling Login Display Manager"
 
 sudo systemctl enable --now sddm.service
 
+
+echo -e "\nSetup SDDM Theme"
+
+sudo cat <<EOF > /etc/sddm.conf.d/kde_settings.conf
+[Autologin]
+Relogin=false
+Session=
+User=
+
+[General]
+HaltCommand=/usr/bin/systemctl poweroff
+RebootCommand=/usr/bin/systemctl reboot
+
+[Theme]
+Current=Nordic
+
+[Users]
+MaximumUid=60513
+MinimumUid=1000
+EOF
+
 # ------------------------------------------------------------------------
 
 echo -e "\nEnabling bluetooth daemon and setting it to auto-start"

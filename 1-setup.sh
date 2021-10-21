@@ -292,6 +292,7 @@ elif lspci | grep -E "Radeon"; then
 elif lspci | grep -E "Integrated Graphics Controller"; then
     pacman -S libva-intel-driver libvdpau-va-gl lib32-vulkan-intel vulkan-intel libva-intel-driver libva-utils --needed --noconfirm
 fi
+
 echo -e "\nDone!\n"
 
 if [ $(whoami) = "root"  ];
